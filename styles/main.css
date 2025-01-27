@@ -40,3 +40,34 @@ h5,
 h6 {
   line-height: 1;
 }
+
+
+
+/*--------PROJECT-------*/
+
+.accordion-container {
+  width: 100%;
+}
+
+.accordion-item {
+  border-bottom: var(--border);
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.open {
+  display: block;
+}
+
+.accordion-header {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  width: 100%;
+}
