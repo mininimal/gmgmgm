@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Gianmarco Minin
 ---
 
 <div class="projects">

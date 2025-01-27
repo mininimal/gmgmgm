@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 
   // Set a default layout for all pages
   eleventyConfig.addGlobalData("layout", "base.liquid");
@@ -8,22 +8,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("styles");
 
   // Collections
-  eleventyConfig.addCollection("work", function(collectionApi) {
+  eleventyConfig.addCollection("work", function (collectionApi) {
     return collectionApi.getFilteredByGlob("site/work/*.md");
   });
 
-  eleventyConfig.addCollection("posts", function(collectionApi) {
+  eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("site/posts/*.md");
   });
 
   // Base configuration
   return {
     dir: {
-      input: "site",    // Source folder for site content
-      includes: "_include", // Includes for reusable components
-      layouts: "_layout",   // Layouts folder
-      data: "_data",        // Global data files
-      output: "dist"       // Output directory changed to "dist"
+      input: "site",
+      includes: "_include",
+      layouts: "_layout",
+      data: "_data",
+      output: "dist"
     },
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
