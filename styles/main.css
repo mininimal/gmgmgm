@@ -1,38 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header, footer {
-    background: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  main {
-    padding: 2em;
-  }
-
-
-  
-----------------------------------------------
-
-  :root {
-    --font-family: 'Inter Variable', sans-serif;
-    --font-size: clamp(16px, 2svmin, 24px);
-    --text-color: #000;
-    --line-height: 1.6;
-    --background-color: rgb(34, 34, 34);
-    --image-height: 50svh;
-    --padding: clamp(16px, 3svmin, 32px);
-    --wash1: rgba(0, 0, 0, 0.1);
-    --wash2: rgba(0, 0, 0, 0.05);
+:root {
+  --font-family: 'Inter Variable', 'Helvetica', 'Arial', sans-serif;
+  --font-size: clamp(16px, 2svmin, 24px);
+  --text-color: #000;
+  --line-height: 1.6;
+  --background-color: rgb(34, 34, 34);
+  --image-height: 50svh;
+  --padding: clamp(16px, 3svmin, 32px);
+  --wash1: rgba(0, 0, 0, 0.1);
+  --wash2: rgba(0, 0, 0, 0.05);
 }
-
------------------------------
 
 .ProjectList {
   width: 100vw;
