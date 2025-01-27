@@ -1,0 +1,17 @@
+{
+  "title": "Gianmarco Minin",
+  "baseUrl": "https://gmgmgm.design",
+  "author": {
+    "name": "Gianmarco Minin",
+    "email": "work@gmgmgm.design",
+    "fediverse": "@gm@mastodon.design"
+  },
+  "socialLinks": {
+    "github": "https://github.com/mininimal",
+    "linkedin": "https://linkedin.com/in/gminin",
+    "mastodon": "https://mastodon.design/@gm"
+  },
+  "themeColor": "#ffd800",
+  "timezone": "America/Phoenix"
+}
+ 

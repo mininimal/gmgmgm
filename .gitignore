@@ -1,0 +1,22 @@
+# dependencies installed by npm
+node_modules
+yarn.lock
+
+# build artifacts
+dist
+
+# secrets and errors
+.env
+.log
+
+# OS related files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Local Netlify folder
+.netlify
+
+# Editor files
+.vscode/

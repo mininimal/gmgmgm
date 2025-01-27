@@ -1,13 +1,32 @@
-module.exports = function (eleventyConfig) {
-    eleventyConfig.addCollection("projects", function (collection) {
-      return collection.getFilteredByTag("project");
-    });
-  
-    return {
-      dir: {
-        input: "src",
-        output: "dist"
-      }
-    };
+module.exports = function(eleventyConfig) {
+
+  // Set a default layout for all pages
+  eleventyConfig.addGlobalData("layout", "base.liquid");
+
+  // Passthrough copy for assets
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("styles");
+
+  // Collections
+  eleventyConfig.addCollection("work", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("site/work/*.md");
+  });
+
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("site/posts/*.md");
+  });
+
+  // Base configuration
+  return {
+    dir: {
+      input: "site",    // Source folder for site content
+      includes: "_include", // Includes for reusable components
+      layouts: "_layout",   // Layouts folder
+      data: "_data",        // Global data files
+      output: "dist"       // Output directory changed to "dist"
+    },
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "liquid",
+    dataTemplateEngine: "liquid"
   };
-  
+};
