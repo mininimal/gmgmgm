@@ -4,6 +4,8 @@ Currently built with [11ty](https://www.11ty.dev/), but maybe that'll change.
 
 Deploys to [Netlify](https://www.netlify.com/) when a pull comes through. Wow! Neat!
 
+Run `npm run start` locally to see it at http://localhost:8080/.
+
 ```txt
 /
 ├── eleventy.config.js

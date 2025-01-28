@@ -1,6 +1,24 @@
+/*--------SITEWIDE-------*/
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
 :root {
-  --font-family: 'Inter Variable', 'Helvetica', 'Arial', sans-serif;
+  --font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
   --font-size: clamp(16px, 2svmin, 24px);
+  --font-weight: 400;
   --text-color: rgb(187, 187, 187);
   --line-height: 1.5;
   --background-color: rgb(34, 34, 34);
@@ -25,6 +43,8 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
 }
 
 a {
@@ -39,11 +59,13 @@ h4,
 h5,
 h6 {
   line-height: 1;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
 }
 
 
 
-/*--------PROJECT-------*/
+/*--------ACCORDION-------*/
 
 .accordion-container {
   width: 100%;
