@@ -1,4 +1,4 @@
-/*--------SITEWIDE-------*/
+/* Fonts Import */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -15,36 +15,55 @@
   src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  overflow-anchor: none;
+}
+
+/* Variable Declarations */
 :root {
   --font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
   --font-size: clamp(16px, 2svmin, 24px);
-  --font-weight: 400;
   --text-color: rgb(187, 187, 187);
-  --line-height: 1.5;
+  --line-height: 1.6;
   --background-color: rgb(34, 34, 34);
   --image-height: 50svh;
   --padding: clamp(16px, 3svmin, 32px);
   --wash1: rgba(0, 0, 0, 0.1);
   --wash2: rgba(0, 0, 0, 0.05);
-  --border: solid 1px rgba(255, 255, 255, .5);
+  --border: 1px solid rgba(255, 255, 255, .5);
+  
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* TODO: Light mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    
+  }
 }
+*/
+
+
 
 html {
   background-color: var(--background-color);
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--font-family);
   font-size: var(--font-size);
-  font-weight: var(--font-weight);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: none;
 }
 
 a {
@@ -66,6 +85,66 @@ h6 {
 
 
 /*--------ACCORDION-------*/
+.projects {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 auto;S
+}
+
+.project {
+  border-bottom: var(--border);
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+.toggle {
+  padding: var(--padding);
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-color);
+  justify-content: space-between
+}
+
+.toggle:active > * {
+  opacity: 0.5;
+}
+
+.projectContent {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;*/
+}
+
+.projectContent.open { /* SWAP THIS FOR THE .projectContent RULES */
+  display: none;
+}
+
+.projectContent p {
+
+}
+
+/* .accordion-header {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  width: 100%;
+} */
+
+
 
 .accordion-container {
   width: 100%;
@@ -81,15 +160,4 @@ h6 {
 
 .accordion-content.open {
   display: block;
-}
-
-.accordion-header {
-  background-color: var(--background-color);
-  border: none;
-  color: var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--padding);
-  width: 100%;
 }

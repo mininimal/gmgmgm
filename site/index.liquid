@@ -2,18 +2,20 @@
 title: "Gianmarco Minin"
 ---
 
-<div class="accordion-container">
+<div class="projects">
   {% for project in collections.work %}
-    <div class="accordion-item">
-      <button class="accordion-header">
-        <h2>{{ project.data.title }} at {{ project.data.company }}</h2>
-        <span>{{ project.data.year }}</span>
-      </button>
-      <div class="accordion-content">
-        <p>{{ project.data.summary }}</p>
-        <img src="{{ project.data.mainImage }}" alt="{{ project.data.title }}">
+  <div class="project">
+    <button class="toggle">
+      <h2>{{ project.data.title }} at {{ project.data.company }}</h2>
+      <span>{{ project.data.year }}</span>
+    </button>
+    <div class="projectContent">
+      <div class="projectSummary">
+        <p>{{ project.data.description }}</p>
         <a href="{{ project.url }}">Read more</a>
       </div>
+      <img src="{{ project.data.mainImage }}" alt="{{ project.data.title }}">
     </div>
+  </div>
   {% endfor %}
 </div>
