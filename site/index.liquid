@@ -3,19 +3,30 @@ title: "Gianmarco Minin"
 ---
 
 <div class="projects">
+
   {% for project in collections.work %}
-  <div class="project">
-    <button class="toggle">
+
+  <details name="project">
+
+    <!-- Accordion header-->
+    <summary id="summary-{{ forloop.index }}" aria-controls="content-{{ forloop.index }}">
       <h2>{{ project.data.title }} at {{ project.data.company }}</h2>
       <span>{{ project.data.year }}</span>
-    </button>
-    <div class="projectContent">
-      <div class="projectSummary">
-        <p>{{ project.data.description }}</p>
-        <a href="{{ project.url }}">Read more</a>
+    </summary>
+
+    <!-- Accordion content-->
+    <div id="content-{{ forloop.index }}" class="content" role="region" aria-labelledby="summary-{{ forloop.index }}">
+      <div class="innerWrapper">
+        <div class="projectSummary">
+          <p>{{ project.data.description }}</p>
+          <a href="{{ project.url }}">Read more</a>
+        </div>
+        <img src="{{ project.data.mainImage }}" alt="{{ project.data.title }}">
       </div>
-      <img src="{{ project.data.mainImage }}" alt="{{ project.data.title }}">
     </div>
-  </div>
+
+  </details>
+
   {% endfor %}
+
 </div>
