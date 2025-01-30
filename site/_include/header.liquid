@@ -1,12 +1,10 @@
-<div class="bio">
-    <button class="toggle">
-        <h1>Gianmarco Minin</h1>
-        <span>Info</span>
-    </button>
-    <div class="bioContent">
-        <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at <a
-                href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a
-                href="https://www.godaddy.com/" target="_blank">GoDaddy</a>.</p>
+<details name="bio">
+    <summary id="summary-bio" aria-controls="content-bio">
+        <span>{{ site.author.name }}</span>
+        <span>Info</span> <!-- TODO: Make this a nav menu instead -->
+    </summary>
+    <div id="content-bio" class="content" role="region" aria-labelledby="summary-bio">
+        <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at <a href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a href="https://www.godaddy.com/" target="_blank">GoDaddy</a>.</p> <!-- TODO: Open external links in new tab automatically -->
         <br>
         <ul>
             <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
@@ -15,10 +13,4 @@
             <li><a href="{{ site.socialLinks.github}}" target="_blank">GitHub</a></li>
         </ul>
     </div>
-</div>
-
-<details>
-    <summary>
-
-    </summary>
 </details>

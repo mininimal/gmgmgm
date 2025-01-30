@@ -85,7 +85,7 @@
   --wash1: rgba(0, 0, 0, 0.1);
   --wash2: rgba(0, 0, 0, 0.05);
   --border: 1px solid rgba(255, 255, 255, .5);
-  
+
 }
 
 /* TODO: Light mode
@@ -132,41 +132,58 @@ h6 {
 
 /* ---------- PROJECTS ACCORDION ---------- */
 /* Container */
-.projects details {
+details {
   border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
-.projects details:last-child {
+details:last-child {
   border-bottom: none;
 }
 
 /* Heading */
-.projects summary {
+summary {
   display: flex;
-  color: var(--text-color); /* TODO */
+  color: var(--text-color);
+  /* FIXME: Use accent color variable */
   justify-content: space-between;
   align-items: center;
   padding: var(--padding);
 }
 
-.projects summary:active > * {
-  opacity: 0.5; /* TODO: Animate this transition */
+summary:active>* {
+  opacity: 0.5;
+  /* TODO: Animate this transition */
 }
 
-.projects summary h2,
-.projects summary span {
+summary h2,
+summary span {
   font-size: var(--font-size);
 }
 
 /* Content */
+div.content {
+  padding: var(--padding);
+}
+
+/* ---------- BIO ACCORDION ---------- */
+#content-bio ul {
+  padding: 0;
+}
+
+#content-bio li {
+  display: inline-block;
+  list-style: none;
+}
+
+/* ---------- PROJECT ACCORDION ---------- */
 .projects div.content {
   display: flex;
-  overflow-x: scroll; /* TODO: Allow grab-to-scroll */
-  padding: var(--padding);
+  overflow-x: scroll;
+  /* TODO: Allow grab-to-scroll */
   position: relative;
 }
 
-.projects div.innerWrapper{
+.projects div.innerWrapper {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -185,7 +202,8 @@ h6 {
 }
 
 .projects .projectSummary a {
-  color: violet; /* TODO */
+  color: violet;
+  /* FIXME: Use accent color variable */
 }
 
 .projects div.content img {
