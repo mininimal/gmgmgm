@@ -1,11 +1,17 @@
+---
+title: {{ post.title }}
+---
 <article>
-    <header class="projectIntro"> <!-- TODO: Switch to hgroup with open-props -->
-        <img src="{{ project.featuredMedia }}">
-        <div class="introText">
-        {{ project.title }}{{ project.description }}
-        </div>
-    </header>
-    <div class="projectContent">
-        {{ project.content }}
+  <hgroup>
+    <h1>{{ post.title }}</h1>
+  </hgroup>
+  <header class="projectIntro">
+    <img src="{{ project.featuredMedia }}">
+    <div class="introText">
+      {{ project.title }}{{ project.description }}
     </div>
+  </header>
+  <div class="projectContent">
+    {{ project.content }}
+  </div>
 </article>
