@@ -7,9 +7,18 @@
     "fediverse": "@gm@mastodon.design"
   },
   "socialLinks": {
-    "github": "https://github.com/mininimal",
-    "linkedin": "https://linkedin.com/in/gminin",
-    "mastodon": "https://mastodon.design/@gm"
+    "github": {
+      "url": "https://github.com/mininimal",
+      "label": "GitHub"
+    },
+    "linkedin": {
+      "url": "https://linkedin.com/in/gminin",
+      "label": "LinkedIn"
+    },
+    "mastodon": {
+      "url": "https://mastodon.design/@gm",
+      "label": "Mastodon"
+    }
   },
   "themeColor": "#ffd800",
   "timezone": "America/Phoenix"

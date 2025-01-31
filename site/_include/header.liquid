@@ -1,18 +1,25 @@
 <header>
-<details name="bio">
+  <details name="bio">
     <summary id="summary-bio" aria-controls="content-bio">
-        <span>{{ site.author.name }}</span>
-        <span>Info</span> <!-- TODO: Make this a nav menu instead -->
+      <span>{{ site.author.name }}</span>
+      <span>Info</span> <!-- TODO: Make this a nav menu instead -->
     </summary>
     <div id="content-bio" class="content" role="region" aria-labelledby="summary-bio">
-        <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at <a href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a href="https://www.godaddy.com/" target="_blank">GoDaddy</a>.</p> <!-- TODO: Open external links in new tab automatically -->
-        <br>
-        <ul>
-            <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
-            {% for name in site.socialLinks %}
-                <li><a href=" {{ site.socialLinks[name] }} ">{{ name | capitalize }}</a></li>
-            {% endfor %}
-        </ul>
+      <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at
+        <a href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a href="https://www.godaddy.com/"
+          target="_blank">GoDaddy</a>.
+      </p>
+      <!-- TODO: Open external links in new tab automatically -->
+      <br>
+      <ul>
+        <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
+        {% for link in site.socialLinks %}
+        <li>
+          <a href="{{ link[1].url }}">{{ link[1].label }}</a>
+          {%- unless forloop.last %},{% endunless %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-</details>
+  </details>
 </header>
