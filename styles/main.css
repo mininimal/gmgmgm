@@ -130,14 +130,10 @@ h6 {
 }
 
 
-/* ---------- PROJECTS ACCORDION ---------- */
+/* ---------- ACCORDION ---------- */
 /* Container */
 details {
   border-bottom: 1px solid rgba(255, 255, 255, .5);
-}
-
-details:last-child {
-  border-bottom: none;
 }
 
 /* Heading */
@@ -161,7 +157,7 @@ summary span {
 }
 
 /* Content */
-div.content {
+details .content {
   padding: var(--padding);
 }
 
@@ -176,14 +172,18 @@ div.content {
 }
 
 /* ---------- PROJECT ACCORDION ---------- */
-.projects div.content {
+.projects details:last-child {
+  border-bottom: none;
+}
+
+.projects .content {
   display: flex;
   overflow-x: scroll;
   /* TODO: Allow grab-to-scroll */
   position: relative;
 }
 
-.projects div.innerWrapper {
+.projects .innerWrapper {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -194,7 +194,7 @@ div.content {
 }
 
 .projects .projectSummary {
-  height: var(--image-height);
+  height: 100%;
   width: 480px;
   display: flex;
   flex-direction: column;
