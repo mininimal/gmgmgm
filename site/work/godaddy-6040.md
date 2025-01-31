@@ -1,6 +1,6 @@
 ---
 slug: gddy-6040
-year: 2022
+workYear: 2022
 name: Notification Marquee
 title: Solving notification blindness to increase renewals
 description: GoDaddy's wide range of products can cause loyal customers to receieve a large number of notifications. I created a component to elevate important renewal-related notifications on the homepage, resulting in a 22% increase in open rate.

@@ -1,3 +1,4 @@
+<header>
 <details name="bio">
     <summary id="summary-bio" aria-controls="content-bio">
         <span>{{ site.author.name }}</span>
@@ -8,9 +9,10 @@
         <br>
         <ul>
             <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
-            <li><a href="{{ site.socialLinks.mastodon }}" target="_blank">Mastodon</a>, </li>
-            <li><a href="{{ site.socialLinks.linkedin }}" target="_blank">LinkedIn</a>, </li>
-            <li><a href="{{ site.socialLinks.github}}" target="_blank">GitHub</a></li>
+            {% for name in site.socialLinks %}
+                <li><a href=" {{ site.socialLinks[name] }} ">{{ name | capitalize }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </details>
+</header>

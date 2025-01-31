@@ -2,16 +2,19 @@
 title: "Gianmarco Minin"
 ---
 
+<!-- Sort projects by year -->
+{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+
 <div class="projects">
 
-  {% for project in collections.work %}
+  {% for project in workCollection %}
 
   <details name="project">
 
     <!-- Accordion header-->
     <summary id="summary-{{ forloop.index }}" aria-controls="content-{{ forloop.index }}">
       <h2>{{ project.data.title }} at {{ project.data.company }}</h2>
-      <span>{{ project.data.year }}</span>
+      <span>{{ project.data.workYear }}</span>
     </summary>
 
     <!-- Accordion content-->

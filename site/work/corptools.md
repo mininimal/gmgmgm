@@ -1,6 +1,6 @@
 ---
 slug: 2b-corptools
-year: 2024
+workYear: 2024
 name: CorpTools
 title: Uniting internal tools into a SaaS product
 description: Two Barrels handled customer service communication through various disconnected tools for email, phone, documents, and more. With our customer service teams moving from format-based teams to region-based teams, I identified an opportunity to unify our tools into a single ticketing system through a comprehensive design system. The result, CorpTools, eventually began a second life as a SaaS suite.

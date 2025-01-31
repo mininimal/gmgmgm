@@ -1,6 +1,6 @@
 ---
 slug: gddy-wds
-year: 2019
+workYear: 2019
 name: WordPress Websites
 title: Creating VIP ecommerce websites
 description: GoDaddy's Website Design Services delivered complete websites including design, copywriting, development, and troubleshooting. I handled design and WordPress setup in addition to contributing to the client onboarding flow.
