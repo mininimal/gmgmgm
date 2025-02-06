@@ -1,13 +1,9 @@
 ---
-title:
-slug:
-layout:
-date:
-description:
+title: Site History
+date: 2025-02-05T13:23:53-07:00
+id: 35993eea-d40a-4184-a383-4432a08d6172
 tags:
   -
-  -
-featuredImg:
 ---
 
 IT'S ALIIIIIIIIIVE!

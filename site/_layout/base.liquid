@@ -5,15 +5,18 @@
   <title>{{ title | prepend: "GM // " | default: site.title }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/utils.css">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/styles/main.css" rel="preload">
+  <link rel="stylesheet" href="/styles/normalize.css" rel="preload">
+  <link rel="stylesheet" href="/styles/theme.css">
+  <link rel="canonical" href="{{ page.url }}">
+  <meta name="theme-color" content="{{ site.themeColor }}">
+  <!-- TODO: Link JS files with defer, like <script src="/scripts/main.js" defer></script>-->
+  <!-- TODO: Favicon -->
+  <!-- TODO: Social graph garbage -->
   <!--me-->
   <meta name="fediverse:creator" content="{{ site.author.fediverse }}">
   <link rel="me" href="{{ site.socialLinks.mastodon }}">
-  <link rel="author" href="humans.txt">
+  <link rel="author" href="/humans.txt">
 </head>
 <body>
   {% include "_include/header.liquid" %}

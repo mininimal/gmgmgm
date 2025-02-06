@@ -1,6 +1,19 @@
-const cheerio = require("cheerio");
+const mila = require("markdown-it-link-attributes");
 
 module.exports = function (eleventyConfig) {
+
+  // Open external links in new tab
+  const milaOptions = {
+    matcher(href) {
+      return href.match(/^https?:\/\//);
+    },
+    attrs: {
+      target: "_blank",
+      rel: "noopener",
+    },
+  };
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mila, milaOptions));
+
   // Set a default layout for all pages
   eleventyConfig.addGlobalData("layout", "base.liquid");
 
@@ -17,31 +30,6 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("site/posts/*.md");
   });
 
-  // Transform to add target="_blank" and rel="noopener noreferrer" to external links
-  eleventyConfig.addTransform("externalLinks", function (content) {
-    // Only process HTML files
-    if (this.outputPath && this.outputPath.endsWith(".html")) {
-      const $ = cheerio.load(content);
-
-      // Find all links with an href starting with http:// or https://
-      $('a[href^="http://"], a[href^="https://"]').each(function () {
-        const href = $(this).attr("href");
-
-        // Skip internal links (optional, adjust as needed)
-        if (!href.includes("{{ site.title }}")) {
-          $(this).attr("target", "_blank");
-          $(this).attr("rel", "noopener noreferrer");
-        }
-      });
-
-      // Return the modified HTML
-      return $.html();
-    }
-
-    // Return unmodified content for non-HTML files
-    return content;
-  });
-
   // Base configuration
   return {
     dir: {
@@ -50,7 +38,7 @@ module.exports = function (eleventyConfig) {
       layouts: "_layout",
       data: "_data",
       output: "dist"
-    },
+    }, 
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
     dataTemplateEngine: "liquid"

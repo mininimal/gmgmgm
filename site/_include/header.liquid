@@ -1,8 +1,19 @@
 <header>
   <details name="bio">
     <summary id="summary-bio" aria-controls="content-bio">
-      <span>{{ site.author.name }}</span>
-      <span>Info</span> <!-- TODO: Make this a nav menu instead -->
+      <span id="logo">{{ site.author.name }}</span>
+      <nav>
+        <ul>
+          <li>info</li>
+          <li><a href="https://cheese.com">/about</a></li>
+          <li><a href="https://cheese.com">/writing</a></li>
+          <li><a href="https://cheese.com">/work</a></li>
+          <!-- FIXME: use actual collection -->
+          <!-- for each link in nav -->
+          <!--<a href="{ link }">/{ link.title }</a> slash layout for nav menu -->
+          <!--{ endfor }-->
+        </ul>
+      </nav>
     </summary>
     <div id="content-bio" class="content" role="region" aria-labelledby="summary-bio">
       <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at
