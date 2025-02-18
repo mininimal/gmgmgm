@@ -21,4 +21,4 @@ These posts helped me solve problems on the site. I probably did a worse version
 
 1. Using OKLCH for color: https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl
 1. Consistent post front matter with VSCode snippets (https://chrismcleod.dev/blog/visual-studio-code-snippet-for-markdown-frontmatter/#fnref1)
-1. s
+1. External links in new tab: https://dannywhite.net/notes/new-tab-links/

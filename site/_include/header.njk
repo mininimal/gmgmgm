@@ -7,11 +7,11 @@
           <li>info</li>
           <li><a href="https://cheese.com">/about</a></li>
           <li><a href="https://cheese.com">/writing</a></li>
-          <li><a href="https://cheese.com">/work</a></li>
-          <!-- FIXME: use actual collection -->
-          <!-- for each link in nav -->
-          <!--<a href="{ link }">/{ link.title }</a> slash layout for nav menu -->
-          <!--{ endfor }-->
+          <li><a href="/">/work</a></li>
+          <!-- FIXME: use actual collection
+          for each link in nav
+          <a href="{{ link }}">/{{ link.title }}</a>
+          endfor-->
         </ul>
       </nav>
     </summary>
@@ -20,6 +20,7 @@
         <a href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a href="https://www.godaddy.com/"
           target="_blank">GoDaddy</a>.
       </p>
+      
       <!-- TODO: Open external links in new tab automatically -->
       <br>
       <ul>
@@ -27,7 +28,7 @@
         {% for link in site.socialLinks %}
         <li>
           <a href="{{ link[1].url }}">{{ link[1].label }}</a>
-          {%- unless forloop.last %},{% endunless %}
+          {%- if not loop.last %},{% endif %}
         </li>
         {% endfor %}
       </ul>

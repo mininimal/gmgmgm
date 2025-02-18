@@ -1,17 +1,19 @@
 ---
 title: {{ post.title }}
 ---
+
 <article>
   <hgroup>
     <h1>{{ post.title }}</h1>
   </hgroup>
   <header class="projectIntro">
-    <img src="{{ project.featuredMedia }}">
+    <img src="{{ project.featuredMedia }}" alt="{{ project.title }}">
     <div class="introText">
-      {{ project.title }}{{ project.description }}
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
     </div>
   </header>
   <div class="projectContent">
-    {{ project.content }}
+    {{ project.content | safe }}
   </div>
-</article>
+</article>eee

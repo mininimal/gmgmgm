@@ -19,7 +19,6 @@
   "homepage": "https://github.com/mininimal/gmgmgm#readme",
   "description": "",
   "dependencies": {
-    "cheerio": "^1.0.0",
     "markdown-it-link-attributes": "^4.0.1"
   }
 }

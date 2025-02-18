@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mila, milaOptions));
 
   // Set a default layout for all pages
-  eleventyConfig.addGlobalData("layout", "base.liquid");
+  eleventyConfig.addGlobalData("layout", "base.njk");
 
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("assets");
@@ -38,9 +38,6 @@ module.exports = function (eleventyConfig) {
       layouts: "_layout",
       data: "_data",
       output: "dist"
-    }, 
-    markdownTemplateEngine: "liquid",
-    htmlTemplateEngine: "liquid",
-    dataTemplateEngine: "liquid"
-  };
+    }
+  }
 };

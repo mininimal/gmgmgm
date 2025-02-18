@@ -57,11 +57,11 @@
 
 /* Fonts Import */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Atkinson Next';
   font-style: normal;
   font-weight: 100 900;
   font-optical-sizing: auto;
-  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
 }
 
 @font-face {
@@ -72,10 +72,17 @@
   src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Atkinson Mono';
+  font-style: normal;
+  font-weight: 200 800;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
+}
 
 /* Variable Declarations */
 :root {
-  --font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  --font-family: 'Atkinson Next', 'Helvetica', 'Arial', sans-serif;
   --font-size: clamp(16px, 2svmin, 24px);
   --text-color: oklch(79.21% 0 0);
   --theme-color: oklch(83.28% 0.1711 81.97);
@@ -87,6 +94,7 @@
   --wash1: oklch(0% 0 0 / 10%);
   --wash2: oklch(0% 0 0 / 5%);
   --border: 1px solid oklch(100% 0 0 / 50%);
+  
 
 }
 

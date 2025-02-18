@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!--site-->
-  <title>{{ title | prepend: "GM // " | default: site.title }}</title>
+  <title>{{ "GM // " + (title | default(site.title)) }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/main.css" rel="preload">
@@ -19,9 +19,9 @@
   <link rel="author" href="/humans.txt">
 </head>
 <body>
-  {% include "_include/header.liquid" %}
+  {% include "header.njk" %}
   <main>
-    {{ content }}
+    {{ content | safe }}
   </main>
 </body>
 </html>

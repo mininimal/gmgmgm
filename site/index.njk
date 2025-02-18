@@ -2,8 +2,8 @@
 title: "Gianmarco Minin"
 ---
 
-<!-- Sort projects by year -->
-{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+{# Sort projects by year #}
+{% set workCollection = collections.work | sort(false, false, "data.workYear") | reverse %}
 
 <div class="projects">
 
@@ -12,13 +12,13 @@ title: "Gianmarco Minin"
   <details name="project">
 
     <!-- Accordion header-->
-    <summary id="summary-{{ forloop.index }}" aria-controls="content-{{ forloop.index }}">
+    <summary id="summary-{{ loop.index }}" aria-controls="content-{{ loop.index }}">
       <h2>{{ project.data.title }} at {{ project.data.company }}<sup class="featured">*</sup></h2>
       <span>{{ project.data.workYear }}</span>
     </summary>
 
     <!-- Accordion content-->
-    <div id="content-{{ forloop.index }}" class="content" role="region" aria-labelledby="summary-{{ forloop.index }}">
+    <div id="content-{{ loop.index }}" class="content" role="region" aria-labelledby="summary-{{ loop.index }}">
       <div class="innerWrapper">
         <div class="projectSummary">
           <p>{{ project.data.description }}</p>
