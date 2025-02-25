@@ -1,17 +1,24 @@
+{% set currentUrl = page.url %}
+
 <header>
   <details name="bio">
     <summary id="summary-bio" aria-controls="content-bio">
-      <span id="logo">{{ site.author.name }}</span>
+      <span id="logo" class="{% if currentUrl == '/' %}home{% else %}subpage{% endif %}">
+        <a href="/">{{ site.title -}}</a>
+        {%- if currentUrl != "/" -%}
+          <span class="page-title">/{{- currentUrl | replace("/", "") | replace("-", " ") | title -}}</span>
+        {%- endif -%}
+      </span>
       <nav>
-        <ul>
-          <li>info</li>
-          <li><a href="https://cheese.com">/about</a></li>
-          <li><a href="https://cheese.com">/writing</a></li>
-          <li><a href="/">/work</a></li>
-          <!-- FIXME: use actual collection
-          for each link in nav
-          <a href="{{ link }}">/{{ link.title }}</a>
-          endfor-->
+        <ul role="list">
+          <li>Contact</li>
+          {%- for pageEntry in collections.page -%}
+            {%- if pageEntry.url != currentUrl -%}
+              <li>
+                <a href="{{ pageEntry.url }}">/{{ pageEntry.data.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
         </ul>
       </nav>
     </summary>
@@ -25,9 +32,9 @@
       <br>
       <ul>
         <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
-        {% for link in site.socialLinks %}
+        {% for key, link in site.socialLinks %}
         <li>
-          <a href="{{ link[1].url }}">{{ link[1].label }}</a>
+          <a href="{{ link.url }}">{{ link.label }}</a>
           {%- if not loop.last %},{% endif %}
         </li>
         {% endfor %}

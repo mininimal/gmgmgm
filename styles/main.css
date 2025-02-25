@@ -80,20 +80,40 @@
   src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
 }
 
+/* ---------- Primitives ---------- */
+:root {
+  --color-dark: oklch(24.29% 0.0114 293.18);
+  --color-medium: oklch(40% 0.02 293.18);
+  --color-light: oklch(60% 0.02 293.18);
+  --color-bright: oklch(95% 0.0114 293.18);
+  --color-theme: oklch(83.28% 0.1711 81.97);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-dark: oklch(95% 0.0114 293.18);
+    --color-medium: oklch(60% 0.02 293.18);
+    --color-light: oklch(40% 0.02 293.18);
+    --color-bright: oklch(24.29% 0.0114 293.18);
+  }
+}
+  
+/* ---------- Tokens ---------- */
+:root {
+  --text-color: var(--color-light);
+  --link-color: var(--color-bright);
+  --background-color: var(--color-dark);
+  --border: 1px solid var(--color-medium);
+}
+
+
 /* Variable Declarations */
 :root {
   --font-family: 'Atkinson Next', 'Helvetica', 'Arial', sans-serif;
   --font-size: clamp(16px, 2svmin, 24px);
-  --text-color: oklch(79.21% 0 0);
-  --theme-color: oklch(83.28% 0.1711 81.97);
-  --link-color: oklch(100% 0 0);
   --line-height: 1.6;
-  --background-color: oklch(24.29% 0.0114 293.18);
   --image-height: 50svh;
   --padding: clamp(16px, 3svmin, 32px);
-  --wash1: oklch(0% 0 0 / 10%);
-  --wash2: oklch(0% 0 0 / 5%);
-  --border: 1px solid oklch(100% 0 0 / 50%);
   
 
 }
@@ -101,19 +121,13 @@
 /* super-saturated theme color for cool monitors */
 @media (color-gamut: p3) {
   :root {
-    --theme-color: oklch(83.28% 0.1911 81.97);
+    --color-theme: oklch(83.28% 0.1911 81.97);
   }
 }
 
-/* TODO: Light mode
-@media (prefers-color-scheme: light) {
-  :root {
-    
-  }
-}
-*/
 
 
+/* ---------- SITEWIDE ---------- */
 
 html {
   background-color: var(--background-color);
@@ -128,6 +142,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   text-size-adjust: none;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -148,6 +168,24 @@ h6 {
 
 
 /* ---------- HEADER ---------- */
+#logo a {
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+#logo.home a {
+  color: var(--color-theme);
+}
+
+#logo.subpage a{
+  color: var(--color-medium);
+}
+
+#logo.subpage .page-title {
+  color: var(--color-theme);
+  text-transform: lowercase;
+}
+
 nav ul {
   display: flex;
   flex-direction: row-reverse;
@@ -156,12 +194,19 @@ nav ul {
 }
 nav li {
   list-style: none;
+  text-transform: lowercase;
 }
 
-nav > a {
+nav a {
   text-decoration: none;
 }
 
+/* ---------- FOOTER ---------- */
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: var(--border);
+}
 
 
 /* ---------- ACCORDION ---------- */
@@ -173,11 +218,10 @@ details {
 /* Heading */
 summary {
   display: flex;
-  color: var(--text-color);
-  /* FIXME: Use accent color variable */
   justify-content: space-between;
   align-items: center;
   padding: var(--padding);
+  gap: calc(var(--padding) * 2);
 }
 
 summary:active>* {
@@ -185,9 +229,14 @@ summary:active>* {
   /* TODO: Animate this transition */
 }
 
-summary h2,
-summary span {
+.project-info {
+  flex: 0 0 auto;
+}
+
+summary h2 {
+  color: var(--color-bright);
   font-size: var(--font-size);
+  flex: 1;
 }
 
 /* Content */
@@ -206,7 +255,7 @@ details .content {
 }
 
 #logo {
-  color: var(--theme-color);
+  color: var(--color-theme);
   font-weight: 500;
 }
 
@@ -241,14 +290,14 @@ details .content {
 }
 
 .projects .projectSummary a {
-  color: oklch(0.83 0.17 81.97 / 1);
-  /* FIXME: Use accent color variable */
+  color: var(--color-theme);
 }
 
 .projects div.content img {
   height: var(--image-height);
   min-width: 480px;
 }
+
 .featured {
   color: oklch(0.63 0.26 29.23 / 1);
   margin-left: 2px;

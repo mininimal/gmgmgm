@@ -13,8 +13,9 @@ title: "Gianmarco Minin"
 
     <!-- Accordion header-->
     <summary id="summary-{{ loop.index }}" aria-controls="content-{{ loop.index }}">
-      <h2>{{ project.data.title }} at {{ project.data.company }}<sup class="featured">*</sup></h2>
-      <span>{{ project.data.workYear }}</span>
+      <span class="project-info">{{ project.data.workYear }}</span>
+      <h2>{{ project.data.title }}<sup class="featured">*</sup></h2> <!-- TODO: Add Fetured atribute in schema -->
+      <span class="project-info">{{ project.data.company }}</span>
     </summary>
 
     <!-- Accordion content-->
@@ -24,7 +25,7 @@ title: "Gianmarco Minin"
           <p>{{ project.data.description }}</p>
           <a href="{{ project.url }}">Read more</a>
         </div>
-        <img src="{{ project.data.mainImage }}" alt="{{ project.data.title }}">
+        <img src="./assets/images/{{ project.data.thumb }}" alt="{{ project.data.title }}">
       </div>
     </div>
 

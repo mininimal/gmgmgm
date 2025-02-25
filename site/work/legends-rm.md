@@ -1,4 +1,5 @@
 ---
+tags: work
 slug: legends-rm
 workYear: 2023
 name: Real Madrid
