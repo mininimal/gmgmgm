@@ -168,15 +168,8 @@ h6 {
 
 
 /* ---------- HEADER ---------- */
-header {
-  display: flex;
-  border-bottom: var(--border);
-  padding: var(--padding);
-  justify-content: space-between;
+#logo a {
   text-transform: lowercase;
-}
-
-header a {
   text-decoration: none;
 }
 
@@ -190,6 +183,7 @@ header a {
 
 #logo.subpage .page-title {
   color: var(--color-theme);
+  text-transform: lowercase;
 }
 
 nav ul {
@@ -207,56 +201,28 @@ nav a {
   text-decoration: none;
 }
 
+/* ---------- BIO ---------- */
+#content-bio ul {
+  padding: 0;
+}
+
+#content-bio li {
+  display: inline-block;
+  list-style: none;
+}
+
+#logo {
+  color: var(--color-theme);
+  font-weight: 500;
+}
 
 /* ---------- FOOTER ---------- */
 footer {
   display: flex;
   justify-content: center;
   border-top: var(--border);
-  padding: var(--padding);
 }
 
-/* ---------- ACCORDION ---------- */
-/* Container */
-details {
-  border-bottom: var(--border);
-}
-
-/* Heading */
-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--padding);
-  gap: calc(var(--padding) * 2);
-  cursor: pointer;
-}
-
-summary:active > * {
-  opacity: 0.5;
-  /* TODO: Animate this transition */
-}
-
-/* Generic info class (replaces .project-info) */
-.accordion-info {
-  flex: 0 0 auto;
-}
-
-summary h2 {
-  color: var(--color-bright);
-  font-size: var(--font-size);
-  flex: 1;
-}
-
-/* Content */
-details .content {
-  padding: var(--padding);
-}
-
-/* Remove border from the last accordion */
-details:last-child {
-  border-bottom: none;
-}
 
 /* ---------- PROJECT ACCORDION ---------- */
 .projects .content {

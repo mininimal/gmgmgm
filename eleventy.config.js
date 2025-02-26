@@ -1,6 +1,13 @@
 const mila = require("markdown-it-link-attributes");
+const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+
+  // Add a custom date filter
+  eleventyConfig.addFilter("formatDate", (dateObj) => {
+    // Parse the date as a JS Date object in UTC and format it
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL dd, yyyy");
+  });
 
   // Open external links in new tab
   const milaOptions = {

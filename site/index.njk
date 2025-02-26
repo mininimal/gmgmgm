@@ -2,35 +2,4 @@
 title: "Gianmarco Minin"
 ---
 
-{# Sort projects by year #}
-{% set workCollection = collections.work | sort(false, false, "data.workYear") | reverse %}
-
-<div class="projects">
-
-  {% for project in workCollection %}
-
-  <details name="project">
-
-    <!-- Accordion header-->
-    <summary id="summary-{{ loop.index }}" aria-controls="content-{{ loop.index }}">
-      <span class="project-info">{{ project.data.workYear }}</span>
-      <h2>{{ project.data.title }}<sup class="featured">*</sup></h2> <!-- TODO: Add Fetured atribute in schema -->
-      <span class="project-info">{{ project.data.company }}</span>
-    </summary>
-
-    <!-- Accordion content-->
-    <div id="content-{{ loop.index }}" class="content" role="region" aria-labelledby="summary-{{ loop.index }}">
-      <div class="innerWrapper">
-        <div class="projectSummary">
-          <p>{{ project.data.description }}</p>
-          <a href="{{ project.url }}">Read more</a>
-        </div>
-        <img src="./assets/images/{{ project.data.thumb }}" alt="{{ project.data.title }}">
-      </div>
-    </div>
-
-  </details>
-
-  {% endfor %}
-
-</div>
+hi this site is under construction but go ahead and look around :^)

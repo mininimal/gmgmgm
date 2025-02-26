@@ -4,7 +4,7 @@ title: {{ post.title }}
 
 <article>
   <hgroup>
-    <h1>{{ post.title }}</h1>
+    <h1>{{ post.data.title }}</h1>
   </hgroup>
   <header class="projectIntro">
     <img src="{{ project.featuredMedia }}" alt="{{ project.title }}">
@@ -16,4 +16,4 @@ title: {{ post.title }}
   <div class="projectContent">
     {{ project.content | safe }}
   </div>
-</article>eee
+</article>

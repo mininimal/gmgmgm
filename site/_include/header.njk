@@ -1,44 +1,22 @@
 {% set currentUrl = page.url %}
 
 <header>
-  <details name="bio">
-    <summary id="summary-bio" aria-controls="content-bio">
-      <span id="logo" class="{% if currentUrl == '/' %}home{% else %}subpage{% endif %}">
-        <a href="/">{{ site.title -}}</a>
-        {%- if currentUrl != "/" -%}
-          <span class="page-title">/{{- currentUrl | replace("/", "") | replace("-", " ") | title -}}</span>
+  <span id="logo" class="{% if currentUrl == '/' %}home{% else %}subpage{% endif %}">
+    <a href="/">{{ site.title -}}</a>
+    {%- if currentUrl != "/" -%}
+      <span class="page-title">/{{- currentUrl | replace("/", "") | replace("-", " ") | title -}}</span>
+    {%- endif -%}
+  </span>
+  <nav>
+    <ul role="list">
+      <li>Contact</li>
+      {%- for pageEntry in collections.page -%}
+        {%- if pageEntry.url != currentUrl -%}
+          <li>
+            <a href="{{ pageEntry.url }}">/{{ pageEntry.data.title }}</a>
+          </li>
         {%- endif -%}
-      </span>
-      <nav>
-        <ul role="list">
-          <li>Contact</li>
-          {%- for pageEntry in collections.page -%}
-            {%- if pageEntry.url != currentUrl -%}
-              <li>
-                <a href="{{ pageEntry.url }}">/{{ pageEntry.data.title }}</a>
-              </li>
-            {%- endif -%}
-          {%- endfor -%}
-        </ul>
-      </nav>
-    </summary>
-    <div id="content-bio" class="content" role="region" aria-labelledby="summary-bio">
-      <p>Digital Designer currently at <a href="https://www.legends.net/" target="_blank">Legends</a>. Formerly at
-        <a href="https://www.twobarrels.com/" target="_blank">Two Barrels</a> and <a href="https://www.godaddy.com/"
-          target="_blank">GoDaddy</a>.
-      </p>
-      
-      <!-- TODO: Open external links in new tab automatically -->
-      <br>
-      <ul>
-        <li><a href="mailto:{{ site.author.email }}" target="_blank">Email</a>, </li>
-        {% for key, link in site.socialLinks %}
-        <li>
-          <a href="{{ link.url }}">{{ link.label }}</a>
-          {%- if not loop.last %},{% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </details>
+      {%- endfor -%}
+    </ul>
+  </nav>
 </header>

@@ -1,4 +1,0 @@
----
-tags: page
-title: About
----

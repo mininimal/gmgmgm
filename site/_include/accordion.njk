@@ -1,0 +1,14 @@
+{# Generate a unique ID for the accordion using loop.index #}
+{% set id = loop.index %}
+
+<details name="accordion">
+  <!-- Accordion header -->
+  <summary id="summary-{{ id }}" aria-controls="content-{{ id }}">
+    {{ accordionHeader | safe }}
+  </summary>
+
+  <!-- Accordion content -->
+  <div id="content-{{ id }}" class="content" role="region" aria-labelledby="summary-{{ id }}">
+    {{ accordionContent | safe }}
+  </div>
+</details>

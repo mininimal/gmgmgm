@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mininimal/gmgmgm#readme",
   "description": "",
   "dependencies": {
+    "luxon": "^3.5.0",
     "markdown-it-link-attributes": "^4.0.1"
   }
 }
