@@ -1,60 +1,3 @@
-@layer openprops, normalize, utils, theme, components.base, components.has-deps;
-
-/*
-* Open Props
-* Import as many props as you need here.
-* https://unpkg.com/browse/open-props@2.0.0-beta.5/css
-*/
-@import "opbeta/css/media-queries.css" layer(openprops);
-@import "opbeta/index.css" layer(openprops);
-@import "opbeta/css/sizes/media.css" layer(openprops);
-@import "opbeta/css/font/lineheight.css" layer(openprops);
-@import "opbeta/css/color/hues.oklch.css" layer(openprops);
-
-/* Normalize */
-@import "./normalize.css";
-
-/* Theme */
-@import "./theme.css";
-
-/*
-* Components
-* Components are divided into two categories - if they are stand-alone (base) or if they have dependencies (has-deps).
-*/
-/*** Base components (no dependencies)  */
-@import "./actions/button.css";
-@import "./actions/icon-button.css";
-@import "./actions/toggle-button-group.css";
-@import "./data-display/avatar.css";
-@import "./data-display/badge.css";
-@import "./data-display/card.css";
-@import "./data-display/chip.css";
-@import "./data-display/definition-list.css";
-@import "./data-display/divider.css";
-@import "./data-display/link.css";
-@import "./data-display/table.css";
-@import "./feedback/progress.css";
-@import "./feedback/spinner.css";
-@import "./inputs/checkbox-radio.css";
-@import "./inputs/switch.css";
-@import "./inputs/range.css";
-@import "./text/typography.css";
-
-/*** Has dependencies */
-@import "./actions/button-group.css";
-@import "./data-display/accordion.css";
-@import "./data-display/list.css";
-@import "./feedback/alert.css";
-@import "./feedback/dialog.css";
-@import "./feedback/snackbar.css";
-@import "./inputs/field-group.css";
-@import "./inputs/field.css";
-@import "./inputs/select.css";
-@import "./inputs/text-field.css";
-@import "./inputs/textarea.css";
-@import "./text/rich-text.css";
-
-
 /* Fonts Import */
 @font-face {
   font-family: 'Atkinson Next';
@@ -63,60 +6,233 @@
   font-optical-sizing: auto;
   src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
 }
+/* TODO:" Add Mono version and Italic version of font */
 
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 100 900;
-  font-optical-sizing: auto;
-  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
+  
 
-@font-face {
-  font-family: 'Atkinson Mono';
-  font-style: normal;
-  font-weight: 200 800;
-  font-optical-sizing: auto;
-  src: url('/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
-}
+@layer reset, theme, layout;
+/* https://www.smashingmagazine.com/2024/05/modern-css-layouts-no-framework-needed/ */
 
-/* ---------- Primitives ---------- */
-:root {
-  --color-dark: oklch(24.29% 0.0114 293.18);
-  --color-medium: oklch(40% 0.02 293.18);
-  --color-light: oklch(60% 0.02 293.18);
-  --color-bright: oklch(95% 0.0114 293.18);
-  --color-theme: oklch(83.28% 0.1711 81.97);
-}
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-dark: oklch(95% 0.0114 293.18);
-    --color-medium: oklch(60% 0.02 293.18);
-    --color-light: oklch(40% 0.02 293.18);
-    --color-bright: oklch(24.29% 0.0114 293.18);
+  body {
+    margin: 0;
   }
 }
-  
-/* ---------- Tokens ---------- */
-:root {
-  --text-color: var(--color-light);
-  --link-color: var(--color-bright);
-  --background-color: var(--color-dark);
-  --border: 1px solid var(--color-medium);
+
+@layer theme {
+  :root {
+    /* Sizing */
+    --ratio: 1.61803398875rem;
+    --layout-repeat: 3;
+    --layout-space: clamp(16px, 3svmin, 32px);
+    --layout-size-min: 60ch;
+    --layout-size-max: 80ch;
+
+    /* Color */
+    --color-dark: oklch(24.29% 0.0114 293.18);
+    --color-medium: oklch(40% 0.02 293.18);
+    --color-light: oklch(60% 0.02 293.18);
+    --color-bright: oklch(95% 0.0114 293.18);
+    --color-theme: oklch(83.28% 0.1711 81.97);
+    --background-color: var(--color-dark);
+
+    /* Text */
+    --font-family: 'Atkinson Next', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif; /* https://modernfontstacks.com/ */
+    --font-size: clamp(16px, 2svmin, 24px);
+    --line-height: 1.6;
+    --text-color: var(--color-light);
+    --link-color: var(--color-bright);
+
+    /* Other */
+    --border: 1px solid var(--color-medium);
+    --image-height: 50svh; /* FIXME: Is this actually necessary? */
+  }
 }
 
+@layer layout {
+  :root {
+    /* Stack https://every-layout.dev/layouts/stack/ */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    .stack > * {
+      margin-block: 0;
+    } 
+    
+    .stack > * + * {
+      margin-block-start: var(--space, var(--layout-space));
+    }
 
-/* Variable Declarations */
-:root {
-  --font-family: 'Atkinson Next', 'Helvetica', 'Arial', sans-serif;
-  --font-size: clamp(16px, 2svmin, 24px);
-  --line-height: 1.6;
-  --image-height: 50svh;
-  --padding: clamp(16px, 3svmin, 32px);
-  
+    /* Box https://every-layout.dev/layouts/box/ */
+    .box {
+      padding: var(--layout-space);
+      border: var(--border);
+      color: var(--color-dark);
+      background-color: var(--color-light);
+    }
+    
+    .box * {
+      color: inherit;
+    }
+    
+    .box.invert {
+      color: var(--color-light);
+      background-color: var(--color-dark);
+    }
 
+    /* Center https://every-layout.dev/layouts/center/ */ 
+    .center {
+      box-sizing: content-box;
+      margin-inline: auto;
+      max-inline-size: var(--layout-size-max);
+      padding-inline-start: var(--layout-space);
+      padding-inline-end: var(--layout-space);
+    }
+
+    /* Cluster https://every-layout.dev/layouts/cluster/ */
+    .cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space, var(--layout-space));
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    /* Sidebar https://every-layout.dev/layouts/sidebar/ */
+    .with-sidebar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--layout-space);
+    }
+    
+    .with-sidebar > :first-child {
+      flex-grow: 1;
+    }
+    
+    .with-sidebar > :last-child {
+      flex-basis: 0;
+      flex-grow: 999;
+      min-inline-size: 50%;
+    }
+
+    /* Switcher https://every-layout.dev/layouts/switcher/ */
+
+    /* Cover https://every-layout.dev/layouts/cover/ */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      min-block-size: 100vh;
+      padding: var(--layout-space);
+    }
+    
+    .cover > * {
+      margin-block: var(--layout-space);
+    }
+    
+    .cover > :first-child:not(h1) {
+      margin-block-start: 0;
+    }
+    
+    .cover > :last-child:not(h1) {
+      margin-block-end: 0;
+    }
+    
+    .cover > h1 { /* This can be changed to whatever element should be centered. */
+      margin-block: auto;
+    }
+    
+    /* Grid https://every-layout.dev/layouts/grid/ */
+    .grid {
+      display: grid;
+      grid-gap: var(--layout-space);
+    }
+    
+    @supports (width: min(var(--layout-siz-min), 100%)) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-siz-min), 100%), 1fr));
+      }
+    }
+
+    /* Frame https://every-layout.dev/layouts/frame/ */
+    .frame {
+      --n: 16;
+      --d: 9;
+      aspect-ratio: var(--n) / var(--d);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .frame > img,
+    .frame > video {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+    }
+
+    /* Reel https://every-layout.dev/layouts/reel/ */
+    .reel {
+      display: flex;
+      block-size: 50vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-color: var(--color-theme) var(--color-light);
+    }
+    
+    .reel::-webkit-scrollbar {
+      block-size: 1rem;
+    }
+    
+    .reel::-webkit-scrollbar-track {
+      background-color: var(--color-light);
+    }
+    
+    .reel::-webkit-scrollbar-thumb {
+      background-color: var(--color-light);
+      background-image: linear-gradient(var(--color-light) 0, var(--color-light) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-light) 0.75rem);
+    }
+    
+    .reel > * {
+      flex: 0 0 auto;
+    }
+    
+    
+    .reel > img {
+      block-size: 100%;
+      flex-basis: auto;
+      width: auto;
+    }
+    
+    .reel > * + * {
+      margin-inline-start: var(--layout-space);
+    }
+    
+    .reel.overflowing {
+      padding-block-end: var(--layout-space);
+    }
+
+    /* Impostor https://every-layout.dev/layouts/imposter/ */
+
+    /* Icon https://every-layout.dev/layouts/icon/ */
+    .icon {
+      height: 0.75em;
+      height: 1cap;
+      width: 0.75em;
+      width: 1cap;
+    }
+  }
 }
+
 
 /* super-saturated theme color for cool monitors */
 @media (color-gamut: p3) {
@@ -144,10 +260,28 @@ body {
   text-size-adjust: none;
   display: flex;
   flex-direction: column;
+  min-block-size: 100vh;
+}
+
+body > * {
+  margin-block: var(--layout-space);
+}
+
+body > :first-child:not(main) {
+  margin-block-start: 0;
+}
+
+body > :last-child:not(main) {
+  margin-block-end: 0;
 }
 
 main {
-  flex: 1;
+  box-sizing: content-box;
+  margin-block: 0 auto;
+  margin-inline: auto;
+  /* max-inline-size: var(--layout-size-max); */
+  padding-inline-start: var(--layout-space);
+  padding-inline-end: var(--layout-space);
 }
 
 a {
@@ -170,14 +304,19 @@ h6 {
 /* ---------- HEADER ---------- */
 header {
   display: flex;
+  flex-wrap: wrap;
   border-bottom: var(--border);
-  padding: var(--padding);
+  padding: var(--layout-space);
   justify-content: space-between;
   text-transform: lowercase;
 }
 
 header a {
   text-decoration: none;
+}
+
+#logo {
+  display: block;
 }
 
 #logo.home a {
@@ -194,9 +333,11 @@ header a {
 
 nav ul {
   display: flex;
-  flex-direction: row-reverse;
-  gap: var(--padding);
-  color: var(--link-color)
+  flex-wrap: wrap;
+  gap: var(--layout-space, 1rem);
+  color: var(--link-color);
+  justify-content: flex-start;
+  padding: 0;
 }
 nav li {
   list-style: none;
@@ -211,9 +352,9 @@ nav a {
 /* ---------- FOOTER ---------- */
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border-top: var(--border);
-  padding: var(--padding);
+  padding: var(--layout-space);
 }
 
 /* ---------- ACCORDION ---------- */
@@ -227,9 +368,8 @@ summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--padding);
-  gap: calc(var(--padding) * 2);
-  cursor: pointer;
+  padding: var(--layout-space) 0;
+  gap: calc(var(--layout-space) * 2);
 }
 
 summary:active > * {
@@ -237,7 +377,6 @@ summary:active > * {
   /* TODO: Animate this transition */
 }
 
-/* Generic info class (replaces .project-info) */
 .accordion-info {
   flex: 0 0 auto;
 }
@@ -248,10 +387,6 @@ summary h2 {
   flex: 1;
 }
 
-/* Content */
-details .content {
-  padding: var(--padding);
-}
 
 /* Remove border from the last accordion */
 details:last-child {
@@ -259,41 +394,47 @@ details:last-child {
 }
 
 /* ---------- PROJECT ACCORDION ---------- */
-.projects .content {
+/* https://every-layout.dev/layouts/reel/ */
+details .content {
   display: flex;
-  overflow-x: scroll;
-  /* TODO: Allow grab-to-scroll */
-  position: relative;
+  block-size: 50vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: var(--color-theme) var(--color-light);
 }
 
-.projects .innerWrapper {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  column-gap: 36px;
-  cursor: grab;
-  overflow-anchor: none;
+details .content::-webkit-scrollbar {
+  block-size: 1rem;
 }
 
-.projects .accordionSummary {
-  height: 100%;
-  width: 480px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+details .content::-webkit-scrollbar-track {
+  background-color: var(--color-light);
 }
 
-.projects .accordionSummary a {
-  color: var(--color-theme);
+details .content::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
+  background-image: linear-gradient(var(--color-light) 0, var(--color-light) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-light) 0.75rem);
 }
 
-.projects div.content img {
-  height: var(--image-height);
-  min-width: 480px;
+details .content > * {
+  flex: 0 0 auto;
 }
 
-.featured {
-  color: oklch(0.63 0.26 29.23 / 1);
-  margin-left: 2px;
+
+details .content > img {
+  block-size: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+details .content > * + * {
+  margin-inline-start: var(--layout-space);
+}
+
+details .content.overflowing {
+  padding-block-end: var(--layout-space);
+}
+
+.projectSummary {
+  max-inline-size: var(--layout-size-max);
 }

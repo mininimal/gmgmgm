@@ -1,3 +1,8 @@
 <footer>
-    🦶
+    <p>℗ copyleft 3025</p>
+    <div>
+    {% for key, link in site.socialLinks %}
+        <a href="{{ link.url }}">{{ link.label }}</a>{%- if not loop.last %}🦶{% endif %}
+    {% endfor %}
+    </div>
 </footer>

@@ -6,6 +6,8 @@ title: Work
 {# Sort projects by year #}
 {% set workCollection = collections.work | sort(false, false, "data.workYear") | reverse %}
 
+<h1>{{ title }}</h1>
+<p>{{ workCollection.length }} case studies<p>
 <div class="projects">
   {% for project in workCollection %}
     {% set accordionHeader %}
@@ -15,13 +17,11 @@ title: Work
     {% endset %}
 
     {% set accordionContent %}
-      <div class="innerWrapper">
-        <div class="projectSummary">
-          <p>{{ project.data.description }}</p>
-          <a href="{{ project.url }}">Read more</a>
-        </div>
-        <img src="./assets/images/{{ project.data.thumb }}" alt="{{ project.data.title }}">
+      <div class="projectSummary">
+        <p>{{ project.data.description }}</p>
+        <a href="{{ project.url }}">Read more</a>
       </div>
+      <img src="/assets/images/{{ project.data.thumb }}" alt="{{ project.data.title }}">
     {% endset %}
 
     {% include "accordion.njk" %}
