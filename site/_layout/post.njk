@@ -3,17 +3,11 @@ title: {{ post.title }}
 ---
 
 <article>
-  <hgroup>
-    <h1>{{ post.data.title }}</h1>
-  </hgroup>
-  <header class="projectIntro">
+  <section class="post-intro">
     <img src="{{ project.featuredMedia }}" alt="{{ project.title }}">
-    <div class="introText">
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </div>
-  </header>
-  <div class="projectContent">
-    {{ project.content | safe }}
-  </div>
+    <h1>{{ post.data.title }}</h1>
+  </section>
+  <section>
+    {{ post }}
+  </section>
 </article>

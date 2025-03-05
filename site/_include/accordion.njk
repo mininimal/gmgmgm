@@ -3,12 +3,12 @@
 
 <details name="accordion">
   <!-- Accordion header -->
-  <summary id="summary-{{ id }}" aria-controls="content-{{ id }}">
+  <summary id="summary-{{ id }}" aria-controls="content-{{ id }}" class="cluster">
     {{ accordionHeader | safe }}
   </summary>
 
   <!-- Accordion content -->
-  <div id="content-{{ id }}" class="content" role="region" aria-labelledby="summary-{{ id }}">
+  <div id="content-{{ id }}" class="content with-sidebar" role="region" aria-labelledby="summary-{{ id }}">
     {{ accordionContent | safe }}
   </div>
 </details>

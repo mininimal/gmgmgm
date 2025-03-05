@@ -3,26 +3,25 @@ tags: page
 title: Writing
 ---
 
-<div class="posts">
-  {% for post in collections.posts %}
-    {% set accordionHeader %}
-      <span class="accordion-info">{{ post.date | formatDate }}</span>
-      <h2>{{ post.data.title }}</h2>
-      <span class="accordion-info">{{ post.data.categories or "Uncategorized" }}</span>
-    {% endset %}
 
-    {% set accordionContent %}
-      <div class="innerWrapper">
-        <div class="accordionSummary">
-          <p>{{ post.data.description }}</p>
-          <a href="{{ post.url }}">Read more</a>
-        </div>
-        {% if post.data.thumb %}
-          <img src="./assets/images/{{ post.data.thumb }}" alt="{{ post.data.title }}">
-        {% endif %}
+{% for post in collections.posts %}
+  {% set accordionHeader %}
+    <span class="accordion-info">{{ post.date | formatDate }}</span>
+    <h2>{{ post.data.title }}</h2>
+    <span class="accordion-info">{{ post.data.categories or "Uncategorized" }}</span>
+  {% endset %}
+
+  {% set accordionContent %}
+    <div class="innerWrapper">
+      <div class="accordionSummary">
+        <p>{{ post.data.description }}</p>
+        <a href="{{ post.url }}">Read more</a>
       </div>
-    {% endset %}
+      {% if post.data.thumb %}
+        <img src="./assets/images/{{ post.data.thumb }}" alt="{{ post.data.title }}">
+      {% endif %}
+    </div>
+  {% endset %}
 
-    {% include "accordion.njk" %}
-  {% endfor %}
-</div>
+  {% include "accordion.njk" %}
+{% endfor %}

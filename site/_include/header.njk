@@ -1,6 +1,6 @@
 {% set currentUrl = page.url %}
 
-<header>
+<header class="cluster box">
   <span id="logo" class="{% if currentUrl == '/' %}home{% else %}subpage{% endif %}">
     <a href="/">{{ site.title -}}</a>
     {%- if currentUrl != "/" -%}
@@ -8,7 +8,7 @@
     {%- endif -%}
   </span>
   <nav>
-    <ul role="list">
+    <ul role="list" class="cluster">
       {%- for pageEntry in collections.page -%}
         {%- if pageEntry.url != currentUrl -%}
           <li>

@@ -1,8 +1,9 @@
-<footer>
+<footer class="cluster box">
     <p>℗ copyleft 3025</p>
-    <div>
+    <p>🦶🦶🦶</p>
+    <div class="cluster">
     {% for key, link in site.socialLinks %}
-        <a href="{{ link.url }}">{{ link.label }}</a>{%- if not loop.last %}🦶{% endif %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
     {% endfor %}
     </div>
 </footer>
