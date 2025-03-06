@@ -1,13 +1,14 @@
----
-title: {{ post.title }}
----
+<article class="post">
 
-<article>
-  <section class="post-intro">
-    <img src="{{ project.featuredMedia }}" alt="{{ project.title }}">
-    <h1>{{ post.data.title }}</h1>
+  <section class="intro">
+    <h1>{{ title }}</h1>
+    {% if thumb %}
+      <img src="/assets/images/{{ thumb }}" alt="{{ title }}" class="thumbnail">
+    {% endif %}
   </section>
-  <section>
-    {{ post }}
+
+  <section class="content">
+    {{ content | safe }}
   </section>
+
 </article>

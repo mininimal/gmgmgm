@@ -1,3 +1,11 @@
+---
+title: "Installing Actual Budget on a Synology device"
+date: 2025-03-05
+id: 501c415a-7212-451f-a90d-0128bc4af178
+categories:
+  - Server
+---
+
 # Install Actual Budget on Synology
 
 This guide uses Synology's native Docker manager, [Container Manager](https://www.synology.com/en-us/dsm/feature/docker). This avoids Portainer which is used in [Marius' guide](https://mariushosting.com/how-to-install-actual-on-your-synology-nas/), but is essentially the same [official install process](https://actualbudget.org/docs/install/docker) through Docker on any other system.
@@ -65,7 +73,7 @@ Again, you can dive deeper into the [server configuration options](https://actua
 ## Finish Project
 
 1. Once your YAML is all set up, click `Next` button.
-   ![Screenshot of General Settings panel for Container Manager's Create Project]('create-project-general-settings.png')
+   ![Screenshot of General Settings panel for Container Manager's Create Project]('/images/create-project-general-settings.png')
 1. [Web Portal](https://kb.synology.com/en-uk/DSM/help/WebStation/application_webserv_virtualhost?version=7) is not necessary. If you don't know what it is, just click `Next`!
 1. Confirm everything looks good in the Summary. You can check `Start the project once it is created`, then click `Done`.
 1. Visit the web interface wherever you set it up (`https://<your-nas-ip>:5006` most likely) to ensure it works.

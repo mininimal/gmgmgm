@@ -3,7 +3,7 @@ tags: work
 slug: gddy-wds
 featured: true
 workYear: 2021
-thumb: gddy-wds_thumb.png
+thumb: /images/gddy-wds_thumb.png
 title: Creating VIP ecommerce websites
 company: GoDaddy
 subtitle: WordPress Websites

@@ -439,7 +439,8 @@
   main,
   header,
   nav,
-  footer {
+  footer,
+  section {
     max-inline-size: none;
   }
 
@@ -643,7 +644,8 @@ body {
 }
 
 main {
-  margin-block-start: var(--layout-space);
+  margin-block: var(--layout-space);
+  margin-inline: var(--layout-space);
 }
 
 footer {
@@ -651,9 +653,47 @@ footer {
 }
 
 /* ---------- ARCHIVE LAYOUT ---------- */
-.projectAccordion {
-  width: 100vw;
+
+.archive {
+  max-inline-size: none;
 }
+
+/* Single Container */
+/* details, */
+.archiveSingle {
+  border-bottom: var(--border);
+}
+
+/* details:last-child, */
+.archiveSingle:last-child {
+  border-bottom: none;
+}
+
+/* summary, */
+.archiveSingle {
+  padding-block: var(--layout-space);
+}
+
+/* summary:active>*, */
+.archiveSingle:active>* {
+  opacity: 0.5;
+  /* TODO: Animate this transition */
+}
+
+/* summary h2, */
+.archiveSingle h2 {
+  color: var(--color-bright);
+  font-size: var(--font-size);
+  flex: 1;
+}
+
+/* Single Content */
+.archiveSingle .content {
+  margin-block: var(--layout-space);
+}
+
+
+
 
 /* ---------- SITEWIDE ---------- */
 
@@ -709,30 +749,58 @@ footer {
   border-top: var(--border);
 }
 
-/* ---------- ACCORDION ---------- */
-/* Container */
-details {
-  border-bottom: var(--border);
+
+
+
+
+
+
+
+
+
+
+/* Content Section */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Heading */
-summary {
-  padding: var(--layout-space) 0;
+/* Style h2 and its following content */
+.content h2 {
+  grid-column: 1;
+  /* Place h2 in the first column */
+  text-align: right;
+  margin: 0;
+  padding-right: 1rem;
+  border-right: 2px solid #ccc;
+  /* Optional: Add a divider */
 }
 
-summary:active>* {
-  opacity: 0.5;
-  /* TODO: Animate this transition */
+.content h2~* {
+  grid-column: 2;
+  /* Place all elements after h2 in the second column */
 }
 
-summary h2 {
-  color: var(--color-bright);
-  font-size: var(--font-size);
-  flex: 1;
+/* Use CSS Grid for the layout */
+.content>* {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  align-items: start;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content>* {
+    grid-template-columns: 1fr;
+    /* Switch to single column on small screens */
+  }
 
-/* Remove border from the last accordion */
-details:last-child {
-  border-bottom: none;
+  .content h2 {
+    text-align: left;
+    border-right: none;
+    /* Remove divider on small screens */
+    padding-right: 0;
+  }
 }

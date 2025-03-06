@@ -1,0 +1,24 @@
+---
+tags: page
+title: Writing
+---
+
+<section class="stack">
+  <h1>Writing</h1>
+  <span>{{ collections.posts.length }} posts</span>
+</stack>
+
+<section class="archive">
+
+{% for post in collections.posts %}
+  <a href="{{ post.url }}">
+  <div class="cluster archiveSingle">
+    <span class="accordion-info">{{ post.date | formatDate }}</span>
+    <h2>{{ post.data.title }}</h2>
+    <span class="accordion-info">{{ post.data.categories or "Uncategorized" }}</span>
+  </div>
+  </a>
+
+{% endfor %}
+
+</section>
