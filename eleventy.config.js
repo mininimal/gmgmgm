@@ -27,9 +27,9 @@ module.exports = function (eleventyConfig) {
   // Passthrough copy for assets
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("styles");
-  eleventyConfig.addPassthroughCopy("site/posts/**/images");
-  eleventyConfig.addPassthroughCopy("site/work/**/images");
-  
+  eleventyConfig.addPassthroughCopy("site/posts/*/images/**");
+  eleventyConfig.addPassthroughCopy("site/work/*/images/**");
+
   // Collections
   eleventyConfig.addCollection("work", function (collectionApi) {
     return collectionApi.getFilteredByGlob("site/work/**/*.md");
