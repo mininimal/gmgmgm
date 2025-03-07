@@ -1,7 +1,5 @@
 ---
-tags: work
-slug: gddy-wds
-featured: true
+permalink: /work/godaddy-website-design-services
 workYear: 2021
 thumb: gddy-wds_thumb.png
 title: Creating VIP ecommerce websites

@@ -2,10 +2,8 @@ const mila = require("markdown-it-link-attributes");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-
   // Add a custom date filter
   eleventyConfig.addFilter("formatDate", (dateObj) => {
-    // Parse the date as a JS Date object in UTC and format it
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL dd, yyyy");
   });
 
@@ -25,29 +23,31 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("layout", "base.njk");
 
   // Passthrough copy for assets
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("styles");
-  eleventyConfig.addPassthroughCopy("site/posts/*/images/**");
-  eleventyConfig.addPassthroughCopy("site/work/*/images/**");
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/styles");
+  eleventyConfig.addPassthroughCopy("src/content/posts/*/images/**");
+  eleventyConfig.addPassthroughCopy("src/content/work/*/images/**");
 
   // Collections
   eleventyConfig.addCollection("work", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("site/work/**/*.md");
+    return collectionApi.getFilteredByGlob("src/content/work/**/*.md");
   });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("site/posts/**/*.md");
+    return collectionApi.getFilteredByGlob("src/content/posts/**/*.md");
   });
 
   // Base configuration
   return {
     dir: {
-      input: "site",
-      includes: "_include",
-      layouts: "_layout",
-      data: "_data",
-      output: "dist"
+      input: "src",          // Source directory
+      includes: "includes",  // Nunjucks includes/partials
+      layouts: "layouts",    // Layout templates
+      data: "data",          // Global data files
+      output: "dist",        // Output directory
     },
-    defaultLayout: "base.njk",
-  }
+    markdownTemplateEngine: "njk", // Use Nunjucks for Markdown
+    htmlTemplateEngine: "njk",     // Use Nunjucks for HTML
+    templateFormats: ["md", "njk"], // Supported template formats
+  };
 };
