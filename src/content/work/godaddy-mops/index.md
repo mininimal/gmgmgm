@@ -2,6 +2,7 @@
 tags: work
 slug: gddy-mops
 workYear: 2022
+thumb: godaddy-mops_thumb.png
 name: Notification Marquee
 title: Improving godaddy.com experience to win back customer trust
 description: As a Marketing Operations Technologist at GoDaddy, I was responsible for
@@ -38,7 +39,6 @@ I worked on the Help component that was sprinkled throughout the site to encoura
 As part of simplifying the checkout for our most complicated products, such as VPS Hosting, I dug into the Sitecore backend to explore options for working with large numbers of configuration variations.
 
 Condensing the multi-step process to a single screen where all config options could be seen at the same time, we managed to reduce the cart abandonment rate by 12% for Hosting pages as well as seeing improvements in Domains and Productivity sales.
-
 
 ## Optimizing intake for reduced revisions
 
