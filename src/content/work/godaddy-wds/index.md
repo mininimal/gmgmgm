@@ -1,23 +1,21 @@
 ---
-permalink: /work/godaddy-website-design-services
-workYear: 2021
-thumb: gddy-wds_thumb.png
+tags: work
+permalink: /work/godaddy-website-design-services/
 title: Creating VIP ecommerce websites
+workYear: 2021
 company: GoDaddy
-subtitle: WordPress Websites
 description: GoDaddy's Website Design Services delivered complete websites including design, copywriting, development, and troubleshooting. I handled design and WordPress setup in addition to contributing to the client onboarding flow.
 role:
   - Web Design
   - UX Design
   - Product Design
   - Graphic Design
+thumb: gddy-wds_thumb.png
 ---
 
 During the COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. Hundreds of individuals and entrepreneurs relied on me (ahhhh!) to create their new digital storefronts.
 
 GoDaddy WDS provides a complete website with design, copywriting, development, and ongoing troubleshooting in under a month. I was responsible for creating the back-end setup using WordPress and WooCommerce and designing the front end with Beaver Builder and a small suite of approved plugins. Most clients did not have branding, so assets were often sourced from Google Fonts and Unsplash.
-
-![Screenshot of kareemabduljabbar.com](/assets/images/gddy-wds_kareem-abdul-jabbar.jpg "Kareem Abdul Jabbar")
 
 ## Ew, ur stack is so gross
 
