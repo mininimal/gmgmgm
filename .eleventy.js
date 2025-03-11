@@ -1,7 +1,11 @@
 const mila = require("markdown-it-link-attributes");
 const { DateTime } = require("luxon");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation"); // Import the plugin
 
 module.exports = function (eleventyConfig) {
+  // Add the eleventyNavigation plugin
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  
   // Add a custom date filter
   eleventyConfig.addFilter("formatDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL dd, yyyy");
@@ -33,7 +37,7 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/content/work/**/*.md");
   });
 
-  eleventyConfig.addCollection("posts", function (collectionApi) {
+  eleventyConfig.addCollection("writing", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/content/posts/**/*.md");
   });
 

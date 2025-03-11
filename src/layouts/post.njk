@@ -1,9 +1,9 @@
-{% extends "base.njk" %}
+---
+layout: base.njk
+---
 
-{% block content %}
-<article>
-  <h1>{{ title }}</h1>
-  <p>Published on {{ date | formatDate }}</p>
+<article class="center">
+  <!-- Inline styles? In 2025???? need it for view-transition-->
+  <h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1>
   {{ content | safe }}
 </article>
-{% endblock %}

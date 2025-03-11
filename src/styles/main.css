@@ -73,6 +73,7 @@
   /* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
   @view-transition {
     navigation: auto;
+    disable: (prefers-reduced-motion: reduce);
   }
 
   /* ---------- Open Props Normalize ---------- */
@@ -419,7 +420,7 @@
     --border: 1px solid var(--color-medium);
     --border-radius: 2px;
     --image-height: 50svh;
-    /* FIXME: Is this actually necessary? */
+    --transition: transform 0.2s cubic-bezier(0.37, 1, 0.74, 1);
   }
 
   /* extra-juicy theme color for cool monitors */
@@ -556,12 +557,11 @@
     grid-gap: var(--layout-space);
   }
 
-  /* FIXME: --layout-size-min variable was updated to --layout-measure
-@supports (width: min(var(--layout-size-min), 100%)) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-size-min), 100%), 1fr));
+  @supports (width: min(var(--layout-measure), 100%)) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-measure), 100%), 1fr));
+    }
   }
-} */
 
   /* Frame https://every-layout.dev/layouts/frame/ */
   .frame {
@@ -663,10 +663,16 @@ summary>* {
   max-inline-size: none;
 }
 
-
-
 .archive {
   max-inline-size: none;
+}
+
+.archive:hover .project h2 {
+  color: var(--text-color);
+}
+
+.project:hover h2 {
+  color: var(--color-bright);
 }
 
 /* Single Container */
@@ -744,9 +750,37 @@ nav ul {
   list-style: none;
 }
 
+nav a:hover {
+  color: var(--accent-hover-color);
+  /* Hover color */
+}
+
+/* Current page or parent page link */
+/* Current page link */
+nav a.current {
+  color: var(--color-medium);
+  /* Gray color for current page */
+  pointer-events: none;
+  /* Disable clicking on the current page link */
+  cursor: default;
+  /* Default cursor for current page link */
+}
+
 
 /* ---------- FOOTER ---------- */
 footer {
   justify-content: space-between;
   border-top: var(--border);
+}
+
+p>code,
+pre>code {
+  padding-inline: 4px;
+  border-radius: 4px;
+  border: var(--border);
+}
+
+pre>code {
+  display: block;
+  overflow-x: scroll;
 }

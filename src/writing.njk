@@ -1,16 +1,20 @@
 ---
 tags: page
 title: Writing
+permalink: /writing/
+eleventyNavigation:
+  key: /writing
+  order: 2
 ---
 
 <section class="stack">
   <h1>Writing</h1>
-  <span>{{ collections.posts.length }} posts</span>
+  <span>{{ collections.writing.length }} posts</span>
 </stack>
 
 <section class="archive">
 
-{% for post in collections.posts %}
+{% for post in collections.writing %}
   <a href="{{ post.url }}">
   <div class="cluster archiveSingle">
     <span class="accordion-info">{{ post.date | formatDate }}</span>

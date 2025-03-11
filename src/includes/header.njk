@@ -4,19 +4,24 @@
 
 <header class="cluster box">
   <span id="logo" class="{% if isHomePage %}home{% else %}subpage{% endif %}">
-    <a href="/">{{ site.title -}}</a>
+    <a href="/">{{ site.title }}</a>
     {%- if not isHomePage -%}
-      <span class="page-title">/{{- section -}}</span>
+      {%- set breadcrumbKey = "/" + section -%}
+      <span class="page-title">{{ breadcrumbKey }}</span>
     {%- endif -%}
   </span>
   <nav>
     <ul role="list" class="cluster">
-      {%- for pageEntry in collections.page -%}
-        {%- if pageEntry.url != currentUrl -%}
-          <li>
-            <a href="{{ pageEntry.url }}">/{{ pageEntry.data.title }}</a>
-          </li>
-        {%- endif -%}
+      {%- for entry in collections.all | eleventyNavigation -%}
+        {% set isCurrentPage = entry.url == currentUrl %}
+        <li>
+          <a
+            href="{{ entry.url }}"
+            class="{% if isCurrentPage %}current{% endif %}"
+          >
+            {{ entry.key }}
+          </a>
+        </li>
       {%- endfor -%}
     </ul>
   </nav>
