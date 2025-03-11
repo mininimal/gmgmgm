@@ -1,8 +1,8 @@
 ---
 tags: post
-title: "Site History"
+permalink: /writing/site-history/
+title: A history of gmgmgm.design
 date: 2025-02-26
-id: b1c368b9-b5cf-4711-bfa4-3c728b0e11dc
 categories:
   - Eleventy
 ---

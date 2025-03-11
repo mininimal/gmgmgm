@@ -1,17 +1,14 @@
 ---
 tags: work
-slug: 2b-corptools
-workYear: 2024
-name: CorpTools
+permalink: /work/twobarrels-corptools/
 title: Uniting internal tools into a SaaS product
-description: Two Barrels handled customer service communication through various disconnected tools for email, phone, documents, and more. With our customer service teams moving from format-based teams to region-based teams, I identified an opportunity to unify our tools into a single ticketing system through a comprehensive design system. The result, CorpTools, eventually began a second life as a SaaS suite.
+workYear: 2024
 company: Two Barrels
-type: Product Design
-tools:
-  - Figma
-  - Zeroheight
-  - Storybook
-  - Vue
+description: Two Barrels handled customer service communication through various disconnected tools for email, phone, documents, and more. With our customer service teams moving from format-based teams to region-based teams, I identified an opportunity to unify our tools into a single ticketing system through a comprehensive design system. The result, CorpTools, eventually began a second life as a SaaS suite.
+role:
+  - UX Design
+  - Product Design
+thumb:
 ---
 
 ## H2 heading, I'll think of something later :^)

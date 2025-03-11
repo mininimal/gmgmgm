@@ -1,12 +1,10 @@
 ---
 tags: post
-title: "Interior crocodile alligator, I drive a chevrolet movie theater"
+permalink: /writing/pull-to-refresh-turn-signals/
+title: Gestures... that like... keep going or something... there's an idea here I think
 date: 2025-02-26
-id: f1edc196-0922-4e10-bded-bfd1a2c6c09a
 categories:
   - Design
 ---
 
-## Ye Olde Tweetie
-
-Before
+thhhhbbttthhhsstttd
