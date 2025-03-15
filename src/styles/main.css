@@ -70,329 +70,20 @@
     text-wrap: balance;
   }
 
+  /* https://piccalil.li/blog/add-scroll-margin-to-all-elements-which-can-be-targeted/ */
+  [id] {
+    scroll-margin-top: 2ex;
+  }
+
   /* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
   @view-transition {
     navigation: auto;
     disable: (prefers-reduced-motion: reduce);
   }
-
-  /* ---------- Open Props Normalize ---------- */
-  :where(:not(fieldset, progress, meter)) {
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    border-style: solid;
-    border-width: 0;
-  }
-
-  :where(fieldset) {
-    border: var(--border);
-    padding: var(--layout-space);
-    display: grid;
-    /* FIXME: this normal? */
-    gap: var(--layout-space);
-  }
-
-  :where(input, button, textarea, select),
-  :where(input[type="file"])::-webkit-file-upload-button {
-    color: inherit;
-    font-size: inherit;
-    font: inherit;
-    letter-spacing: inherit;
-  }
-
-  :where(input):-webkit-autofill,
-  :where(input):-webkit-autofill:hover,
-  :where(input):-webkit-autofill:focus,
-  :where(textarea):-webkit-autofill,
-  :where(textarea):-webkit-autofill:hover,
-  :where(textarea):-webkit-autofill:focus,
-  :where(select):-webkit-autofill,
-  :where(select):-webkit-autofill:hover,
-  :where(select):-webkit-autofill:focus,
-  :where(input):autofill,
-  :where(input):autofill:hover,
-  :where(input):autofill:focus,
-  :where(textarea):autofill,
-  :where(textarea):autofill:hover,
-  :where(textarea):autofill:focus,
-  :where(select):autofill,
-  :where(select):autofill:hover,
-  :where(select):autofill:focus {
-    -webkit-text-fill-color: var(--color-medium);
-    -webkit-box-shadow: 0 0 0px 1e5px var(--well-1) inset;
-    transition: background-color 5000s ease-in-out 0s;
-  }
-
-  ::placeholder {
-    color: var(--color-medium);
-  }
-
-  ::-moz-placeholder {
-    opacity: 1;
-  }
-
-  :focus-visible {
-    /* Inverts the --background-color */
-    --focus-visible-color: rgb(from var(--background-color) calc(255 - r) calc(255 - g) calc(255 - b));
-
-    border-radius: var(--border-radius, 0px);
-    outline: 2px solid var(--focus-visible-color);
-    outline-offset: 2px;
-  }
-
-  @media (--motionOK) {
-    :where(:focus-visible) {
-      transition: outline-offset 145ms var(--ease-2);
-    }
-
-    :where(:not(:active):focus-visible) {
-      transition-duration: 0.15s;
-    }
-  }
-
-  :where(:not(:active):focus-visible) {
-    outline-offset: var(--outline-offset, 0px);
-  }
-
-  :where(a[href],
-    area,
-    button,
-    input:not([type="text"],
-      [type="email"],
-      [type="number"],
-      [type="password"],
-      [type=""],
-      [type="tel"],
-      [type="url"]),
-    label[for],
-    select,
-    summary) {
-    cursor: pointer;
-  }
-
-  :where(a[href],
-    area,
-    button,
-    [role="button"],
-    input,
-    label[for],
-    select,
-    summary,
-    textarea,
-    [tabindex]:not([tabindex*="-"])) {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
-
-  :where(img, svg, video, canvas, audio, iframe, embed, object) {
-    display: block;
-  }
-
-  :where(img, svg, video) {
-    block-size: auto;
-    max-inline-size: 100%;
-  }
-
-  :where(dt:not(:first-of-type)) {
-    margin-block-start: var(--layout-space);
-  }
-
-  :where(figure) {
-    display: grid;
-    gap: var(--size-2);
-    place-items: center;
-  }
-
-  :target {
-    scroll-margin-block-start: 2rem;
-  }
 }
 
+
 @layer theme {
-  html {
-    color-scheme: var(--color-scheme);
-  }
-
-  .light {
-    --color-scheme: light;
-  }
-
-  .dark {
-    --color-scheme: dark;
-  }
-
-  :where(html) {
-    color-scheme: light dark;
-
-    --palette-hue: var(--oklch-teal);
-    --palette-hue-rotate-by: 5;
-    --palette-chroma: 0.89;
-
-    /* Primary */
-    --primary: var(--color-8);
-    --primary-light: oklch(from var(--primary) calc(l * 1.25) c h);
-    --primary-dark: oklch(from var(--primary) calc(l * 0.75) c h);
-    --primary-contrast: var(--gray-1);
-
-    /* Text */
-    --text-color-1: light-dark(var(--gray-15), var(--gray-1));
-    --text-color-1-contrast: light-dark(var(--gray-2), var(--gray-15));
-    --text-color-2: light-dark(var(--gray-13), var(--gray-4));
-    --text-color-2-contrast: light-dark(var(--gray-4), var(--gray-13));
-
-    /* Surface */
-    --surface-default: light-dark(var(--gray-1), var(--gray-13));
-    --surface-filled: light-dark(var(--gray-3), var(--gray-15));
-    --surface-tonal: light-dark(var(--gray-3), var(--gray-12));
-    --surface-elevated: light-dark(var(--gray-1), var(--gray-12));
-
-    /* Shadows */
-    --shadow-color: light-dark(220 3% 15%, 220 40% 2%);
-    --shadow-strength: light-dark(1%, 10%);
-    --inner-shadow-highlight: light-dark(inset 0 -0.5px 0 0 #fff,
-        inset 0 0.5px 0 0 #0001,
-        inset 0 -0.5px 0 0 #fff1,
-        inset 0 0.5px 0 0 #0007);
-
-    /* Typography */
-    /* --font-size-h1: var(--font-size-fluid-3, 3.5rem);
-      --font-size-h2: var(--font-size-fluid-2, 2rem);
-      --font-size-h3: var(--font-size-fluid-1, 1.5rem);
-      --font-size-h4: var(--font-size-3, 1.25rem);
-      --font-size-h5: var(--font-size-2, 1.1rem);
-      --font-size-h6: var(--font-size-fluid-0, 1rem);
-      --font-size-lg: var(--font-size-3, 1.25rem);
-      --font-size-md: var(--font-size-fluid-0, 1rem);
-      --font-size-sm: 0.875rem;
-      --font-size-xs: var(--font-size-0, 0.75rem); */
-
-    /* Borders */
-    --border-color: light-dark(var(--gray-4), var(--gray-12));
-    --border-radius: var(--size-1);
-    --border-width: 1px;
-
-    /* Input Field */
-    --field-border-color: var(--border-color);
-    --field-border-radius: var(--size-1);
-    --field-border-width: 1px;
-    --field-size: 2.3lh;
-    --field-size-small: 1.9lh;
-
-    /* Button */
-    --button-border-radius: var(--radius-round);
-
-    /* Ripple effect */
-    @media (prefers-reduced-motion: no-preference) {
-      --button-ripple-size: 100%;
-      --button-ripple-duration: 0.5s;
-    }
-  }
-
-  /* Highlight colors */
-  :where(.red, .error, del) {
-    --palette-hue: var(--oklch-red, 25);
-    --palette-chroma: 1;
-    --palette-hue-rotate-by: 1;
-  }
-
-  :where(.blue, .ok, abbr, dfn) {
-    --palette-hue: var(--oklch-blue, 210);
-    --palette-chroma: 1;
-    --palette-hue-rotate-by: 1;
-  }
-
-  :where(.green, .good, ins) {
-    --palette-hue: var(--oklch-green, 145);
-    --palette-chroma: 1;
-    --palette-hue-rotate-by: 1;
-  }
-
-  :where(.orange, .warning) {
-    --palette-hue: var(--oklch-orange, 75);
-    --palette-chroma: 1;
-    --palette-hue-rotate-by: 1;
-  }
-
-  :where(html) {
-    --red: oklch(from var(--color-9) l 0.2 25);
-    --blue: oklch(from var(--color-9) l 0.2 210);
-    --green: oklch(from var(--color-9) l 0.2 145);
-    --orange: oklch(from var(--color-7) l 0.2 75);
-  }
-
-  /* Gray palette */
-  :where(html) {
-    --gray-chroma: 0.01;
-    --gray-lightness: 255;
-
-    --gray-1: oklch(from var(--color-1) l var(--gray-chroma) var(--gray-lightness));
-    --gray-2: oklch(from var(--color-2) l var(--gray-chroma) var(--gray-lightness));
-    --gray-3: oklch(from var(--color-3) l var(--gray-chroma) var(--gray-lightness));
-    --gray-4: oklch(from var(--color-4) l var(--gray-chroma) var(--gray-lightness));
-    --gray-5: oklch(from var(--color-5) l var(--gray-chroma) var(--gray-lightness));
-    --gray-6: oklch(from var(--color-6) l var(--gray-chroma) var(--gray-lightness));
-    --gray-7: oklch(from var(--color-7) l var(--gray-chroma) var(--gray-lightness));
-    --gray-8: oklch(from var(--color-8) l var(--gray-chroma) var(--gray-lightness));
-    --gray-9: oklch(from var(--color-9) l var(--gray-chroma) var(--gray-lightness));
-    --gray-10: oklch(from var(--color-10) l var(--gray-chroma) var(--gray-lightness));
-    --gray-11: oklch(from var(--color-11) l var(--gray-chroma) var(--gray-lightness));
-    --gray-12: oklch(from var(--color-12) l var(--gray-chroma) var(--gray-lightness));
-    --gray-13: oklch(from var(--color-13) l var(--gray-chroma) var(--gray-lightness));
-    --gray-14: oklch(from var(--color-14) l var(--gray-chroma) var(--gray-lightness));
-    --gray-15: oklch(from var(--color-15) l var(--gray-chroma) var(--gray-lightness));
-    --gray-16: oklch(from var(--color-16) l var(--gray-chroma) var(--gray-lightness));
-  }
-
-
-  /* Hover and active effect for checkbox, radio and icon buttons */
-  :where(.checkbox input, .radio input, .icon-button) {
-    --isLTR: 1;
-    --isRTL: -1;
-
-    position: relative;
-    transform-style: preserve-3d;
-
-    &:dir(rtl) {
-      --isLTR: -1;
-      --isRTL: 1;
-    }
-
-    &:where(:not([disabled])) {
-      &:hover:before {
-        --thumb-scale: 1;
-      }
-
-      &:active:before {
-        --thumb-scale: 1.1;
-      }
-
-      &::before {
-        --thumb-scale: 0.01;
-        --highlight-size: 150%;
-
-        background-color: oklch(0.6 0 0 / 0.2);
-        block-size: var(--highlight-size);
-        clip-path: circle(50%);
-        content: "";
-        inline-size: var(--highlight-size);
-        inset-block-start: 50%;
-        inset-inline-start: 50%;
-        position: absolute;
-        transform-origin: center center;
-        transform: translateX(calc(var(--isRTL) * 50%)) translateY(-50%) translateZ(-1px) scale(var(--thumb-scale));
-        will-change: transform;
-
-        @media (prefers-reduced-motion: no-preference) {
-          transition: transform 0.2s ease;
-        }
-      }
-    }
-  }
-
-  /* ---------------HANDMADE STYLES---------------------*/
-
-
-  /* ---------- VARIABLES ---------- */
   :root {
     /* Sizing */
     --ratio: 1.61803398875rem;
@@ -626,10 +317,10 @@
 
   /* Icon https://every-layout.dev/layouts/icon/ */
   .icon {
-    height: 0.75em;
-    height: 1cap;
-    width: 0.75em;
-    width: 1cap;
+    block-size: 0.75em;
+    block-size: 1cap;
+    inline-size: 0.75em;
+    inline-size: 1cap;
   }
 }
 
@@ -642,19 +333,23 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-block-size: 100vh;
 }
 
-main {
-  margin-block: var(--layout-space);
-  margin-inline: var(--layout-space);
-}
+/* main {
+margin-block: var(--layout-space);
+margin-inline: var(--layout-space);
+} */
 
 footer {
   margin-block-start: auto;
 }
 
 /* ---------- ARCHIVE LAYOUT ---------- */
+details {
+  padding-inline: var(--layout-space);
+}
+
 summary {
   padding-block: var(--layout-space);
 }
@@ -678,12 +373,12 @@ summary>* {
 /* Single Container */
 /* details, */
 .archiveSingle {
-  border-bottom: var(--border);
+  border-block-end: var(--border);
 }
 
 /* details:last-child, */
 .archiveSingle:last-child {
-  border-bottom: none;
+  border-block-end: none;
 }
 
 
@@ -721,7 +416,7 @@ h6 {
 
 /* ---------- HEADER ---------- */
 header {
-  border-bottom: var(--border);
+  border-block-end: var(--border);
   justify-content: space-between;
   text-transform: lowercase;
 }
@@ -768,7 +463,7 @@ nav a.current {
 /* ---------- FOOTER ---------- */
 footer {
   justify-content: space-between;
-  border-top: var(--border);
+  border-block-start: var(--border);
 }
 
 p>code,
@@ -780,5 +475,6 @@ pre>code {
 
 pre>code {
   display: block;
-  overflow-x: scroll;
+  /* https://kilianvalkhof.com/2021/css-html/you-want-overflow-auto-not-overflow-scroll/ */
+  overflow-x: auto;
 }

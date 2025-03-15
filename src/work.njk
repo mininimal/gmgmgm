@@ -7,11 +7,6 @@ eleventyNavigation:
   order: 1
 ---
 
-<section>
-  <h1>Work</h1>
-  <span>{{ collections.work.length }} projects</span>
-</section>
-
 <section class="archive">
 
   {# Sort in reverse order #}
@@ -26,7 +21,7 @@ eleventyNavigation:
         <span>{{ project.data.company }}</span>
       </summary>
       <!-- Accordion content -->
-      <div id="content-{{ id }}" class="with-sidebar" role="region" aria-labelledby="summary-{{ id }}">
+      <div id="content-{{ id }}" role="region" aria-labelledby="summary-{{ id }}">
         <div class="stack">
           <p>{{ project.data.description }}</p>
           <a href="{{ project.url }}">Read more</a>

@@ -1,6 +1,7 @@
 ---
 tags: work
 permalink: /work/legends-realmadrid/
+featured: true
 title: Refreshing a legendary football brand's design system
 workYear: 2023
 company: Legends

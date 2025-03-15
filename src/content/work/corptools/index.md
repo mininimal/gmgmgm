@@ -1,6 +1,7 @@
 ---
 tags: work
 permalink: /work/twobarrels-corptools/
+featured: true
 title: Uniting internal tools into a SaaS product
 workYear: 2024
 company: Two Barrels

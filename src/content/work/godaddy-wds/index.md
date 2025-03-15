@@ -1,6 +1,7 @@
 ---
 tags: work
 permalink: /work/godaddy-website-design-services/
+featured: false
 title: Creating VIP ecommerce websites
 workYear: 2021
 company: GoDaddy
