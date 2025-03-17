@@ -1,6 +1,5 @@
 ---
-tags: work
-permalink: /work/thinq-tv/
+slug: thinq-tv
 title: Leading product vision of creator startup
 workYear: 2019
 company: ThinQ.tv
@@ -11,24 +10,31 @@ role:
   - Web Design
   - Brand Design
 thumb:
+featured: true
 ---
 
 # Context
 
 ## Company
-ThinQ.tv (formerly CrowdPublish.tv.) 
+
+ThinQ.tv (formerly CrowdPublish.tv.)
 
 ## Start and finish date
+
 Aug. 2018 — Feb. 2019
 
 ## My role in the project
+
 Product Designer
 
 ## What I did
+
 Front-end code, product vision focusing, brand unifying, design system creation, and user research.
 
 ## Team and their roles (other teams involved?)
+
 ### Software Engineers
+
 [Prachi Miyan](https://www.linkedin.com/in/prachi-miyan/)
 [Kamila Sarsam](https://www.linkedin.com/in/kamilasarsam/)
 [Jacob Hreshchyshyn](https://www.linkedin.com/in/jhreshchyshyn/)
@@ -38,19 +44,24 @@ Front-end code, product vision focusing, brand unifying, design system creation,
 [Andrew Simon](https://www.linkedin.com/in/asimondrew/)
 [Chris Kurian](https://www.linkedin.com/in/chris-kurian-3408b9188/)
 [Kowit Karunas](https://www.linkedin.com/in/kowitkarunas/)
+
 ### UX Designers
+
 [Kewal Haria](https://www.linkedin.com/in/kewal-haria/)
 [Emily Kochi](https://www.linkedin.com/in/emilykochi/)
+
 ### Nonprofit Outreach
+
 [Elaine Chandras](https://www.linkedin.com/in/elaine-chandras-5526a6187/)
 [Geneva Casebolt](https://www.linkedin.com/in/geneva-casebolt-7579ab169/)
 [Bailey Dozier-Shabazz](https://www.linkedin.com/in/doziershabazz/)
 
 ## Platform(s)
+
 Ruby on Rails
 GitHub
 
-# Understand the problem 
+# Understand the problem
 
 ## Background
 
@@ -70,7 +81,7 @@ The final product, ThinQ.tv, wouldn't match this concept very closely due to the
 
 ## References
 
-Kickstarter, Patreon, Twitch, and YouTube were our major references. We often summarized the product as "Twitch + Patreon," but our unique feature — community discussion — is needed to 
+Kickstarter, Patreon, Twitch, and YouTube were our major references. We often summarized the product as "Twitch + Patreon," but our unique feature — community discussion — is needed to
 
 ## Target User
 
@@ -78,13 +89,12 @@ The "groups" concept died fairly early on — we knew this would require buy-in 
 
 Our Creators could work in whatever medium, opening up the platform to more than just authors and filmmakers. The Outreach team did a great job finding smaller creators and nonprofit organizations who were willing to contribute to testing the experience.
 
-Fans were originally expected to be a user who visits the platform to support a *specific* creato
+Fans were originally expected to be a user who visits the platform to support a _specific_ creato
 r, but we quickly realized we should enable a discovery feature so we could capture users who like finding new creators to support.
 
 ## Needs
 
-To meet this vision, we needed video conferencing, payment processing, user profiles, and a way to discover other users. 
-
+To meet this vision, we needed video conferencing, payment processing, user profiles, and a way to discover other users.
 
 # Ideate the Solution
 
@@ -146,7 +156,7 @@ a
 
 a
 
----------
+---
 
 # What are we even making?
 

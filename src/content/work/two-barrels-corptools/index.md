@@ -1,7 +1,4 @@
 ---
-tags: work
-permalink: /work/twobarrels-corptools/
-featured: true
 title: Uniting internal tools into a SaaS product
 workYear: 2024
 company: Two Barrels
@@ -10,6 +7,7 @@ role:
   - UX Design
   - Product Design
 thumb:
+featured: true
 ---
 
 ## H2 heading, I'll think of something later :^)

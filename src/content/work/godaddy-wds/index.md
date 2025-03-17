@@ -1,7 +1,4 @@
 ---
-tags: work
-permalink: /work/godaddy-website-design-services/
-featured: false
 title: Creating VIP ecommerce websites
 workYear: 2021
 company: GoDaddy
@@ -12,6 +9,7 @@ role:
   - Product Design
   - Graphic Design
 thumb: gddy-wds_thumb.png
+featured: false
 ---
 
 During the COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. Hundreds of individuals and entrepreneurs relied on me (ahhhh!) to create their new digital storefronts.

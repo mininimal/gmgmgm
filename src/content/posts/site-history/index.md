@@ -1,7 +1,5 @@
 ---
-tags: post
-permalink: /writing/site-history/
-title: A history of gmgmgm.design
+title: "A history of gmgmgm.design"
 date: 2025-02-26
 categories:
   - Eleventy

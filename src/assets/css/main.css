@@ -345,6 +345,27 @@ footer {
   margin-block-start: auto;
 }
 
+/* https://frontendmasters.com/blog/chilled-out-text-underlines/ */
+a {
+  color: var(--link-color);
+  text-underline-offset: 2px;
+}
+
+a:not(:is(:hover, :focus)) {
+  text-decoration-color:
+    color-mix(in srgb, currentColor, transparent 75%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+}
+
 /* ---------- ARCHIVE LAYOUT ---------- */
 details {
   padding-inline: var(--layout-space);
@@ -396,22 +417,6 @@ summary>* {
 }
 
 
-/* ---------- SITEWIDE ---------- */
-
-a {
-  color: var(--link-color);
-  text-decoration-color: var(--text-color);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight);
-}
 
 
 /* ---------- HEADER ---------- */

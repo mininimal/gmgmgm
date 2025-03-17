@@ -21,6 +21,20 @@
     }
   },
   "themeColor": "#ffbb04",
-  "timezone": "America/Phoenix"
+  "timezone": "America/Phoenix",
+  "navigation": [
+		{
+			"label": "/work",
+			"url": "/work/"
+		},
+		{
+			"label": "/writing",
+			"url": "/writing/"
+		},
+		{
+			"label": "/about",
+			"url": "/about/"
+		}
+	]
 }
  

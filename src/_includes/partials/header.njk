@@ -12,14 +12,14 @@
   </span>
   <nav>
     <ul role="list" class="cluster">
-      {%- for entry in collections.all | eleventyNavigation -%}
+      {%- for item in site.navigation -%}
         {% set isCurrentPage = entry.url == currentUrl %}
         <li>
           <a
-            href="{{ entry.url }}"
+            href="{{ item.url }}"
             class="{% if isCurrentPage %}current{% endif %}"
           >
-            {{ entry.key }}
+            {{ item.label }}
           </a>
         </li>
       {%- endfor -%}

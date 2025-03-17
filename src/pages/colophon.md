@@ -1,5 +1,4 @@
 ---
-tags: page
 title: Colophon
 ---
 

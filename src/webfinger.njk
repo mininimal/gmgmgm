@@ -1,0 +1,28 @@
+---
+permalink: '.well-known/webfinger'
+eleventyExcludeFromCollections: true
+dynamicPermalink: false
+---
+{
+  "subject": "acct:gm@mastodon.design",
+  "aliases": [
+    "https://mastodon.design/@gm",
+    "https://mastodon.design/users/gm"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.design/@gm"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.design/users/gmk"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.design/authorize_interaction?uri={uri}"
+    }
+  ]
+}

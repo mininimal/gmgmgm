@@ -1,6 +1,4 @@
 ---
-tags: post
-permalink: /writing/actual-budget-synology/
 title: Installing Actual Budget on a Synology device
 date: 2025-03-05
 categories:

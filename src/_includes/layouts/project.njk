@@ -1,0 +1,9 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<article class="center">
+  <!-- Inline styles? In 2025???? need it for view-transition-->
+  <h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1>
+  {{ content | safe }}
+</article>
+{% endblock %}

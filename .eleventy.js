@@ -1,15 +1,16 @@
 const mila = require("markdown-it-link-attributes");
 const { DateTime } = require("luxon");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation"); // Import the plugin
 
 module.exports = function (eleventyConfig) {
-  // Add the eleventyNavigation plugin
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  
+ 
   // Add a custom date filter
-  eleventyConfig.addFilter("formatDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL dd, yyyy");
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    const date = new Date(dateObj);
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   });
+
+  // Current Year filter
+  eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
   // Open external links in new tab
   const milaOptions = {
@@ -23,35 +24,35 @@ module.exports = function (eleventyConfig) {
   };
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mila, milaOptions));
 
-  // Set a default layout for all pages
-  eleventyConfig.addGlobalData("layout", "base.njk");
-
   // Passthrough copy for assets
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/styles");
-  eleventyConfig.addPassthroughCopy("src/content/posts/*/images/**");
-  eleventyConfig.addPassthroughCopy("src/content/work/*/images/**");
+  eleventyConfig.addPassthroughCopy("src/assets/");
+  eleventyConfig.addPassthroughCopy("src/site/content/posts/*/images/**");
+  eleventyConfig.addPassthroughCopy("src/site/content/work/*/images/**");
 
   // Collections
   eleventyConfig.addCollection("work", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/content/work/**/*.md");
-  });
+  });   
 
   eleventyConfig.addCollection("writing", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/content/posts/**/*.md");
   });
 
+  // Clear trailing slash warning
+  eleventyConfig.configureErrorReporting( { 
+    allowMissingExtensions: true 
+  } );
+
   // Base configuration
   return {
-    dir: {
-      input: "src",          // Source directory
-      includes: "includes",  // Nunjucks includes/partials
-      layouts: "layouts",    // Layout templates
-      data: "data",          // Global data files
-      output: "dist",        // Output directory
-    },
-    markdownTemplateEngine: "njk", // Use Nunjucks for Markdown
-    htmlTemplateEngine: "njk",     // Use Nunjucks for HTML
-    templateFormats: ["md", "njk"], // Supported template formats
-  };
+		dir: {
+			input: "src",
+			output: "dist",
+      includes: "_includes",
+		},
+		passthroughFileCopy: true,
+		templateFormats: [ "njk", "md", "txt", "html" ],
+		htmlTemplateEngine: "njk",
+		markdownTemplateEngine: "njk",
+	};
 };
