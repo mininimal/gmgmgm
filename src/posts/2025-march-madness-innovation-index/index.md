@@ -4,7 +4,7 @@ published: 2025-03-18
 updated:
 categories:
   - Sports
-draft: true
+draft: false
 ---
 
 I know very little about NBA basketball, and even less about college basketball. This makes me the perfect oracle for a your March Madness bracket — I am without biases such as knowing which school even has a team.
