@@ -3,7 +3,7 @@ title: Work
 layout: layouts/base.njk
 ---
 <main>
-  <section class="cluster box titleRow">
+  <section class="box titleRow">
     <h1>{{ title }}</h1>
     <span> {{ collections.work.length }} projects</span>
   </section>
@@ -14,21 +14,22 @@ layout: layouts/base.njk
     {% for project in collections.work %}
 
       {% set id = loop.index %}
-      <details name="projectsAccordion" class="archiveSingle">
+      <hr>
+      <details name="projectsAccordion">
         <!-- Accordion header -->
-        <summary id="summary-{{ id }}" aria-controls="content-{{ id }}" class="cluster">
+        <summary id="summary-{{ id }}" aria-controls="content-{{ id }}" class="cluster box archiveItem">
           <span>{{ project.data.workYear }}</span>
           <h2>{{ project.data.title }}</h2>
-          <span>{{ project.data.company }}</span>
+          <span>{{ project.data.role[0] }}</span>
         </summary>
         <!-- Accordion content -->
         <div id="content-{{ id }}" role="region" aria-labelledby="summary-{{ id }}" class="reel">
-          <div class="stack">
+          <aside class="stack">
             <p>{{ project.data.description }}</p>
-            <a href="{{ project.url }}">Read more</a>
-          </div>
+            <a href="{{ project.url }}">Read full case study</a>
+          </aside>
           {% if project.data.thumb %}
-            <img  class="frame" src="{{ project.url }}images/{{ project.data.thumb }}" alt="Screenshot of {{ project.data.title }}">
+            <img src="{{ project.url }}images/{{ project.data.thumb }}" alt="Screenshot of {{ project.data.title }}">
           {% endif %}
         </div>
       </details>

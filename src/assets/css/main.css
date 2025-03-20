@@ -46,56 +46,7 @@ h6 {
   font-weight: var(--font-weight);
 }
 
-/* ---------- ARCHIVE LAYOUT ---------- */
-details {
-  padding-inline: var(--layout-space);
-}
 
-summary {
-  padding-block: var(--layout-space);
-}
-
-summary>*,
-.archiveSingle>* {
-  max-inline-size: none;
-}
-
-.archive {
-  max-inline-size: none;
-}
-
-.archive:hover .project h2 {
-  color: var(--text-color);
-}
-
-.project:hover h2 {
-  color: var(--color-bright);
-}
-
-/* Single Container */
-/* details, */
-.archiveSingle {
-  border-block-end: var(--border);
-}
-
-/* details:last-child, */
-.archiveSingle:last-child {
-  border-block-end: none;
-}
-
-
-/* summary:active>*, */
-.archiveSingle:active>* {
-  opacity: 0.5;
-  /* TODO: Animate this transition */
-}
-
-/* summary h2, */
-.archiveSingle h2 {
-  color: var(--color-bright);
-  font-size: var(--font-size);
-  flex: 1;
-}
 
 
 
@@ -169,12 +120,7 @@ pre>code {
 
 /*TODO: MAKE FOOTER AND HEADER AND TITLE ROW NOT A BOX!!!!!!!!!*/
 
-.titleRow {
-  display: flex;
-  justify-content: space-between;
-  border-block-end: var(--border);
-  padding: var(--layout-space);
-}
+
 
 /* -------------------- POSTS ------------------------ */
 /* TODO: Actually style the footnotes */
@@ -201,4 +147,107 @@ article>:not(h1, h2) {
 
 .footnotes {
   font-size: 16px;
+}
+
+
+
+/* ---------- ARCHIVE LAYOUT ---------- */
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+details {
+  transition: var(--transition);
+}
+
+
+.archiveItem {
+  max-inline-size: none;
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.archiveItem h2 {
+  color: var(--color-bright);
+  font-size: var(--font-size);
+  flex: 1;
+  max-inline-size: none;
+}
+
+.archive hr {
+  border: none;
+  block-size: 1px;
+  background-color: var(--color-medium);
+  max-inline-size: none;
+  margin-block: 0;
+}
+
+details>.reel {
+  padding-inline: var(--layout-space);
+  padding-block-end: var(--layout-space);
+}
+
+.archiveItem:active>* {
+  opacity: 0.5;
+}
+
+/* Hover Effect */
+.archive,
+.archive * {
+  transition: var(--transition);
+}
+
+.archive:hover .archiveItem:not(:hover) * {
+  color: var(--color-medium);
+}
+
+/* !important required to reset becuase of extra summary element not found on writing archive */
+.archive:hover details[open] span {
+  color: var(--text-color) !important;
+}
+
+.archive:hover details[open] h2 {
+  color: var(--link-color) !important;
+}
+
+
+
+
+
+/* https://css-tricks.com/using-styling-the-details-element/ */
+::details-content {
+  transition: height 0.5s ease, content-visibility 0.5s ease allow-discrete;
+  block-size: 0;
+  overflow: clip;
+}
+
+/* Browser supports interpolate-size */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  [open]::details-content {
+    block-size: auto;
+  }
+}
+
+@supports not (interpolate-size: allow-keywords) {
+  details[open] .reel {
+    animation: animateDown 0.2s linear forwards;
+  }
+
+  @keyframes animateDown {
+    0% {
+      opacity: 0;
+      transform: translatey(-15px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translatey(0);
+    }
+  }
 }

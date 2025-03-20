@@ -15,8 +15,8 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-
   caret-color: var(--color-theme);
+  /* this allows transitions to keywords and not just values, like auto */
   interpolate-size: allow-keywords;
 }
 
@@ -43,7 +43,7 @@ ol[role='list'] {
 }
 
 body {
-  min-height: 100vh;
+  min-block-size: 100vh;
   line-height: 1.5;
 
   font-synthesis: style;
@@ -96,7 +96,7 @@ select {
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
-  min-height: 10em
+  min-block-size: 10em
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
