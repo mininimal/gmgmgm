@@ -1,8 +1,10 @@
 ---
 title: "A history of gmgmgm.design"
-date: 2025-02-26
+published: 2025-02-26
+updated:
 categories:
   - Eleventy
+draft: true
 ---
 
 IT'S ALIIIIIIIIIVE!

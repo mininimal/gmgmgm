@@ -16,15 +16,14 @@
   <meta name="fediverse:creator" content="{{ site.author.fediverse }}">
   <link rel="me" href="{{ site.socialLinks.mastodon.url }}">
   <link rel="author" href="/humans.txt">
+  <a href="mailto:gm@gmgmgm.design" rel="me">
 
   <link rel="stylesheet" href="/assets/css/main.css" rel="preload">
 </head>
 
 <body>
   {% include "partials/header.njk" %}
-  <main class="stack">
-    {{ content | safe }}
-  </main>
+  {{ content | safe }}
   {% include "partials/footer.njk" %}
 </body>
 

@@ -1,8 +1,10 @@
 ---
 title: Installing Actual Budget on a Synology device
-date: 2025-03-05
+published: 2025-03-05
+updated:
 categories:
   - Home Server
+draft: true
 ---
 
 This guide uses Synology's native Docker manager, [Container Manager](https://www.synology.com/en-us/dsm/feature/docker). This avoids Portainer which is used in [Marius' guide](https://mariushosting.com/how-to-install-actual-on-your-synology-nas/), but is essentially the same [official install process](https://actualbudget.org/docs/install/docker) through Docker on any other system.

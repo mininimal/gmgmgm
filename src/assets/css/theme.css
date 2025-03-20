@@ -1,0 +1,65 @@
+:root {
+  /* Sizing */
+  --ratio: 1.61803398875rem;
+  --layout-repeat: 3;
+  --layout-space: clamp(16px, 3svmin, 32px);
+  --layout-measure: 60ch;
+  /* https://every-layout.dev/rudiments/axioms/#a-universal-value */
+
+  /* Color */
+  --color-dark: oklch(24.29% 0.0114 293.18);
+  --color-medium: oklch(40% 0.02 293.18);
+  --color-light: oklch(60% 0.02 293.18);
+  --color-bright: oklch(95% 0.0114 293.18);
+  --color-theme: oklch(83.28% 0.1711 81.97);
+
+  /* Text */
+  --font-size: clamp(16px, 2svmin, 24px);
+  --line-height: 1.6;
+  --text-color: var(--color-light);
+  --link-color: var(--color-bright);
+
+  /* Other */
+  --border: 1px solid var(--color-medium);
+  --border-radius: 2px;
+  --transition: transform 0.2s cubic-bezier(0.37, 1, 0.74, 1);
+}
+
+/* extra-juicy theme color for cool monitors */
+@media (color-gamut: p3) {
+  :root {
+    --color-theme: oklch(83.28% 0.1911 81.97);
+  }
+}
+
+* {
+  max-inline-size: var(--layout-measure);
+}
+
+html,
+body,
+div,
+main,
+header,
+nav,
+footer,
+section,
+details,
+summary {
+  max-inline-size: none;
+}
+
+/* https://every-layout.dev/layouts/frame/ - global responsive images */
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  /* FIXME: 11ty image plugin needs this for some reason to avoid vertically stretching images */
+}
+
+body {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--color-dark);
+}

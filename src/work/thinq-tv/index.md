@@ -3,7 +3,7 @@ slug: thinq-tv
 title: Leading product vision of creator startup
 workYear: 2019
 company: ThinQ.tv
-description: During my studies at ASU, I joined a Venture Devils startup building a platform to help creators connect with their audience. I led the product vision, contributed to front-end code, and worked on the UX and web design.
+description: "During my studies at ASU, I joined a Venture Devils startup building a platform to help creators connect with their audience. I led the product vision, contributed to front-end code, and worked on the UX and web design."
 role:
   - Product Design
   - UX Design
@@ -11,6 +11,7 @@ role:
   - Brand Design
 thumb:
 featured: true
+draft: true
 ---
 
 # Context

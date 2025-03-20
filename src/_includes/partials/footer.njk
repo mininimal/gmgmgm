@@ -1,9 +1,9 @@
 <footer class="cluster box">
-    <p>℗ copyleft {% currentYear %}</p>
-    <p>🦶🦶🦶</p>
-    <div class="cluster">
-    {% for key, link in site.socialLinks %}
-        <a href="{{ link.url }}">{{ link.label }}</a>
-    {% endfor %}
-    </div>
+  <span>🄯{% currentYear %}. <a href="https://anticapitalist.software/" target="_blank" rel="noopener noreferrer">Rights Reserved</a>.</span>
+  <span>🦶🦶🦶</span>
+  <div class="cluster">
+  {% for key, link in site.socialLinks %}
+    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+  {% endfor %}
+  </div>
 </footer>

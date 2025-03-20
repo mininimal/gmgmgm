@@ -1,333 +1,13 @@
-@layer font, theme, every-layout, reset;
-
-@layer font {
-  @font-face {
-    font-family: 'Atkinson Next';
-    font-style: normal;
-    font-weight: 100 900;
-    font-optical-sizing: auto;
-    src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
-  }
-
-  /* TODO:" Add Mono version and Italic version of font */
-}
-
-@layer reset {
-
-  /* https://www.joshwcomeau.com/css/custom-css-reset/ */
-  /*- ---------- CUSTOM RESET ---------- */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl,
-  blockquote,
-  figure,
-  pre,
-  table,
-  form {
-    margin: 0;
-  }
-
-  :where(html) {
-    caret-color: var(--color-theme);
-    interpolate-size: allow-keywords;
-    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
-
-  :where(body) {
-    font-synthesis: style;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    line-height: var(--line-height);
-  }
-
-  :where(p, h1, h2, h3, h4, h5, h6) {
-    overflow-wrap: break-word;
-  }
-
-  :where(p) {
-    text-wrap: pretty;
-  }
-
-  :where(h1, h2, h3, h4, h5, h6) {
-    text-wrap: balance;
-  }
-
-  /* https://piccalil.li/blog/add-scroll-margin-to-all-elements-which-can-be-targeted/ */
-  [id] {
-    scroll-margin-top: 2ex;
-  }
-
-  /* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
-  @view-transition {
-    navigation: auto;
-    disable: (prefers-reduced-motion: reduce);
-  }
-}
-
-
-@layer theme {
-  :root {
-    /* Sizing */
-    --ratio: 1.61803398875rem;
-    --layout-repeat: 3;
-    --layout-space: clamp(16px, 3svmin, 32px);
-    --layout-measure: 50ch;
-    /* https://every-layout.dev/rudiments/axioms/#a-universal-value */
-
-    /* Color */
-    --color-dark: oklch(24.29% 0.0114 293.18);
-    --color-medium: oklch(40% 0.02 293.18);
-    --color-light: oklch(60% 0.02 293.18);
-    --color-bright: oklch(95% 0.0114 293.18);
-    --color-theme: oklch(83.28% 0.1711 81.97);
-
-    /* Text */
-    --font-family: 'Atkinson Next', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-    /* https://modernfontstacks.com/ */
-    --font-size: clamp(16px, 2svmin, 24px);
-    --line-height: 1.6;
-    --text-color: var(--color-light);
-    --link-color: var(--color-bright);
-
-    /* Other */
-    --border: 1px solid var(--color-medium);
-    --border-radius: 2px;
-    --image-height: 50svh;
-    --transition: transform 0.2s cubic-bezier(0.37, 1, 0.74, 1);
-  }
-
-  /* extra-juicy theme color for cool monitors */
-  @media (color-gamut: p3) {
-    :root {
-      --color-theme: oklch(83.28% 0.1911 81.97);
-    }
-  }
-
-  * {
-    max-inline-size: var(--layout-measure);
-  }
-
-  html,
-  body,
-  div,
-  main,
-  header,
-  nav,
-  footer,
-  section,
-  details,
-  summary {
-    max-inline-size: none;
-  }
-
-  body {
-    font-size: var(--font-size);
-    font-family: var(--font-family);
-    line-height: var(--line-height);
-    color: var(--text-color);
-    background-color: var(--color-dark);
-  }
-}
-
-@layer every-layout {
-  /* From Every Layout (https://every-layout.dev) */
-  /* https://www.smashingmagazine.com/2024/05/modern-css-layouts-no-framework-needed/ */
-
-  /* Stack https://every-layout.dev/layouts/stack/ */
-  .stack {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .stack>* {
-    margin-block: 0;
-  }
-
-  .stack>*+* {
-    margin-block-start: var(--layout-space);
-  }
-
-  /* Box https://every-layout.dev/layouts/box/ */
-  .box {
-    padding: var(--layout-space);
-    border: var(--border);
-  }
-
-  .box * {
-    color: inherit;
-  }
-
-  .box.invert {
-    color: var(--color-dark);
-    background-color: var(--color-light);
-  }
-
-  /* Center https://every-layout.dev/layouts/center/ */
-  .center {
-    box-sizing: content-box;
-    margin-inline: auto;
-    /* max-inline-size: var(--layout-measure); */
-  }
-
-  /* Cluster https://every-layout.dev/layouts/cluster/ */
-  .cluster {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--layout-space);
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  /* Sidebar https://every-layout.dev/layouts/sidebar/ */
-  .with-sidebar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--layout-space);
-  }
-
-  .with-sidebar> :first-child {
-    flex-basis: --layout-size;
-    flex-grow: 1;
-  }
-
-  .with-sidebar> :last-child {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: 50%;
-  }
-
-  /* Switcher https://every-layout.dev/layouts/switcher/ */
-
-  /* Cover https://every-layout.dev/layouts/cover/ */
-  .cover {
-    display: flex;
-    flex-direction: column;
-    min-block-size: 100vh;
-    padding: 0;
-  }
-
-  .cover>* {
-    margin-block: var(--layout-space);
-  }
-
-  .cover> :first-child:not(main) {
-    margin-block-start: 0;
-  }
-
-  .cover> :last-child:not(main) {
-    margin-block-end: 0;
-  }
-
-  .cover>h1 {
-    margin-block: auto;
-  }
-
-
-  /* Grid https://every-layout.dev/layouts/grid/ */
-  .grid {
-    display: grid;
-    grid-gap: var(--layout-space);
-  }
-
-  @supports (width: min(var(--layout-measure), 100%)) {
-    .grid {
-      grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-measure), 100%), 1fr));
-    }
-  }
-
-  /* Frame https://every-layout.dev/layouts/frame/ */
-  .frame {
-    --n: 16;
-    --d: 9;
-    aspect-ratio: var(--n) / var(--d);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .frame>img,
-  .frame>video {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-  }
-
-  /* Reel https://every-layout.dev/layouts/reel/ */
-  .reel {
-    display: flex;
-    block-size: 50vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-color: var(--color-theme) var(--color-light);
-  }
-
-  .reel::-webkit-scrollbar {
-    block-size: 1rem;
-  }
-
-  .reel::-webkit-scrollbar-track {
-    background-color: var(--color-light);
-  }
-
-  .reel::-webkit-scrollbar-thumb {
-    background-color: var(--color-light);
-    background-image: linear-gradient(var(--color-light) 0, var(--color-light) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-light) 0.75rem);
-  }
-
-  .reel>* {
-    flex: 0 0 auto;
-  }
-
-
-  .reel>img {
-    block-size: 100%;
-    flex-basis: auto;
-    width: auto;
-  }
-
-  .reel>*+* {
-    margin-inline-start: var(--layout-space);
-  }
-
-  .reel.overflowing {
-    padding-block-end: var(--layout-space);
-  }
-
-  /* Impostor https://every-layout.dev/layouts/imposter/ */
-
-  /* Icon https://every-layout.dev/layouts/icon/ */
-  .icon {
-    block-size: 0.75em;
-    block-size: 1cap;
-    inline-size: 0.75em;
-    inline-size: 1cap;
-  }
-}
-
-/*@import url('font.css') layer(font);
-@import url('normalize.css') layer(reset);
+@import url('font.css') layer(font);
+@import url('reset.css') layer(reset);
 @import url('theme.css') layer(theme);
-@import url('layout.css') layer(layout);*/
+@import url('composition.css') layer(c);
+
+
+@layer font, reset, c, reset;
+
+
+
 
 /* ----------MAIN LAYOUT ---------- */
 body {
@@ -345,10 +25,10 @@ footer {
   margin-block-start: auto;
 }
 
-/* https://frontendmasters.com/blog/chilled-out-text-underlines/ */
+/* https://piccalil.li/links/chilled-out-text-underlines */
 a {
   color: var(--link-color);
-  text-underline-offset: 2px;
+  text-underline-offset: .2ex;
 }
 
 a:not(:is(:hover, :focus)) {
@@ -375,7 +55,8 @@ summary {
   padding-block: var(--layout-space);
 }
 
-summary>* {
+summary>*,
+.archiveSingle>* {
   max-inline-size: none;
 }
 
@@ -467,13 +148,15 @@ nav a.current {
 
 /* ---------- FOOTER ---------- */
 footer {
-  justify-content: space-between;
   border-block-start: var(--border);
+  justify-content: space-between;
 }
 
+code,
 p>code,
 pre>code {
-  padding-inline: 4px;
+  padding-inline: 1ex;
+  font-size: calc(var(--font-size) - 4px);
   border-radius: 4px;
   border: var(--border);
 }
@@ -482,4 +165,40 @@ pre>code {
   display: block;
   /* https://kilianvalkhof.com/2021/css-html/you-want-overflow-auto-not-overflow-scroll/ */
   overflow-x: auto;
+}
+
+/*TODO: MAKE FOOTER AND HEADER AND TITLE ROW NOT A BOX!!!!!!!!!*/
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  border-block-end: var(--border);
+  padding: var(--layout-space);
+}
+
+/* -------------------- POSTS ------------------------ */
+/* TODO: Actually style the footnotes */
+article {
+  display: grid;
+  grid-template-columns: auto var(--layout-measure);
+  gap: var(--layout-space);
+}
+
+article h1,
+article h2 {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span auto;
+}
+
+article>:not(h1, h2) {
+  grid-column: 2 / span 1;
+}
+
+
+.footnotes-sep {
+  inline-size: 100%;
+}
+
+.footnotes {
+  font-size: 16px;
 }

@@ -1,8 +1,7 @@
 ---
 title: Chipotle Order
+layout: layouts/page.njk
 ---
-
-# Chipotle Order
 
 This is extremely important and should be included in my will. Thank you to my lawyer who I do not have for making sure this is done.
 

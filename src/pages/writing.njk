@@ -1,23 +1,25 @@
 ---
 title: Writing
+layout: layouts/base.njk
 ---
 
-<section class="stack">
-  <h1>Writing</h1>
-  <span>{{ collections.writing.length }} posts</span>
-</stack>
+<main>
+  <section class="titleRow">
+    <h1>Writing</h1>
+    <span>{{ collections.writing.length }} posts</span>
+  </section>
 
-<section class="archive">
+  <section class="archive">
 
-{% for post in collections.writing %}
-  <a href="{{ post.url }}">
-  <div class="cluster archiveSingle">
-    <span class="accordion-info">{{ post.date | postDate }}</span>
-    <h2>{{ post.data.title }}</h2>
-    <span class="accordion-info">{{ post.data.categories or "Uncategorized" }}</span>
-  </div>
-  </a>
+  {% for post in collections.writing | reverse %}
+    
+    <div class="cluster box archiveSingle">
+      <span>{{ post.data.published | postDate }}</span>
+      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      <span>{{ post.data.categories or "Uncategorized" }}</span>
+    </div>
 
-{% endfor %}
+  {% endfor %}
 
-</section>
+  </section>
+</main>

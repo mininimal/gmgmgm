@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Atkinson Next';
+  font-style: normal;
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Next';
+  font-style: italic;
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Next Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-optical-sizing: auto;
+  src: url('/assets/fonts/atkinson/AtkinsonHyperlegibleMonoVF-Variable.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* https://modernfontstacks.com/ */
+:root {
+  --font-family: 'Atkinson Next', system-ui, sans-serif;
+  --font-family-mono: 'Atkinson Next Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+/* TODO: Set up Italic version of font */
