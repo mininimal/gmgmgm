@@ -99,7 +99,7 @@
   grid-gap: var(--layout-space);
 }
 
-@supports (width: min(var(--layout-measure), 100%)) {
+@supports (inline-size: min(var(--layout-measure), 100%)) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-measure), 100%), 1fr));
   }
@@ -126,10 +126,10 @@
 /* Reel ---------- https://every-layout.dev/layouts/reel/ */
 .reel {
   display: flex;
-  block-size: 50vh;
+  /* block-size: 50vh; */
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-color: var(--color-theme) var(--color-light);
+  scrollbar-color: var(--color-theme) var(--color-dark);
 }
 
 .reel::-webkit-scrollbar {
@@ -137,12 +137,12 @@
 }
 
 .reel::-webkit-scrollbar-track {
-  background-color: var(--color-light);
+  background-color: var(--color-dark);
 }
 
 .reel::-webkit-scrollbar-thumb {
   background-color: var(--color-light);
-  background-image: linear-gradient(var(--color-light) 0, var(--color-light) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-light) 0.75rem);
+  background-image: linear-gradient(var(--color-dark) 0, var(--color-dark) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-dark) 0.75rem);
 }
 
 .reel>* {
@@ -153,7 +153,7 @@
 .reel>img {
   block-size: 100%;
   flex-basis: auto;
-  width: auto;
+  inline-size: auto;
 }
 
 .reel>*+* {

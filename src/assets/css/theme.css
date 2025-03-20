@@ -22,7 +22,7 @@
   /* Other */
   --border: 1px solid var(--color-medium);
   --border-radius: 2px;
-  --transition: transform 0.2s cubic-bezier(0.37, 1, 0.74, 1);
+  --transition: all 0.2s cubic-bezier(0.37, 1, 0.74, 1);
 }
 
 /* extra-juicy theme color for cool monitors */
