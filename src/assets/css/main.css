@@ -3,32 +3,19 @@
 @import url('theme.css') layer(theme);
 @import url('composition.css') layer(c);
 
-
 @layer font, reset, c, reset;
 
-
-
-
-/* ----------MAIN LAYOUT ---------- */
-body {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 100vh;
+/* Pushes footer to bottom of window WITH the stack margin.
+https://every-layout.dev/layouts/stack#splitting-the-stack */
+body.stack> :nth-child(2) {
+  margin-block-end: auto;
 }
 
-/* main {
-margin-block: var(--layout-space);
-margin-inline: var(--layout-space);
-} */
-
-footer {
-  margin-block-start: auto;
-}
 
 /* https://piccalil.li/links/chilled-out-text-underlines */
 a {
   color: var(--link-color);
-  text-underline-offset: .2ex;
+  text-underline-offset: 0.3ex;
 }
 
 a:not(:is(:hover, :focus)) {

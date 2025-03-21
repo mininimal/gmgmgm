@@ -3,28 +3,23 @@
 
 <head>
   <!--site-->
+  <link rel="stylesheet" href="/assets/css/main.css" rel="preload">
   <title>{{ "GM // " + (title | default(site.title)) }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="{{ page.url }}">
   <meta name="theme-color" content="{{ site.themeColor }}">
   <script src="https://tinylytics.app/embed/1i_vCg6iWTo15L3spHzy.js" defer></script>
-  <!-- TODO: Link JS files with defer, like <!script src="/scripts/main.js" defer></script>-->
-  <!-- TODO: Favicon -->
-  <!-- TODO: Social graph garbage -->
-  <!--me-->
   <meta name="fediverse:creator" content="{{ site.author.fediverse }}">
   <link rel="me" href="{{ site.socialLinks.mastodon.url }}">
   <link rel="author" href="/humans.txt">
-  <a href="mailto:gm@gmgmgm.design" rel="me">
-
-  <link rel="stylesheet" href="/assets/css/main.css" rel="preload">
+  <link rel="me" href="mailto:gm@gmgmgm.design">
 </head>
 
-<body>
+<body class="stack">
   {% include "partials/header.njk" %}
   {{ content | safe }}
   {% include "partials/footer.njk" %}
 </body>
 
-</html> 
+</html>
