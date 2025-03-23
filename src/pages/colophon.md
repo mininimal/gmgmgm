@@ -21,6 +21,7 @@ These posts helped me solve problems on the site. I probably did a worse version
 - [Plain CSS vars for theming](https://open-props.style)
 - [Fallback fonts for modern OS's](https://modernfontstacks.com/)
 - [Using OKLCH for color](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
+- [OKLCH Picker](https://oklch.com/)
 - [Consistent post front matter with VSCode snippets](https://chrismcleod.dev/blog/visual-studio-code-snippet-for-markdown-frontmatter/#fnref1)
 - [External links in new tab](https://dannywhite.net/notes/new-tab-links/)
 - [Webfinger Mastodon alias in case you ever change servers](https://reverentgeek.com/configure-eleventy-to-host-a-custom-mastodon-alias/)

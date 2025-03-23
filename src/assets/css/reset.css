@@ -16,8 +16,6 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   caret-color: var(--color-theme);
-  /* this allows transitions to keywords and not just values, like auto */
-  interpolate-size: allow-keywords;
 }
 
 
@@ -105,7 +103,12 @@ textarea:not([rows]) {
 }
 
 /* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
-@view-transition {
-  navigation: auto;
-  disable: (prefers-reduced-motion: reduce);
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    interpolate-size: allow-keywords;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
 }

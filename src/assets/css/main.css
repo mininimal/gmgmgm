@@ -203,7 +203,9 @@ details>.reel {
 
 
 
-/* https://css-tricks.com/using-styling-the-details-element/ */
+/* https://css-tricks.com/using-styling-the-details-element/
+https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#transition-animation-for-details */
+
 ::details-content {
   transition: height 0.5s ease, content-visibility 0.5s ease allow-discrete;
   block-size: 0;
@@ -238,3 +240,24 @@ details>.reel {
     }
   }
 }
+
+
+/* details {
+  inline-size: 50ch;
+
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition: content-visibility 1s allow-discrete, opacity 1s, block-size 1s;
+  }
+
+  &[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  }
+} */
