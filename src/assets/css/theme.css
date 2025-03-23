@@ -57,6 +57,10 @@ main {
   margin-inline: var(--layout-space);
 }
 
+main.cover {
+  margin-block-start: 0;
+}
+
 img {
   /* https://every-layout.dev/layouts/frame/ - global responsive images */
   max-inline-size: 100%;

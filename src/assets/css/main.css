@@ -1,19 +1,9 @@
 @import url('font.css') layer(font);
 @import url('reset.css') layer(reset);
+@import url('composition.css') layer(composition);
 @import url('theme.css') layer(theme);
-@import url('composition.css') layer(c);
 
-@layer font, reset, c, reset;
-
-
-
-
-
-
-
-
-
-
+@layer font, reset, composition, reset;
 
 /* ---------- HEADER ---------- */
 header {
