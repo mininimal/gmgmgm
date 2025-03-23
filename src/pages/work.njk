@@ -3,13 +3,13 @@ title: Work
 layout: layouts/base.njk
 ---
 
-<main>
+<main class="archive">
   <section class="box titleRow">
     <h1>{{ title }}</h1>
     <span> {{ collections.work.length }} projects</span>
   </section>
 
-  <section class="archive">
+  <section>
 
     {# Sort in reverse order #}
     {% for project in collections.work %}

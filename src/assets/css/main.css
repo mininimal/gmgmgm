@@ -5,33 +5,10 @@
 
 @layer font, reset, c, reset;
 
-/* Pushes footer to bottom of window WITH the stack margin.
-https://every-layout.dev/layouts/stack#splitting-the-stack */
-body.stack> :nth-child(2) {
-  margin-block-end: auto;
-}
 
 
-/* https://piccalil.li/links/chilled-out-text-underlines */
-a {
-  color: var(--link-color);
-  text-underline-offset: 0.3ex;
-}
 
-a:not(:is(:hover, :focus)) {
-  text-decoration-color:
-    color-mix(in srgb, currentColor, transparent 75%);
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight);
-}
 
 
 
@@ -43,6 +20,7 @@ header {
   border-block-end: var(--border);
   justify-content: space-between;
   text-transform: lowercase;
+  padding: var(--layout-space);
 }
 
 header a {
@@ -88,6 +66,7 @@ nav a.current {
 footer {
   border-block-start: var(--border);
   justify-content: space-between;
+  padding: var(--layout-space);
 }
 
 code,
@@ -139,6 +118,13 @@ article>:not(h1, h2) {
 
 
 /* ---------- ARCHIVE LAYOUT ---------- */
+/* EDGE TO EDGE LAYOUT*/
+.archive {
+  margin-block-start: 0;
+  margin-inline: 0;
+}
+
+
 .titleRow {
   display: flex;
   justify-content: space-between;

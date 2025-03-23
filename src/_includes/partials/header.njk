@@ -2,7 +2,7 @@
 {% set isHomePage = currentUrl == "/" %}
 {% set section = currentUrl.split("/")[1] | default("") %}
 
-<header class="cluster box">
+<header class="cluster">
   <span id="logo" class="{% if isHomePage %}home{% else %}subpage{% endif %}">
     <a href="/">{{ site.title }}</a>
     {%- if not isHomePage -%}

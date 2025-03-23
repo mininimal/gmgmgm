@@ -17,6 +17,16 @@
   margin-block-start: var(--layout-space, 1em);
 }
 
+.stack:only-child {
+  block-size: 100%;
+}
+
+/* Pushes footer to bottom of window WITH the stack margin.
+https://every-layout.dev/layouts/stack#splitting-the-stack */
+.stack> :nth-child(2) {
+  margin-block-end: auto;
+}
+
 /* Box ---------- https://every-layout.dev/layouts/box/ */
 .box {
   padding: var(--layout-space);
