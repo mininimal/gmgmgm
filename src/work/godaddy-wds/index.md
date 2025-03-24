@@ -1,5 +1,5 @@
 ---
-title: Bringing eCommerce to small businesses and VIPs
+title: Bringing eCommerce to small businesses
 workYear: 2021
 company: GoDaddy
 description: "During the worldwide COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. These entrepreneurs relied on WDS (and me!) to create their new digital storefronts."
@@ -23,16 +23,20 @@ Since sites were out of our hands after the initial build, we needed to tool the
 
 To further save money, we wanted to avoid paid storefronts like Shopify that would increase our prices and erode our profits. Conveniently, we had a hosting product[^1] that included an automated [WordPress](https://wordpress.org/download/) install, which we could extend with the free [WooCommerce](https://woocommerce.com/) ecommerce plugin.
 
-Finally, to ensure our teeam could troubleshoot approved plugins
+Finally, to ensure our teeam could troubleshoot approved plugins 
 
-## Saving company cash by keeping it in-house and open source
+## Saving company cash by keeping services in-house and open source
 
 Our sites were built on WordPress, which has the dual advantages of being free and a product we already offer — Managed WordPress (MWP)[^1] was our base tier hosting that included automated WordPress installation and updates. This meant no hosting payments _and_ allowed us to lower the initial price for a WDS build.
 
 Since the platform and hosting were essentially free, our other major cost was in WordPress and WooCommerce plugins and extensions. Our <abbr title="Managed WordPress">MWP</abbr> developers regularly contributed improvements suggested by <abbr title="Website Design Services">WDS</abbr> designers to several of these plugins, earning us discounted agency licensing. More money saved!
 
+
+
+
+
 [Beaver Builder](https://www.wpbeaverbuilder.com/) and
-First, it can be hosted in-house on our very cheap Managed WordPress servers, improving our profit margin. Secondly, it's as abstracted away from code as you can get -- and our customers want to stand as far away from code as possible.
+ First, it can be hosted in-house on our very cheap Managed WordPress servers, improving our profit margin. Secondly, it's as abstracted away from code as you can get -- and our customers want to stand as far away from code as possible.
 
 ### Hosting on MWP
 
@@ -45,5 +49,6 @@ Beaver Builder is one of several WordPress-based visual builders, providing a <a
 The original intent was to allow
 
 ## From one-off to subscription
+
 
 [^1]: I [rebuilt the checkout](/work/godaddy-mops-hosting-checkout) for this product at my next role!

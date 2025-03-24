@@ -19,6 +19,7 @@ html {
 }
 
 
+
 body,
 h1,
 h2,
@@ -101,6 +102,8 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+
 
 /* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
 @media (prefers-reduced-motion: no-preference) {
