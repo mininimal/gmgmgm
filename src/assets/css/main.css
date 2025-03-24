@@ -42,12 +42,12 @@ nav a:hover {
 
 /* Current page or parent page link */
 /* Current page link */
-nav a.current {
+nav li .current {
   color: var(--color-medium);
   /* Gray color for current page */
   pointer-events: none;
   /* Disable clicking on the current page link */
-  cursor: default;
+  cursor: not-allowed;
   /* Default cursor for current page link */
 }
 
@@ -80,7 +80,7 @@ pre>code {
 
 /* -------------------- POSTS ------------------------ */
 /* TODO: Actually style the footnotes */
-article {
+/* article {
   display: grid;
   grid-template-columns: auto var(--layout-measure);
   gap: var(--layout-space);
@@ -103,7 +103,7 @@ article>:not(h1, h2) {
 
 .footnotes {
   font-size: 16px;
-}
+} */
 
 
 
@@ -139,7 +139,7 @@ details {
   max-inline-size: none;
 }
 
-.archive hr {
+.archiveList hr {
   border: none;
   block-size: 1px;
   background-color: var(--color-medium);
@@ -157,21 +157,21 @@ details>.reel {
 }
 
 /* Hover Effect */
-.archive,
-.archive * {
+.archiveList,
+.archiveList * {
   transition: var(--transition);
 }
 
-.archive:hover .archiveItem:not(:hover) * {
+.archiveList:hover .archiveItem:not(:hover) * {
   color: var(--color-medium);
 }
 
 /* !important required to reset becuase of extra summary element not found on writing archive */
-.archive:hover details[open] span {
+.archiveList:hover details[open] span {
   color: var(--text-color) !important;
 }
 
-.archive:hover details[open] h2 {
+.archiveList:hover details[open] h2 {
   color: var(--link-color) !important;
 }
 

@@ -13,7 +13,7 @@
   <nav>
     <ul role="list" class="cluster">
       {%- for item in site.navigation -%}
-        {% set isCurrentPage = entry.url == currentUrl %}
+        {% set isCurrentPage = item.url == currentUrl %}
         <li>
           <a
             href="{{ item.url }}"
