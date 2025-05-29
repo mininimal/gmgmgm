@@ -2,7 +2,7 @@
 title: Uniting internal tools into a SaaS product
 workYear: 2024
 company: Two Barrels
-description: "Two Barrels handled customer service communication through various disconnected tools for email, phone, documents, and more. With our customer service teams moving from format-based teams to region-based teams, I identified an opportunity to unify our tools into a single ticketing system through a comprehensive design system. The result, CorpTools, eventually began a second life as a SaaS suite."
+description: "Two Barrels had too many tools and no shared design language. I helped build a design system from scratch while juggling feature work across multiple product teams. The result: faster dev handoffs, fewer UI bugs, and a system still in use today."
 role:
   - Product Design
   - UX Design
@@ -11,32 +11,41 @@ featured: true
 draft: true
 ---
 
-## H2 heading, I'll think of something later :^)
+## Unifying Two Barrels
 
-Customer service representatives at our parent company were originally divided by type of work — an email team, a phone team, etc. Due to regional expansion, the customer service department restructured to handle specific regions of the US, requiring <abbr title="customer service representative">CSR</abbr>s to juggle our various apps depending on how customers contacted us.
+Two Barrels was the internal software team for Registered Agents, a company that helps small businesses stay compliant with state regulations. Our team built and maintained the tools employees and resellers used daily: customer service platforms, hosting products, domain dashboards, and a few oddball apps we’d inherited along the way.
 
-Our email client, based on [Zimbra](https://github.com/Zimbra/zm-mailbox), was wrapped in a queue tool that allowed CSRs to take the
+I was a product designer embedded across several product teams. Most days, I was working on new features, modernizing old workflows, or hunting down usability issues. But the bigger challenge was upstream: every product looked and worked differently, even when they solved similar problems. There wasn’t a shared language, much less a design system.
 
-Besides the reduction in active work time for <abbr title="customer service representative">CSR</abbr>s, these siloed apps make it difficult to gather analytics to improve processes and
+Some apps were homegrown. Others were acquisitions duct-taped into the stack. With no standards, everything had to be relearned — by users, by developers, by us. That was fine when these were just internal tools. But leadership had started talking about selling them as a SaaS platform. Suddenly, the fragmentation wasn’t just inconvenient — it was a blocker.
 
-# Building a Swiss Army knife
+This case study focuses on the stretch when we tried to bring consistency to that mess without slowing down feature work — and before anyone officially told us to.
 
-Our customer service team worked across a suite of open-source or internally-built tools to handle customer communication. When Two Barrels pivoted to a product-based team structure, I saw an opportunity to unify our customer service tools. The result, CorpTools, took on a life of its own as a SaaS suite for our customers.
+## Starting from the middle
 
-# Work smarter, not harder
+The design system wasn’t handed down from the top. It came from my UX team, who were tired of rebuilding the same patterns differently every time. I was one of three designers who pushed for it and got buy-in to begin.
 
-When I started at Two Barrels, some of the requests were surprising
+We didn’t pause sprint work to start over. I audited the tools my teams owned, looking for overlap, inconsistencies, and repeatable patterns. While we didn’t do full research, we had years of support feedback and dev complaints pointing to real usability friction.
 
----
+We’d been using PrimeVue as a UI base, but it didn’t scale well to our needs. One of our engineers spun up Storybook, and I created a shared Figma library with tokens and flexible, composable components. These weren’t copies of what we had — we redesigned from the ground up, combining the best of each product into shared patterns that worked across them all.
 
-DRAFTS VVV
+I also set up the contribution process: who could submit new components, how to document usage, and the tone and structure we’d use in our documentation. As we built out the system, I wrote and maintained most of our Zeroheight library, which by the time I left included:
 
-CorpTools began life as a simple email handler for our customer service agents, allowing issues to be taken in a queue instead of manualy being selected out of a Zimbra mailbox. Other communications also relied on open source package
+- 12 documented interaction patterns
+- Around 40 core components
+- 5 shared page templates
+- Guidance for accessibility, spacing, content, and exceptions
 
-USE ABBR WITH TITLE FOR ACRONYMS
+Because we couldn’t stop for a redesign, we integrated it into everyday work. As product teams shipped new features, we slowly folded in the system. My teams saw a sharp drop in rollover tickets — builds were faster, QA was easier, and devs weren’t stuck asking what a dropdown should look like this time.
 
-Customer service representatives at Registered Agents were once organized by communication type -- email team, phone team, etc. This was okay in the first years of the company, but as we reached 1,000 employees covering multiple states, it was obvious that our CSRs were expected to have extensive knowledge across too many fields -- all our products AND the considerations of every state.
+## A system that stuck
 
-At the same time, Two Barrels (the tech arm of Registered Agents) decided to pivot to a product-based structure. This made it simple to
+Management considered the design system a side project, but we made it part of how we worked.
 
-Our reliance on open-source or internally-built tools made
+Every new feature we shipped was a chance to clean something up or swap in a reusable pattern. If a dev needed a button, they didn’t build it from scratch — they grabbed it from Storybook. If a designer wasn’t sure how to handle pagination or bulk actions, they checked the pattern library. It wasn’t just about visual consistency; it meant fewer decisions, fewer surprises, and fewer things to QA.
+
+The documentation played a big role in that. Every component had clear usage guidelines, visual do’s and don’ts, and links to working Figma examples. The system became the default answer to “How do we do this?” — which made handoff smoother and made good decisions easier, especially for newer teammates.
+
+I left before the system was fully rolled out across every product, but the foundation was strong: a clear design direction, shared assets, and a process anyone could follow. The team still uses it today, years later.
+
+[img]

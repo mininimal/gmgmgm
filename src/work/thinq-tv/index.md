@@ -36,26 +36,15 @@ Front-end code, product vision focusing, brand unifying, design system creation,
 
 ### Software Engineers
 
-[Prachi Miyan](https://www.linkedin.com/in/prachi-miyan/)
-[Kamila Sarsam](https://www.linkedin.com/in/kamilasarsam/)
-[Jacob Hreshchyshyn](https://www.linkedin.com/in/jhreshchyshyn/)
-[Jason Wu](https://www.linkedin.com/in/jason-wu-368b45135/)
-[Roni Polus](https://www.linkedin.com/in/roni-polus/)
-[Sanket Parikh](https://www.linkedin.com/in/sanket-parikh-b27478a8/)
-[Andrew Simon](https://www.linkedin.com/in/asimondrew/)
-[Chris Kurian](https://www.linkedin.com/in/chris-kurian-3408b9188/)
-[Kowit Karunas](https://www.linkedin.com/in/kowitkarunas/)
+[Prachi Miyan](https://www.linkedin.com/in/prachi-miyan/), [Kamila Sarsam](https://www.linkedin.com/in/kamilasarsam/), [Jacob Hreshchyshyn](https://www.linkedin.com/in/jhreshchyshyn/), [Jason Wu](https://www.linkedin.com/in/jason-wu-368b45135/), [Roni Polus](https://www.linkedin.com/in/roni-polus/), [Sanket Parikh](https://www.linkedin.com/in/sanket-parikh-b27478a8/), [Andrew Simon](https://www.linkedin.com/in/asimondrew/), [Chris Kurian](https://www.linkedin.com/in/chris-kurian-3408b9188/), [Kowit Karunas](https://www.linkedin.com/in/kowitkarunas/)
 
 ### UX Designers
 
-[Kewal Haria](https://www.linkedin.com/in/kewal-haria/)
-[Emily Kochi](https://www.linkedin.com/in/emilykochi/)
+[Kewal Haria](https://www.linkedin.com/in/kewal-haria/) & [Emily Kochi](https://www.linkedin.com/in/emilykochi/)
 
 ### Nonprofit Outreach
 
-[Elaine Chandras](https://www.linkedin.com/in/elaine-chandras-5526a6187/)
-[Geneva Casebolt](https://www.linkedin.com/in/geneva-casebolt-7579ab169/)
-[Bailey Dozier-Shabazz](https://www.linkedin.com/in/doziershabazz/)
+[Elaine Chandras](https://www.linkedin.com/in/elaine-chandras-5526a6187/), [Geneva Casebolt](https://www.linkedin.com/in/geneva-casebolt-7579ab169/), [Bailey Dozier-Shabazz](https://www.linkedin.com/in/doziershabazz/)
 
 ## Platform(s)
 
@@ -68,7 +57,7 @@ GitHub
 
 CrowdPublish.tv was a [Venture Devils](https://entrepreneurship.asu.edu/programs/venture-devils/) startup. The whole team was made up of current ASU students who worked about 15 hours a week on the project.
 
-This was a side project for me while I finished my Graphic Information Technology degree at ASU. My only experience code-wise were in the basic web stack of HTML, CSS, and JavaScript. I originally joined as a UX Designer, but realizing how early stage this project was I decided to focus on guiding the product vision.
+This was a side project for me while I finished my Graphic Information Technology degree at ASU. My only experience code-wise were in the basic web stack of HTML, CSS, and JavaScript. I originally joined as a UX Designer, but the disorganization of the project pushed me into the Product Designer role, and I ended up learning a lot more!
 
 ## Vision
 

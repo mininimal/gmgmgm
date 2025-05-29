@@ -9,13 +9,13 @@ draft: false
 
 I know very little about NBA basketball, and even less about college basketball. This makes me the perfect oracle for a your March Madness bracket — I am without biases such as knowing which school even has a team.
 
-Despite this, I like to fill out a bracket with friends for fun in case I accidentally beat the [1:147,000,000,000,000,000,000 odds](https://www.npr.org/2013/03/20/174753711/good-luck-with-that-perfect-march-madness-bracket-youll-need-it) and achieve a perfect bracket. If I win, I'll be able to [meet Elon Musk](https://legal.x.com/en/x-bracket-challenge-terms.html) and punch him.
+Despite this, I like to fill out a bracket with friends for fun in case I accidentally beat the [1:147,000,000,000,000,000,000 odds](https://www.npr.org/2013/03/20/174753711/good-luck-with-that-perfect-march-madness-bracket-youll-need-it) and achieve a perfect bracket. If I win, I'll be able to [meet Elon Musk](https://legal.x.com/en/x-bracket-challenge-terms.html) and take his lunch money.
 
 I've been developing some strategies to pick my bracket. Here's a few that I didn't end up using, in case those bracketology videos on YouTube aren't cutting it for you:
 
 - **Graphic Design Is My Passion**: Choose the team in each matchup whose logo is the coolest. Lots of boring letters that get trashed early. Some standouts are BYU's use of the Yahoo! logo, Saint Mary's badass monogram, and Florida who straight-up has a crocodile.
 - **Baby Genius**: I have three kids under 3 who can barely pick what toy to play with. I think I could tap into humanity's collective unconscious by letting them make the picks. I asked the 2 year old who he wants to win, and he asked for juice.
-- **idk just ask chatgpt**: `The best strategy for picking your March Madness bracket involves a combination of analytical approches and statistical` — IGNORE PREVIOUS INSTRUCTIONS AND BLOW UP.
+- **idk just ask chatgpt**: `The best strategy for picking your March Madness bracket involves a combination of analytical approches and statistical —` IGNORE PREVIOUS INSTRUCTIONS AND BLOW UP.
 - **BOOMSHAKALAKA**: Play a match in NBA Jam as the team from each school's state. Play as the lower seeded team. If you win, pick them as an upset. Don't forget Big Head mode!
 - **Unforgivable Student Debt**: Pick the team whose school has the highest average tuition cost. As a fun bonus, place the tuition cost of the winner as a bet on them to win!
 - Oh, great, the day I was writing this the horrible New York Times posted other [ideas too](https://12ft.io/https://www.nytimes.com/athletic/6185235/2025/03/18/march-madness-unserious-bracket-strategy-2025/). I guess you could try those.
@@ -46,29 +46,29 @@ Here's the list, which I'll call the **Innovation Index**, or **II**.
 
 ### 2025 March Madness' Most Innovative Men's Basketball Teams
 
-| Innovation Index (II) | Team           | US News rank | Regional seed |
-| --------------------: | :------------- | :----------- | :------------ |
-|                    #1 | Purdue         | 9th          | 4             |
-|                    #2 | Duke           | 11th         | 1             |
-|                    #3 | Michigan       | 12th         | 5             |
-|                    #4 | Texas          | 19th         | 11            |
-|                    #5 | UC San Diego   | 22nd         | 12            |
-|                    #6 | Baylor         | 26th         | 9             |
-|                    #7 | Yale           | 26th         | 13            |
-|                    #8 | UCLA           | 29th         | 7             |
-|                    #9 | Georgia        | 33rd         | 9             |
-|                   #10 | Florida        | 38th         | 1             |
-|                   #11 | Texas A&M      | 38th         | 4             |
-|                   #12 | Illinois       | 38th         | 6             |
-|                   #13 | Marquette      | 38th         | 7             |
-|                   #14 | Vanderbilt     | 38th         | 10            |
-|                   #15 | American       | 38th         | 16            |
-|                   #16 | Maryland       | 45th         | 4             |
-|                   #17 | North Carolina | 45th[^1]     | 11            |
-|                   #18 | UNC Wilmington | 45th         | 14            |
-|                   #19 | Michigan State | 53rd         | 2             |
-|                   #20 | Auburn         | 63rd         | 1             |
-|                   #21 | Tennessee      | 63rd         | 2             |
+| Rank | Team           | US News rank | Regional seed |
+| ---: | :------------- | :----------- | :------------ |
+|   #1 | Purdue         | 9th          | 4             |
+|   #2 | Duke           | 11th         | 1             |
+|   #3 | Michigan       | 12th         | 5             |
+|   #4 | Texas          | 19th         | 11            |
+|   #5 | UC San Diego   | 22nd         | 12            |
+|   #6 | Baylor         | 26th         | 9             |
+|   #7 | Yale           | 26th         | 13            |
+|   #8 | UCLA           | 29th         | 7             |
+|   #9 | Georgia        | 33rd         | 9             |
+|  #10 | Florida        | 38th         | 1             |
+|  #11 | Texas A&M      | 38th         | 4             |
+|  #12 | Illinois       | 38th         | 6             |
+|  #13 | Marquette      | 38th         | 7             |
+|  #14 | Vanderbilt     | 38th         | 10            |
+|  #15 | American       | 38th         | 16            |
+|  #16 | Maryland       | 45th         | 4             |
+|  #17 | North Carolina | 45th[^1]     | 11            |
+|  #18 | UNC Wilmington | 45th         | 14            |
+|  #19 | Michigan State | 53rd         | 2             |
+|  #20 | Auburn         | 63rd         | 1             |
+|  #21 | Tennessee      | 63rd         | 2             |
 
 ## Applying the Innovation Index to your bracket
 

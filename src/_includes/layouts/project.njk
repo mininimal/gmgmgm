@@ -1,4 +1,16 @@
-{% extends 'layouts/base.njk' %}
+---
+layout: layouts/base.njk
+---
+<main class="stack">
+  <article class="stack center">
+    <!-- Inline styles? In 2025???? need it for view-transition-->
+    <h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1>
+    <aside>{{ description }}</aside>
+    {{ content | safe }}
+  </article>
+</main>
+
+{# {% extends 'layouts/base.njk' %}
 
 {% block content %}
 <article class="center">
@@ -6,4 +18,4 @@
   <h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1>
   {{ content | safe }}
 </article>
-{% endblock %}
+{% endblock %} #}
