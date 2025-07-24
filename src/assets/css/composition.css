@@ -29,7 +29,7 @@ https://every-layout.dev/layouts/stack#splitting-the-stack */
 
 /* Box ---------- https://every-layout.dev/layouts/box/ */
 .box {
-  padding: var(--layout-space);
+  padding: var(--space-m);
   /* border: var(--border); */
 }
 

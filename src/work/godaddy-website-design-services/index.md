@@ -1,21 +1,20 @@
 ---
-title: Bringing eCommerce to small businesses
+title: "Stylish sites for businesses, celebrities, and everybody in between"
 workYear: 2021
 company: GoDaddy
-description: "During the worldwide COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. These entrepreneurs relied on WDS (and me!) to create their new digital storefronts."
-role:
-  - Web Design
-  - UX Design
-  - Product Design
-  - Graphic Design
+client: GoDaddy Website Design Services
+description: "During the worldwide COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. These entrepreneurs relied on WDS to create their new digital storefronts."
+tools:
+  - WordPress
+  - WooCommerce
+  - Adobe Illustrator
 thumb: gddy-wds_thumb.png
-featured: false
-draft: false
+draft: true
 ---
 
-GoDaddy's Website Design Services provided a complete website with design, copywriting, development, and ongoing troubleshooting — all in under a month. I was responsible for creating the back-end setup using WordPress and WooCommerce and designing the front-end with a small suite of approved plugins. We designed or sourced free assets to build a simple brand guide for clients without.
+## Simplifying handoff for more confident clients
 
-## Confident clients are made with simple handoff
+GoDaddy's Website Design Services provided a complete website — design, copywriting, development, and ongoing troubleshooting — in under a month. I was responsible for back-end setup using WordPress + WooCommerce and designing the front-end with a small suite of plugins. For clients without a brand identity, we also created simple brand guides for the website they could apply to other company artifacts.
 
 Our team was made up of talented designers who knew their way around HTML/CSS/JS, but our clients did not. Our small business customers felt a personal attachment to their brand, so we were dealing with opinionated but inexperienced web users.
 
@@ -33,7 +32,7 @@ As an added money-saving bonus, our familiarity with these plugins allowed our s
 
 At some point, our executive suite realized the big bucks were in selling subscriptions instead of websites. We pivoted to selling our website builds with the option to extend our support timeframe from a year to... as long as the client paid! Of course, we still took care of customers off of our subscription, but fixes incurred a one-time payment per instance. I helped develop the customer experience for the onboarding tool in my next role at GoDaddy.
 
-## Stylish sites for businesses, celebrities, and everybody in between
+## Samples
 
 Here's a few of the client projects I worked on. Sites could range from single-pagers to platform-like functionality. No live links since I can't imagine at this point the sites look anything like they used to.
 

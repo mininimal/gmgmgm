@@ -121,6 +121,14 @@ h6 {
   font-weight: var(--font-weight);
 }
 
+h1 {
+  font-size: var(--size-step-3);
+}
+
+h2 {
+  font-size: var(--size-step-2);
+}
+
 /* https://piccalil.li/links/chilled-out-text-underlines */
 a {
   color: var(--link-color);

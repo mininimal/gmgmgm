@@ -87,22 +87,22 @@ article {
   font-size: var(--size-step-0);
 }
 
-article h1 {
-  color: var(--color-bright);
-  font-size: var(--size-step-2);
-}
-
-/* aside {
-  padding-block-end: var(--layout-space);
-} */
-
-article h2 {
-  margin-block-start: calc(2 * var(--layout-space));
+aside {
   font-size: var(--size-step-1);
 }
 
-article p {
-  margin-block-start: var(--space-s)
+article h1 {
+  color: var(--color-bright);
+}
+
+article h2 {
+  color: var(--color-bright);
+}
+
+article p,
+article ul,
+article ol {
+  margin-block-start: .5lh;
 }
 
 
@@ -115,7 +115,7 @@ article p {
 }
 
 .footnotes {
-  font-size: 16px;
+  font-size: var(--size-step--1);
 }
 
 .footnotes-list {
