@@ -81,15 +81,16 @@ pre>code {
 
 /* -------------------- POSTS ------------------------ */
 article {
-  padding-block-start: 20vh;
+  /* padding-block-start: 20vh; */
   padding-block-end: var(--space-3xl);
-  max-width: var(--layout-measure);
+  max-inline-size: var(--layout-measure);
   font-size: var(--size-step-0);
+  overflow-y: scroll;
 }
 
-aside {
+/* aside {
   font-size: var(--size-step-1);
-}
+} */
 
 article h1 {
   color: var(--color-bright);
@@ -124,7 +125,7 @@ article ol {
 }
 
 .footnote-backref {
-  margin-left: 4px;
+  margin-inline-start: 4px;
 }
 
 /* TODO: Actually style the footnotes */
