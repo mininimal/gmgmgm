@@ -117,17 +117,18 @@ h3,
 h4,
 h5,
 h6 {
+  font-size: var(--font-size);
   font-family: var(--font-family);
   font-weight: var(--font-weight);
 }
 
-h1 {
+/* h1 {
   font-size: var(--size-step-3);
 }
 
 h2 {
   font-size: var(--size-step-2);
-}
+} */
 
 /* https://piccalil.li/links/chilled-out-text-underlines */
 a {

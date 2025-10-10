@@ -19,8 +19,10 @@
   "homepage": "https://github.com/mininimal/gmgmgm#readme",
   "description": "",
   "dependencies": {
+    "eleventy-plugin-toc": "^1.1.5",
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-link-attributes": "^4.0.1"
   },

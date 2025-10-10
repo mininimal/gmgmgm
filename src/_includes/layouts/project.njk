@@ -3,16 +3,31 @@ layout: layouts/base.njk
 ---
 
 
-<div class="titleRow"><h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1></div>
+{# <div class="titleRow"><h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1></div> #}
 <main class="with-sidebar">
-  <aside class="stack">
-    <span>Company: {{ workYear }}</span>
-    <span>Client: {{ client }}</span>
-    <span>Year: {{ workYear }}</span>
-    <span>Tools: {{ tools }}</span>
+  <aside class="box stack">
+    {# Project metadata #}
+    <dl>
+      <dt>Year</dt>
+      <dd><time datetime="{{ workYear }}">{{ workYear }}</time></dd>
+      <dt>Company</dt>
+      <dd>{{ company }}</dd>
+      {% if team %}
+      <dt>Team</dt>
+      <dd>
+        {{ team | join(', ') }}
+      </dd>
+      {% endif %}
+    </dl>
+    {# Project table of contents #}
+    {{ content | toc | safe }}
   </aside>
   <article class="stack">
-    <aside>{{ description }}</aside>
-    {{ content | safe }}
+    <h1 style="view-transition-name: post-{{ title | slugify }};">{{ title }}</h1>
+    <p class="lead">{{ description }}</p>
+    <div class="article-content">
+      {{ content | safe }}
+    </div>
+    <div>⸎</div>
   </article>
 </main>

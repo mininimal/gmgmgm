@@ -4,9 +4,10 @@ workYear: 2025
 company: Legends
 client: Activision Blizzard
 description: "Activision Blizzard is the conglomerate behind some of the biggest brands in gaming, including Xbox, World of Warcraft, and Call of Duty. I was the architect of a token-based design system which powered fluid, branded Shopify experiences across Activision Blizzard’s physical ecommerce network"
-tools:
-  - Figma
-  - Shopify
+team:
+  - "Jeffrey Ren (Dev)"
+  - "Nina Armella (Design)"
+  - "Courtney Gould (Creative)"
 thumb:
 draft: true
 ---
@@ -18,8 +19,6 @@ Originally, this project was scoped to sunset a few existing stores while launch
 Activision Blizzard’s brands are surprising extensive, and many included multiple sub-brands or expansions (like Overwatch and Warcraft under Blizzard, or Gears of War and Halo under Xbox). These all needed distinct visual treatments, and their storefronts needed to support rapid thematic changes during game launches, merch drops, or expansions. At the same time, I wanted to avoid forcing our merchandise teams to constantly have to relearn management of each site.
 
 Every storefront also had to launch in three variants: US, UK, and EU. Each region had different requirements around pricing, fulfillment, and compliance, and the platform had to account for that without creating parallel design or codebases.
-
----
 
 ## A Tokenized Component System
 
@@ -35,8 +34,6 @@ This system enabled the team to launch storefronts quickly, adapt to future IPs 
 [Theme modes switching between Overwatch, Hearthstone, and Tony Hawk](#)
 [Diablo vs. Gears of War token sets applied to same layout](#)
 
----
-
 ## The Process: Designing for Complexity Without Chaos
 
 We began by focusing on the Blizzard Gear Store, since it was the most complex storefront with the widest range of sub-brands. I worked closely with our design manager, visual designer, and frontend developers to define the base architecture in Figma. Every component was designed with flexibility in mind but constrained enough to avoid infinite variance.
@@ -51,15 +48,11 @@ We planned the rollout so that once the first store launched, future ones would 
 [Component library overview with applied tokens](#)
 [Annotated PDP layout shared across stores](#)
 
----
-
 ## The Outcome: One System, Many Expressions
 
 The system allowed us to meet Activision Blizzard’s goals for rapid store launches and brand differentiation. Visual identity could flex while UX remained consistent. New campaigns could be created without bloating the codebase or duplicating design work. Regional storefronts could launch in parallel with minimal overhead.
 
 Most importantly, this wasn’t a one-off solution. We built a system that could accommodate future IPs, new merchandising campaigns, and entire expansions—without resetting the design process every time.
-
----
 
 ## What I Learned
 

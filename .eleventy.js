@@ -1,9 +1,24 @@
-const mila = require("markdown-it-link-attributes");
 const { DateTime } = require("luxon");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const pluginTOC = require("eleventy-plugin-toc");
+const markdownIt = require("markdown-it");
 const markdownItFootnote = require("markdown-it-footnote");
+const markdownItAnchor = require("markdown-it-anchor");
+const mila = require("markdown-it-link-attributes");
 
 module.exports = function (eleventyConfig) {
+  // Add anchors to headings in posts
+  eleventyConfig.setLibrary("md", markdownIt().use(markdownItAnchor));
+
+  // Table of contents on posts
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ["h2", "h3"],
+    wrapper: "nav",
+    wrapperClass: "toc",
+    ul: true,
+    flat: false,
+  });
+
   // Post drafts
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
     if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {

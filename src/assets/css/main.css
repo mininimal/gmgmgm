@@ -81,8 +81,8 @@ pre>code {
 
 /* -------------------- POSTS ------------------------ */
 article {
-  /* padding-block-start: 20vh; */
-  padding-block-end: var(--space-3xl);
+  /* padding-block-start: 10lh; */
+  /* padding-block-end: var(--space-3xl); */
   max-inline-size: var(--layout-measure);
   font-size: var(--size-step-0);
   overflow-y: scroll;
@@ -92,14 +92,30 @@ article {
   font-size: var(--size-step-1);
 } */
 
+
+
+aside dl {
+  display: grid;
+  grid-gap: 4px 16px;
+  grid-template-columns: max-content;
+}
+
+aside dd {
+  margin: 0;
+  grid-column-start: 2;
+}
+
 article h1 {
   color: var(--color-bright);
 }
+
+
 
 article h2 {
   color: var(--color-bright);
 }
 
+/* https://webkit.org/blog/16831/line-height-units/ */
 article p,
 article ul,
 article ol {
