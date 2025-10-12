@@ -1,6 +1,42 @@
-/* 
-https://www.joshwcomeau.com/css/custom-css-reset/
-https://piccalil.li/blog/a-more-modern-css-reset/
+/* ------------------------------------------------------------------------
+reset.gmgmgm.css
+
+Goals:
+- Fix common CSS headaches.
+- Activate future features.
+- Respect user choices when possible.
+
+Steps:
+1. Decide between removing all default margin OR the unexpected bottom margin of some elements.
+2. Consider whether to use `font-smoothing` settings (probably not).
+3. Consider using `optimizeLegibility` if you site is light on text, or apply it more specifically.
+4. If you want a centered, fixed-width site, uncomment the `main` selector.
+5. If your font has large ascenders or descenders, comment out or edit the heading + `button, input, label` line-height.
+6. If you want links to be the same color as text, uncomment the `currentColor` rule.
+7. If you have a fixed header, comment out or adjust the `:target` selector.
+8. If you're using a JS framework, uncomment and adjust the `isolation: isolate` rule.
+
+Sources:
+- Josh W Comeau: https://www.joshwcomeau.com/css/custom-css-reset/
+- Andy Bell: https://piccalil.li/blog/a-more-modern-css-reset/
+- Kevin Powell: https://thecascade.dev/article/least-amount-of-css/
+- Adam Argyle: https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
+- Kilian Valkhof: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+- Dmitry Fadeyev: https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+- Chris Coyier: https://css-tricks.com/almanac/properties/t/text-rendering/
+
+------------------------------------------------------------------------*/
+
+* {
+  margin: 0;
+}
+
+/* Comeau resets all margins, while Bell resets just the bottom margin on specific elements. */
+/*
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
 */
 
 *,
@@ -9,57 +45,72 @@ https://piccalil.li/blog/a-more-modern-css-reset/
   box-sizing: border-box;
 }
 
-
-/* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 html {
+  color-scheme: light dark; /* Sets starting color mode based on user's preference. */
+
+  /* Mobile Safari increases the default font-size when you switch a website from portrait to landscape. */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  caret-color: var(--color-theme);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords; /* Allows transitions between number values and keywords (auto). */
+  }
 
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd,
-ul {
-  margin: 0;
-}
-
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+  @view-transition {
+    navigation: auto; /* Allows default crossfade page transitions to new page when links are clicked. */
+  }
 }
 
 body {
-  min-block-size: 100vh;
+  font-family: system-ui; /* Use user's system default font instead of browser default. */
+  font-size: 1.25rem; /* Usually results in 20px body font, nice for modern sizing. */
   line-height: 1.5;
 
-  font-synthesis: style;
+  font-synthesis: style; /* Prevent synthetic bold & italic when unavailable. */
+
+  /* Consider uncommenting for light mode sites: https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  */
+
+  /* Consider uncommenting for small amounts of text that need better styling: https://css-tricks.com/almanac/properties/t/text-rendering/
   text-rendering: optimizeLegibility;
+  */
+
+  min-block-size: 100vh; /* Prevents pages shorter than the viewport height. */ /*TODO: Check how this works with header/footer*/
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* Without this, media elements are inline by default. */
+  max-inline-size: 100%; /* Prevents media from overflowing container due to being "replaced elements." */
+}
+
+/* TODO: Ensure this isn't already an Every Layout class */
+/* Creates centered, line-width limited layout.
+main {
+  margin-inline: auto;
+  max-inline-size: min(70ch, 100% - 4rem);
+}
+ */
+
+/* Allows form controls to inherit body font styling. */
 input,
-label {
-  line-height: 1.1;
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-block-size: 10em; /* Sensible minimum height for textareas unless specified in HTML. */
 }
 
 p,
@@ -69,49 +120,47 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: break-word; /* Allows lines to break mid-word to prevent overflowing. */
 }
 
 p {
-  text-wrap: pretty;
+  text-wrap: pretty; /* Ensures body text's last line is at least two words, plus some free visual balance tweaks. */
 }
 
-/* Balance text wrapping on headings */
 h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+  text-wrap: balance; /* Tries to balance length of lines of heading text. */
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+h1,
+h2,
+h3,
+h4,
 button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
+input,
+label {
+  line-height: 1.1; /* Avoids height pain on elements that typically have one line of text. Don't use if font has large ascenders & descenders. */
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-block-size: 10em
+ul[role="list"],
+ol[role="list"] {
+  list-style: none; /* Very specific usability workaround for Safari: https://piccalil.li/blog/a-more-modern-css-reset/ */
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
+a:not([class]) {
+  /* color: currentColor; */ /* Allows links to inherit body color. Uncomment if you identify links with techniques besides color. */
+  text-decoration-skip-ink: auto; /* text-decoration (like underlines) skips ascenders & descenders. */
+}
+
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 5ex; /* Adds space above the target of an anchor link. Adjust if you have a fixed header. */
 }
 
-
-
-/* https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#view-transitions-for-page-navigation */
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    interpolate-size: allow-keywords;
-  }
-
-  @view-transition {
-    navigation: auto;
-  }
+/* Only needed if you use a JS framework like React; change selector based on framework. Allows creating a new stacking context without a z-index.
+#root,
+#__next {
+  isolation: isolate;
 }
+*/

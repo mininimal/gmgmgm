@@ -25,11 +25,9 @@
   --space-3xl: clamp(6rem, 5.2683rem + 3.6585vi, 7.875rem);
 
   /* Color */
-
 }
 
-
-
+/* caret-color: var(--color-theme); */ /*TODO: Find somewhere to put this rule. */
 
 /* ---------- TOKENS ---------- */
 :root {
@@ -53,7 +51,6 @@
   --line-height: 1.6;
   --text-color: var(--color-light);
   --link-color: var(--color-bright);
-
 
   /* Other */
   --border: 1px solid var(--color-medium);
@@ -102,7 +99,6 @@ img {
   /* FIXME: 11ty image plugin needs this for some reason to avoid vertically stretching images */
 }
 
-
 /* ---------- TYPE ----------*/
 body {
   font-size: var(--font-size);
@@ -139,7 +135,6 @@ a {
 a:not(:is(:hover, :focus)) {
   text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
 }
-
 
 /* ---------- COLOR ----------*/
 html {
