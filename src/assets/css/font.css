@@ -1,8 +1,45 @@
-/* BunnyCDN, Google Fonts mirror */
-@import url(https://fonts.bunny.net/css?family=dm-mono:400|public-sans:500,500i,700);
+/* Load local fonts */
+@font-face {
+  font-family: "System85";
+  src: url("/assets/fonts/system85/System85Pro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
 
-/* https://modernfontstacks.com/ */
+@font-face {
+  font-family: "System85";
+  src: url("/assets/fonts/system85/System85Pro-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "System85";
+  src: url("/assets/fonts/system85/System85Pro-MediumItalic.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "System85";
+  src: url("/assets/fonts/system85/System85Pro-BoldItalic.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "System85 Mono";
+  src: url("/assets/fonts/system85/System85MonoPro-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Font variables with fallbacks from modernfontstacks.com */
 :root {
-  --font-family: 'Public Sans', system-ui, sans-serif;
-  --font-family-mono: 'DM Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-family: "System85", system-ui, sans-serif;
+  --font-family-mono: "System85 Mono", ui-monospace, "Cascadia Code",
+    "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }

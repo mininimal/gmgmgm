@@ -31,7 +31,7 @@ Sources:
   margin: 0;
 }
 
-/* Comeau resets all margins, while Bell resets just the bottom margin on specific elements. */
+/* Alternative to `margin: 0`, resets just the bottom margin on specific elements. */
 /*
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
