@@ -1,22 +1,21 @@
-@import url('font.css') layer(font);
-@import url('reset.css') layer(reset);
-@import url('composition.css') layer(composition);
-@import url('theme.css') layer(theme);
+@import url("font.css") layer(font);
+@import url("reset.css") layer(reset);
+@import url("composition.css") layer(composition);
+@import url("theme.css") layer(theme);
 
-@layer font, reset, composition, reset;
+@layer font, reset, composition, theme;
 
 /* ---------- HEADER ---------- */
 header {
   border-block-end: var(--border);
   justify-content: space-between;
   text-transform: lowercase;
-  padding: var(--layout-space);
+  padding: var(--layout-padding);
 }
 
 header a {
   text-decoration: none;
 }
-
 
 #logo.home a {
   color: var(--color-theme);
@@ -51,33 +50,30 @@ nav li .current {
   /* Default cursor for current page link */
 }
 
-
 /* ---------- FOOTER ---------- */
 footer {
   border-block-start: var(--border);
   justify-content: space-between;
-  padding: var(--layout-space);
+  padding: var(--layout-padding);
   font-size: var(--size-step--1);
 }
 
 code,
-p>code,
-pre>code {
+p > code,
+pre > code {
   padding-inline: 1ex;
   font-size: calc(var(--font-size) - 4px);
   border-radius: 4px;
   border: var(--border);
 }
 
-pre>code {
+pre > code {
   display: block;
   /* https://kilianvalkhof.com/2021/css-html/you-want-overflow-auto-not-overflow-scroll/ */
   overflow-x: auto;
 }
 
 /*TODO: MAKE FOOTER AND HEADER AND TITLE ROW NOT A BOX!!!!!!!!!*/
-
-
 
 /* -------------------- POSTS ------------------------ */
 article {
@@ -91,8 +87,6 @@ article {
 /* aside {
   font-size: var(--size-step-1);
 } */
-
-
 
 aside dl {
   display: grid;
@@ -109,8 +103,6 @@ article h1 {
   color: var(--color-bright);
 }
 
-
-
 article h2 {
   color: var(--color-bright);
 }
@@ -119,9 +111,8 @@ article h2 {
 article p,
 article ul,
 article ol {
-  margin-block-start: .5lh;
+  margin-block-start: 0.5lh;
 }
-
 
 .footnote-ref {
   font-size: var(--size-step--2);
@@ -148,7 +139,7 @@ article ol {
 /* article {
   display: grid;
   grid-template-columns: auto var(--layout-measure);
-  gap: var(--layout-space);
+  gap: var(--layout-padding);
 }
 
 article h1,
@@ -164,15 +155,12 @@ article>:not(h1, h2) {
 
 */
 
-
-
 /* ---------- ARCHIVE LAYOUT ---------- */
 /* EDGE TO EDGE LAYOUT*/
 .archive {
   margin-block-start: 0;
   margin-inline: 0;
 }
-
 
 .titleRow {
   display: flex;
@@ -182,7 +170,6 @@ article>:not(h1, h2) {
 details {
   transition: var(--transition);
 }
-
 
 .archiveItem {
   max-inline-size: none;
@@ -206,12 +193,12 @@ details {
   margin-block: 0;
 }
 
-details>.reel {
-  padding-inline: var(--layout-space);
-  padding-block-end: var(--layout-space);
+details > .reel {
+  padding-inline: var(--layout-padding);
+  padding-block-end: var(--layout-padding);
 }
 
-.archiveItem:active>* {
+.archiveItem:active > * {
   opacity: 0.5;
 }
 
@@ -233,10 +220,6 @@ details>.reel {
 .archiveList:hover details[open] h2 {
   color: var(--link-color) !important;
 }
-
-
-
-
 
 /* https://css-tricks.com/using-styling-the-details-element/
 https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#transition-animation-for-details */
@@ -275,7 +258,6 @@ https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#t
     }
   }
 }
-
 
 /* details {
   inline-size: 50ch;

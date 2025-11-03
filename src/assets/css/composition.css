@@ -1,20 +1,29 @@
-/* From Every Layout (https://every-layout.dev) */
-/* https://cube.fyi/composition.html */
+/*
+composition.css
 
-/* Stack ---------- https://every-layout.dev/layouts/stack/ */
+Goals:
+- Provide generic, high-level, flexible layouts as in Cube CSS (cube.fyi).
+- Provide utility classes for every technique in Every Layout (every-layout.dev).
+- Keep CSS as DRY as possible.
+
+Directions:
+1. Apply classes as needed, preferably in layout templates.
+*/
+
+/* ---------- Stack ---------- */
 .stack {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.stack>* {
+.stack > * {
   margin-block: 0;
 }
 
 /* https://piccalil.li/blog/my-favourite-3-lines-of-css/ */
-.stack>*+* {
-  margin-block-start: var(--layout-space, 1em);
+.stack > * + * {
+  margin-block-start: var(--layout-padding, 1em);
 }
 
 .stack:only-child {
@@ -23,11 +32,11 @@
 
 /* Pushes footer to bottom of window WITH the stack margin.
 https://every-layout.dev/layouts/stack#splitting-the-stack */
-.stack> :nth-child(2) {
+.stack > :nth-child(2) {
   margin-block-end: auto;
 }
 
-/* Box ---------- https://every-layout.dev/layouts/box/ */
+/* ---------- Box ---------- */
 .box {
   padding: var(--space-m);
   /* border: var(--border); */
@@ -42,79 +51,81 @@ https://every-layout.dev/layouts/stack#splitting-the-stack */
   background-color: var(--color-light);
 }
 
-/* Center ---------- https://every-layout.dev/layouts/center/ */
+/* ---------- Center ---------- */
 .center {
   box-sizing: content-box;
   margin-inline: auto;
   /* max-inline-size: var(--layout-measure); */
 }
 
-/* Cluster ---------- https://every-layout.dev/layouts/cluster/ */
+/* ---------- Cluster ---------- */
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--layout-space);
+  gap: var(--layout-padding);
   justify-content: flex-start;
   align-items: center;
 }
 
-/* Sidebar ---------- https://every-layout.dev/layouts/sidebar/ */
+/* ---------- Sidebar ---------- */
 .with-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--layout-space);
+  gap: var(--layout-padding);
 }
 
-.with-sidebar> :first-child {
+.with-sidebar > :first-child {
   flex-basis: var(--layout-measure);
   flex-grow: 1;
 }
 
-.with-sidebar> :last-child {
+.with-sidebar > :last-child {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 50%;
 }
 
-/* Switcher ---------- https://every-layout.dev/layouts/switcher/ */
+/* ---------- Switcher ---------- */
 
-/* Cover ---------- https://every-layout.dev/layouts/cover/ */
+/* ---------- Cover ---------- */
 .cover {
   display: flex;
   flex-direction: column;
   min-block-size: 80vh;
 }
 
-.cover>* {
+.cover > * {
   margin-block: 1rem;
 }
 
-.cover> :first-child:not(section) {
+.cover > :first-child:not(section) {
   margin-block-start: 0;
 }
 
-.cover> :last-child:not(section) {
+.cover > :last-child:not(section) {
   margin-block-end: 0;
 }
 
-.cover>section {
+.cover > section {
   margin-block: auto;
 }
 
-
-/* Grid ---------- https://every-layout.dev/layouts/grid/ */
+/* ---------- Grid ---------- */
 .grid {
   display: grid;
-  grid-gap: var(--layout-space);
+  grid-gap: var(--layout-padding);
 }
 
 @supports (inline-size: min(var(--layout-measure), 100%)) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--layout-measure), 100%), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--layout-measure), 100%), 1fr)
+    );
   }
 }
 
-/* Frame ---------- https://every-layout.dev/layouts/frame/ */
+/* ---------- Frame ---------- */
 .frame {
   --n: 16;
   --d: 9;
@@ -125,14 +136,14 @@ https://every-layout.dev/layouts/stack#splitting-the-stack */
   align-items: center;
 }
 
-.frame>img,
-.frame>video {
+.frame > img,
+.frame > video {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
 }
 
-/* Reel ---------- https://every-layout.dev/layouts/reel/ */
+/* ---------- Reel ---------- */
 .reel {
   display: flex;
   /* block-size: 50vh; */
@@ -151,21 +162,27 @@ https://every-layout.dev/layouts/stack#splitting-the-stack */
 
 .reel::-webkit-scrollbar-thumb {
   background-color: var(--color-light);
-  background-image: linear-gradient(var(--color-dark) 0, var(--color-dark) 0.25rem, var(--color-theme) 0.25rem, var(--color-theme) 0.75rem, var(--color-dark) 0.75rem);
+  background-image: linear-gradient(
+    var(--color-dark) 0,
+    var(--color-dark) 0.25rem,
+    var(--color-theme) 0.25rem,
+    var(--color-theme) 0.75rem,
+    var(--color-dark) 0.75rem
+  );
 }
 
-.reel>* {
+.reel > * {
   flex: 0 0 auto;
 }
 
-.reel>img {
+.reel > img {
   block-size: 100%;
   flex-basis: auto;
   inline-size: auto;
 }
 
-.reel>*+* {
-  margin-inline-start: var(--layout-space);
+.reel > * + * {
+  margin-inline-start: var(--layout-padding);
 }
 
 /* to implement drag to scroll
@@ -178,10 +195,9 @@ https://joebailey.xyz/blog/dragging-to-scroll-with-javascript/ */
   cursor: grabbing;
 }
 
+/* ---------- Impostor ----------  */
 
-/* Impostor ---------- https://every-layout.dev/layouts/imposter/ */
-
-/* Icon ---------- https://every-layout.dev/layouts/icon/ */
+/* ---------- Icon ---------- */
 .icon {
   block-size: 0.75em;
   block-size: 1cap;

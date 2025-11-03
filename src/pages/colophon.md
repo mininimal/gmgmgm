@@ -12,7 +12,7 @@ layout: layouts/page.njk
 ## Style
 
 1. The Rotterdam template for [Read.cv](https://sites.read.cv) (rip) by [Andy Chung](https://andychung.me/).
-1. Font is Atkinson Hyperlegible Next by the [Braille Institute](https://www.brailleinstitute.org/freefont/).
+1. This site uses [System85](https://www.myfonts.com/collections/system85-font-colophon-foundry/) by [Ben Mitchell](https://typo.social/@ohbendy) at Colophon Foundry.
 
 ## Helpful Posts
 

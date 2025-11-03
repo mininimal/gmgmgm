@@ -1,3 +1,46 @@
+/* ---------- Color ---------- */
+/* Dark mode */
+:root {
+  --color-neutral-0: oklch(24.29% 0.0114 293.18);
+  --color-neutral-25: oklch(40% 0.02 293.18);
+  --color-neutral-75: oklch(60% 0.02 293.18);
+  --color-neutral-100: oklch(95% 0.0114 293.18);
+  --color-accent-0: oklch(83.28% 0.1711 81.97);
+  --color-accent-100: oklch(0.7161 0.146875 82);
+}
+
+/* Light mode */ /* TODO: Make a better neutral palette for light mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-neutral-0: oklch(95% 0.0114 293.18);
+    --color-neutral-25: oklch(60% 0.02 293.18);
+    --color-neutral-57500: oklch(40% 0.02 293.18);
+    --color-neutral-100: oklch(24.29% 0.0114 293.18);
+    --color-accent-0: oklch(0.5149 0.2796875 296);
+    --color-accent-100: oklch(0.6624 0.2015625 296);
+  }
+}
+
+/* ---------- Layout ---------- */
+:root {
+  --layout-measure: 60ch; /* Sets global max character length per line of text. */
+  --layout-padding: clamp(16px, 3svmin, 32px);
+}
+
+/* ---------- Type ---------- */
+:root {
+  font-size: calc(
+    1rem + 0.5vw
+  ); /* Default font size that scales with viewport width. */
+}
+
+/* ---------- Animation ---------- */
+:root {
+  --transition-speed: 0.2s;
+  --transition-function: cubic-bezier(0.37, 1, 0.74, 1);
+  --transition: all var(--transition-speed) var(--transition-function); /* Prefer to use specific property. */
+}
+
 /* ---------- PRIMITIVES ---------- */
 
 :root {
@@ -23,8 +66,6 @@
   --space-xl: clamp(3rem, 2.6341rem + 1.8293vi, 3.9375rem);
   --space-2xl: clamp(4rem, 3.5122rem + 2.439vi, 5.25rem);
   --space-3xl: clamp(6rem, 5.2683rem + 3.6585vi, 7.875rem);
-
-  /* Color */
 }
 
 /* caret-color: var(--color-theme); */ /*TODO: Find somewhere to put this rule. */
@@ -40,11 +81,11 @@
   https://imperavi.com/books/ui-typography/basis/line-length */
 
   /* Color */
-  --color-dark: oklch(24.29% 0.0114 293.18);
-  --color-medium: oklch(40% 0.02 293.18);
-  --color-light: oklch(60% 0.02 293.18);
-  --color-bright: oklch(95% 0.0114 293.18);
-  --color-theme: oklch(83.28% 0.1711 81.97);
+  --color-dark: var(--color-neutral-0);
+  --color-medium: var(--color-neutral-25);
+  --color-light: var(--color-neutral-72);
+  --color-bright: var(--color-neutral-100);
+  --color-theme: var(--color-accent-0);
 
   /* Text */
   --font-size: clamp(16px, 2svmin, 24px);

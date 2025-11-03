@@ -1,12 +1,13 @@
 /* ------------------------------------------------------------------------
-reset.gmgmgm.css
+reset.css
 
 Goals:
 - Fix common CSS headaches.
-- Activate future features.
+- Activate future native CSS features.
 - Respect user choices when possible.
+- Use logical properties.
 
-Steps:
+Directions:
 1. Decide between removing all default margin OR the unexpected bottom margin of some elements.
 2. Consider whether to use `font-smoothing` settings (probably not).
 3. Consider using `optimizeLegibility` if you site is light on text, or apply it more specifically.
@@ -17,12 +18,12 @@ Steps:
 8. If you're using a JS framework, uncomment and adjust the `isolation: isolate` rule.
 
 Sources:
+- David Bushell: https://dbushell.com/2025/09/12/css-reset/
 - Josh W Comeau: https://www.joshwcomeau.com/css/custom-css-reset/
 - Andy Bell: https://piccalil.li/blog/a-more-modern-css-reset/
 - Kevin Powell: https://thecascade.dev/article/least-amount-of-css/
 - Adam Argyle: https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
 - Kilian Valkhof: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
-- Dmitry Fadeyev: https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
 - Chris Coyier: https://css-tricks.com/almanac/properties/t/text-rendering/
 
 ------------------------------------------------------------------------*/
@@ -48,19 +49,47 @@ figure, blockquote, dl, dd {
 html {
   color-scheme: light dark; /* Sets starting color mode based on user's preference. */
 
+  font-size: clamp(1rem, 1rem + 0.5dvw, 2rem);
+  line-height: 1.4;
+  font-family: system-ui, sans-serif;
+  hanging-punctuation: first allow-end last;
+  word-break: break-word;
+
   /* Mobile Safari increases the default font-size when you switch a website from portrait to landscape. */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords; /* Allows transitions between number values and keywords (auto). */
+    & :focus-within {
+      scroll-behavior: smooth;
+    }
   }
 
   @view-transition {
     navigation: auto; /* Allows default crossfade page transitions to new page when links are clicked. */
+  }
+
+  /* Gives view-transitions the same base duration, fill mode and ease. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--default-ease);
+  }
+
+  :root {
+    transition: background-color var(--transition-speed)
+        var(--transition-function),
+      color var(--transition-speed) var(--transition-function); /* Smooth transition for toggling light and dark mode */
   }
 }
 
@@ -73,8 +102,8 @@ body {
 
   /* Consider uncommenting for light mode sites: https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   */
+  -webkit-font-smoothing: antialiased;
 
   /* Consider uncommenting for small amounts of text that need better styling: https://css-tricks.com/almanac/properties/t/text-rendering/
   text-rendering: optimizeLegibility;
@@ -87,7 +116,8 @@ img,
 picture,
 video,
 canvas,
-svg {
+svg,
+label {
   display: block; /* Without this, media elements are inline by default. */
   max-inline-size: 100%; /* Prevents media from overflowing container due to being "replaced elements." */
 }
@@ -130,7 +160,9 @@ p {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 /* FUTURE :heading */ {
   text-wrap: balance; /* Tries to balance length of lines of heading text. */
 }
 
@@ -144,11 +176,6 @@ label {
   line-height: 1.1; /* Avoids height pain on elements that typically have one line of text. Don't use if font has large ascenders & descenders. */
 }
 
-ul[role="list"],
-ol[role="list"] {
-  list-style: none; /* Very specific usability workaround for Safari: https://piccalil.li/blog/a-more-modern-css-reset/ */
-}
-
 a:not([class]) {
   /* color: currentColor; */ /* Allows links to inherit body color. Uncomment if you identify links with techniques besides color. */
   text-decoration-skip-ink: auto; /* text-decoration (like underlines) skips ascenders & descenders. */
@@ -158,9 +185,76 @@ a:not([class]) {
   scroll-margin-block: 5ex; /* Adds space above the target of an anchor link. Adjust if you have a fixed header. */
 }
 
-/* Only needed if you use a JS framework like React; change selector based on framework. Allows creating a new stacking context without a z-index.
-#root,
-#__next {
-  isolation: isolate;
+ul[role="list"],
+ol[role="list"] {
+  list-style: none; /* Very specific usability workaround for Safari: https://piccalil.li/blog/a-more-modern-css-reset/ */
 }
-*/
+
+/* TODO: Do I need this `inside` if I have the above? https://piccalil.li/links/the-coyier-css-starter/ */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+  ul,
+  ol {
+    padding-inline-start: 2ch;
+  }
+}
+
+input:not(
+    :where(
+        [type="submit"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="button"],
+        [type="reset"]
+      )
+  ) {
+  inline-size: 100%;
+}
+
+button,
+input:where([type="submit"], [type="reset"], [type="button"]) {
+  background: CanvasText;
+  color: Canvas;
+  border: 1px solid transparent;
+}
+
+textarea {
+  field-sizing: content;
+  min-block-size: 8lh;
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+table td {
+  font-size: 0.9em;
+}
+
+table td,
+table th {
+  word-break: normal;
+  border: 1px solid gray;
+  padding: 0.5rem;
+}
+
+[role="region"][aria-labelledby][tabindex] {
+  overflow: auto;
+}
+
+caption {
+  font-size: 0.9em;
+}
+
+input:is([type="checkbox"], [type="radio"]),
+select,
+label,
+button {
+  cursor: pointer; /* show the mickey mouse finger on interactive controls */
+}
