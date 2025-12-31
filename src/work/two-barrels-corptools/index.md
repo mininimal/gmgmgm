@@ -4,6 +4,8 @@ workYear: 2024
 company: "Two Barrels"
 client: "Registered Agents Inc."
 description: "Two Barrels operated dozens of internal apps without design or interaction standards. I built the foundation of CorpTools V3, a custom design system that unified patterns across tools, saving dev time and launching new products faster."
+role:
+  - "Design Systems"
 tools:
   - Figma
   - Storybook

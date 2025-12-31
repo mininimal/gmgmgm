@@ -9,29 +9,34 @@ layout: layouts/base.njk
     <span> {{ collections.work.length }} projects</span>
   </section>
 
-  <section class="archiveList">
+  <section class="archive-list">
 
-    {# Sort in reverse order #}
     {% for project in collections.work %}
 
-      {% set id = loop.index %}
       <hr>
-      <details name="projectsAccordion">
+
+      <details name="archive-item">
         <!-- Accordion header -->
-        <summary id="summary-{{ id }}" aria-controls="content-{{ id }}" class="cluster box archiveItem">
-          <span>{{ project.data.workYear }}</span>
+        <summary class="cluster box">
+          <time datetime="{{ project.data.workYear }}">{{ project.data.workYear }}</time>
           <h2>{{ project.data.title }}</h2>
           <span>{{ project.data.role[0] }}</span>
         </summary>
+
         <!-- Accordion content -->
-        <div id="content-{{ id }}" role="region" aria-labelledby="summary-{{ id }}" class="reel">
+        <div class="cluster">
+
           <aside class="stack">
             <p>{{ project.data.description }}</p>
             <a href="{{ project.url }}">Read full case study</a>
           </aside>
+
           {% if project.data.thumb %}
-            <img src="{{ project.url }}images/{{ project.data.thumb }}" alt="Screenshot of {{ project.data.title }}">
+            <figure>
+              <img src="{{ project.url }}images/{{ project.data.thumb }}" alt="Screenshot of {{ project.data.title }}">
+            </figure>
           {% endif %}
+
         </div>
       </details>
 
@@ -40,4 +45,4 @@ layout: layouts/base.njk
   </section>
 </main>
 
-<script src="/assets/js/dragscroll.js"></script>
+<!--TODO: Remove script src="/assets/js/dragscroll.js"></script-->

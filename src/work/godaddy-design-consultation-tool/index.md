@@ -4,7 +4,8 @@ workYear: 2022
 company: GoDaddy
 client: "Website Design Services"
 description: "When onboarding calls began to bottleneck GoDaddy’s Website Design Services during a pandemic, I designed a scalable intake tool that replaced phone scripts and gave customers a clearer path to launch. Fewer calls resulted in faster delivery and happier customers"
-role: "Product Design"
+role:
+  - "UX Design"
 tools:
   - Figma
   - React

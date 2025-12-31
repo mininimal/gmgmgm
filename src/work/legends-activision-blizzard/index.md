@@ -4,6 +4,8 @@ workYear: 2025
 company: Legends
 client: Activision Blizzard
 description: "Activision Blizzard is the conglomerate behind some of the biggest brands in gaming, including Xbox, World of Warcraft, and Call of Duty. I was the architect of a token-based design system which powered fluid, branded Shopify experiences across Activision Blizzard’s physical ecommerce network"
+role:
+  - "Design Systems"
 team:
   - "Jeffrey Ren (Dev)"
   - "Nina Armella (Design)"

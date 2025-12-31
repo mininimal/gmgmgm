@@ -171,21 +171,21 @@ details {
   transition: var(--transition);
 }
 
-.archiveItem {
+.archive-item {
   max-inline-size: none;
   text-decoration: none;
   color: var(--text-color);
   cursor: pointer;
 }
 
-.archiveItem h2 {
+.archive-item h2 {
   color: var(--color-bright);
   font-size: var(--font-size);
   flex: 1;
   max-inline-size: none;
 }
 
-.archiveList hr {
+.archive-list hr {
   border: none;
   block-size: 1px;
   background-color: var(--color-medium);
@@ -193,88 +193,82 @@ details {
   margin-block: 0;
 }
 
-details > .reel {
+details > div {
   padding-inline: var(--layout-padding);
   padding-block-end: var(--layout-padding);
 }
 
-.archiveItem:active > * {
+.archive-item:active > * {
   opacity: 0.5;
 }
 
 /* Hover Effect */
-.archiveList,
-.archiveList * {
+.archive-list,
+.archive-list * {
   transition: var(--transition);
 }
 
-.archiveList:hover .archiveItem:not(:hover) * {
+.archive-list:hover .archive-item:not(:hover) * {
   color: var(--color-medium);
 }
 
 /* !important required to reset becuase of extra summary element not found on writing archive */
-.archiveList:hover details[open] span {
+.archive-list:hover details[open] span {
   color: var(--text-color) !important;
 }
 
-.archiveList:hover details[open] h2 {
+.archive-list:hover details[open] h2 {
   color: var(--link-color) !important;
 }
 
 /* https://css-tricks.com/using-styling-the-details-element/
 https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#transition-animation-for-details */
 
-::details-content {
-  transition: height 0.5s ease, content-visibility 0.5s ease allow-discrete;
-  block-size: 0;
-  overflow: clip;
-}
-
-/* Browser supports interpolate-size */
-@supports (interpolate-size: allow-keywords) {
-  :root {
-    interpolate-size: allow-keywords;
-  }
-
-  [open]::details-content {
-    block-size: auto;
-  }
-}
-
-@supports not (interpolate-size: allow-keywords) {
-  details[open] .reel {
-    animation: animateDown 0.2s linear forwards;
-  }
-
-  @keyframes animateDown {
-    0% {
-      opacity: 0;
-      transform: translatey(-15px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translatey(0);
-    }
-  }
-}
-
-/* details {
-  inline-size: 50ch;
-
+details {
   @media (prefers-reduced-motion: no-preference) {
-    interpolate-size: allow-keywords;
-  }
+    /* Modern browsers with interpolate-size support */
+    @supports (interpolate-size: allow-keywords) {
+      &::details-content {
+        overflow: clip;
+        transition: content-visibility 0.5s allow-discrete, opacity 0.5s,
+          block-size 0.5s;
+        opacity: 0;
+        block-size: 0;
+      }
 
-  &::details-content {
+      &[open]::details-content {
+        opacity: 1;
+        block-size: auto;
+      }
+    }
+
+    /* Fallback for browsers without interpolate-size */
+    @supports not (interpolate-size: allow-keywords) {
+      &[open] > div {
+        animation: animateDown 0.3s ease forwards;
+      }
+    }
+  }
+}
+
+@keyframes animateDown {
+  0% {
     opacity: 0;
-    block-size: 0;
-    overflow-y: clip;
-    transition: content-visibility 1s allow-discrete, opacity 1s, block-size 1s;
+    transform: translateY(-15px);
   }
-
-  &[open]::details-content {
+  100% {
     opacity: 1;
-    block-size: auto;
+    transform: translateY(0);
   }
-} */
+}
+
+details summary {
+  cursor: pointer;
+}
+
+/*--- Project Image---*/
+project-image {
+  border: 8px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

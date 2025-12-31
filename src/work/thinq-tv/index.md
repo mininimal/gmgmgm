@@ -5,10 +5,7 @@ workYear: 2019
 company: ThinQ.tv
 description: "During my studies at ASU, I joined a Venture Devils startup building a platform to help creators connect with their audience. I led the product vision, contributed to front-end code, and worked on the UX and web design."
 role:
-  - Product Design
-  - UX Design
-  - Web Design
-  - Brand Design
+  - "Product Design"
 thumb:
 featured: true
 draft: true

@@ -4,6 +4,8 @@ workYear: 2021
 company: GoDaddy
 client: GoDaddy Website Design Services
 description: "During the worldwide COVID-19 pandemic, I joined GoDaddy's Website Design Services in my first corporate role. Due to lockdown orders, thousands of small businesses had to suddenly pivot to ecommerce with no experience in the internet space. These entrepreneurs relied on WDS to create their new digital storefronts."
+role:
+  - "Website Design"
 tools:
   - WordPress
   - WooCommerce

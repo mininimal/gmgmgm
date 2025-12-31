@@ -24,7 +24,7 @@ Sources:
 - Kevin Powell: https://thecascade.dev/article/least-amount-of-css/
 - Adam Argyle: https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
 - Kilian Valkhof: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
-- Chris Coyier: https://css-tricks.com/almanac/properties/t/text-rendering/
+- Chris Coyier: https://frontendmasters.com/blog/the-coyier-css-starter/
 
 ------------------------------------------------------------------------*/
 
@@ -47,18 +47,23 @@ figure, blockquote, dl, dd {
 }
 
 html {
-  color-scheme: light dark; /* Sets starting color mode based on user's preference. */
+   /* Sets starting color mode based on user's preference. */
+  color-scheme: light dark;
 
-  font-size: clamp(1rem, 1rem + 0.5dvw, 2rem);
-  line-height: 1.4;
+  /* Sets responsive font resizing at root. */
   font-family: system-ui, sans-serif;
+  font-size: clamp(1rem, 1rem + 0.5dvw, 2rem);
+  font-synthesis: style; /* Prevent synthetic bold & italic when unavailable. */
   hanging-punctuation: first allow-end last;
+  line-height: 1.4;
   word-break: break-word;
 
   /* Mobile Safari increases the default font-size when you switch a website from portrait to landscape. */
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 pre {
@@ -93,23 +98,9 @@ pre {
   }
 }
 
+ /*TODO: Check how this works with header/footer*/
 body {
-  font-family: system-ui; /* Use user's system default font instead of browser default. */
-  font-size: 1.25rem; /* Usually results in 20px body font, nice for modern sizing. */
-  line-height: 1.5;
-
-  font-synthesis: style; /* Prevent synthetic bold & italic when unavailable. */
-
-  /* Consider uncommenting for light mode sites: https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
-  -moz-osx-font-smoothing: grayscale;
-  */
-  -webkit-font-smoothing: antialiased;
-
-  /* Consider uncommenting for small amounts of text that need better styling: https://css-tricks.com/almanac/properties/t/text-rendering/
-  text-rendering: optimizeLegibility;
-  */
-
-  min-block-size: 100vh; /* Prevents pages shorter than the viewport height. */ /*TODO: Check how this works with header/footer*/
+  min-block-size: 100vh; /* Prevents pages shorter than the viewport height. */
 }
 
 img,
@@ -117,9 +108,11 @@ picture,
 video,
 canvas,
 svg,
-label {
+iframe {
   display: block; /* Without this, media elements are inline by default. */
   max-inline-size: 100%; /* Prevents media from overflowing container due to being "replaced elements." */
+  block-size: auto;
+  border-style: none;
 }
 
 /* TODO: Ensure this isn't already an Every Layout class */
@@ -130,19 +123,6 @@ main {
 }
  */
 
-/* Allows form controls to inherit body font styling. */
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-textarea:not([rows]) {
-  min-block-size: 10em; /* Sensible minimum height for textareas unless specified in HTML. */
-}
-
 p,
 h1,
 h2,
@@ -150,20 +130,21 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word; /* Allows lines to break mid-word to prevent overflowing. */
+  overflow-wrap: break-word;
 }
 
 p {
-  text-wrap: pretty; /* Ensures body text's last line is at least two words, plus some free visual balance tweaks. */
+  text-wrap: pretty;
 }
 
+/* TODO: Change selector to :heading when released */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 /* FUTURE :heading */ {
-  text-wrap: balance; /* Tries to balance length of lines of heading text. */
+h6 {
+  text-wrap: balance;
 }
 
 h1,
@@ -173,7 +154,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1; /* Avoids height pain on elements that typically have one line of text. Don't use if font has large ascenders & descenders. */
+  line-height: 1.1; /* Don't use if font has large ascenders & descenders. */
 }
 
 a:not([class]) {
@@ -202,6 +183,26 @@ ol {
   }
 }
 
+/* Allows form controls to inherit body font styling. */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea {
+  field-sizing: content;
+  min-block-size: 8lh;
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+textarea:not([rows]) {
+  min-block-size: 10em; /* Sensible minimum height for textareas unless specified in HTML. */
+}
+
 input:not(
     :where(
         [type="submit"],
@@ -221,12 +222,7 @@ input:where([type="submit"], [type="reset"], [type="button"]) {
   border: 1px solid transparent;
 }
 
-textarea {
-  field-sizing: content;
-  min-block-size: 8lh;
-  inline-size: 100%;
-  max-inline-size: 100%;
-}
+
 
 table {
   caption-side: bottom;
