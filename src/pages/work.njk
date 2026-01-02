@@ -15,28 +15,29 @@ layout: layouts/base.njk
 
       <hr>
 
-      <details name="archive-item">
-        <!-- Accordion header -->
+      <details class="archive-item" name="archive-item">
         <summary class="cluster box">
           <time datetime="{{ project.data.workYear }}">{{ project.data.workYear }}</time>
           <h2>{{ project.data.title }}</h2>
           <span>{{ project.data.role[0] }}</span>
         </summary>
 
-        <!-- Accordion content -->
-        <div class="cluster">
-
-          <aside class="stack">
+        <div>
+          <div class="project-info">
             <p>{{ project.data.description }}</p>
             <a href="{{ project.url }}">Read full case study</a>
-          </aside>
+          </div>
 
           {% if project.data.thumb %}
             <figure>
               <img src="{{ project.url }}images/{{ project.data.thumb }}" alt="Screenshot of {{ project.data.title }}">
             </figure>
+            <!-- TODO: Convert thumbs from img to video: 
+            <video autoplay loop muted playsinline>
+              <source src="{{ project.url }}images/{{ project.data.thumb }}" type="video/webm">
+            </video>
+            -->
           {% endif %}
-
         </div>
       </details>
 

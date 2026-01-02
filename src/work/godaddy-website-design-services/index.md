@@ -10,7 +10,7 @@ tools:
   - WordPress
   - WooCommerce
   - Adobe Illustrator
-thumb: gddy-wds_thumb.png
+thumb: GDDY-wds-grid.png
 draft: true
 ---
 

@@ -155,8 +155,59 @@ article>:not(h1, h2) {
 
 */
 
+/* ---------- Generic Details Defaults ---------- */
+/* https://css-tricks.com/using-styling-the-details-element/
+https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#transition-animation-for-details */
+
+details {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Modern browsers with interpolate-size support */
+    @supports (interpolate-size: allow-keywords) {
+      &::details-content {
+        overflow: clip;
+        transition: content-visibility var(--transition-speed)
+            var(--transition-function) allow-discrete,
+          opacity var(--transition-speed) var(--transition-function),
+          block-size var(--transition-speed) var(--transition-function);
+        opacity: 0;
+        block-size: 0;
+      }
+
+      &[open]::details-content {
+        opacity: 1;
+        block-size: auto;
+      }
+    }
+
+    /* Fallback for browsers without interpolate-size */
+    @supports not (interpolate-size: allow-keywords) {
+      &[open] > div {
+        animation: animateDown calc(var(--transition-speed) * 1.5)
+          var(--transition-function) forwards;
+      }
+    }
+  }
+  & > div {
+    padding-inline: var(--layout-padding);
+    padding-block-end: var(--layout-padding);
+  }
+  & summary {
+    cursor: pointer;
+  }
+}
+
+@keyframes animateDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ---------- ARCHIVE LAYOUT ---------- */
-/* EDGE TO EDGE LAYOUT*/
 .archive {
   margin-block-start: 0;
   margin-inline: 0;
@@ -167,22 +218,56 @@ article>:not(h1, h2) {
   justify-content: space-between;
 }
 
-details {
-  transition: var(--transition);
+.archive-item > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-padding);
+  align-items: start;
 }
 
-.archive-item {
-  max-inline-size: none;
-  text-decoration: none;
+.archive-item > .project-info {
+  flex: 0 0 var(--layout-measure);
+  min-inline-size: 0; /* Prevents long words from expanding container */
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-padding);
+}
+
+.archive-item figure {
+  flex: 1 1 0;
+  max-inline-size: 100%;
+  min-inline-size: min(var(--layout-measure), 100%);
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  & picture,
+  & img,
+  & video {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+}
+
+.archive-item summary {
   color: var(--text-color);
-  cursor: pointer;
-}
-
-.archive-item h2 {
-  color: var(--color-bright);
-  font-size: var(--font-size);
-  flex: 1;
-  max-inline-size: none;
+  & h2 {
+    color: var(--color-bright);
+    font-size: var(--font-size);
+    flex: 1;
+    max-inline-size: none;
+  }
+  & :active > * {
+    opacity: 0.5;
+  }
 }
 
 .archive-list hr {
@@ -191,15 +276,6 @@ details {
   background-color: var(--color-medium);
   max-inline-size: none;
   margin-block: 0;
-}
-
-details > div {
-  padding-inline: var(--layout-padding);
-  padding-block-end: var(--layout-padding);
-}
-
-.archive-item:active > * {
-  opacity: 0.5;
 }
 
 /* Hover Effect */
@@ -219,51 +295,6 @@ details > div {
 
 .archive-list:hover details[open] h2 {
   color: var(--link-color) !important;
-}
-
-/* https://css-tricks.com/using-styling-the-details-element/
-https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025#transition-animation-for-details */
-
-details {
-  @media (prefers-reduced-motion: no-preference) {
-    /* Modern browsers with interpolate-size support */
-    @supports (interpolate-size: allow-keywords) {
-      &::details-content {
-        overflow: clip;
-        transition: content-visibility 0.5s allow-discrete, opacity 0.5s,
-          block-size 0.5s;
-        opacity: 0;
-        block-size: 0;
-      }
-
-      &[open]::details-content {
-        opacity: 1;
-        block-size: auto;
-      }
-    }
-
-    /* Fallback for browsers without interpolate-size */
-    @supports not (interpolate-size: allow-keywords) {
-      &[open] > div {
-        animation: animateDown 0.3s ease forwards;
-      }
-    }
-  }
-}
-
-@keyframes animateDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-details summary {
-  cursor: pointer;
 }
 
 /*--- Project Image---*/

@@ -38,7 +38,7 @@ https://every-layout.dev/layouts/stack#splitting-the-stack */
 
 /* ---------- Box ---------- */
 .box {
-  padding: var(--space-m);
+  padding: var(--layout-padding);
   /* border: var(--border); */
 }
 
