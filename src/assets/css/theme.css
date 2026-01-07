@@ -94,6 +94,7 @@
 }
 
 /* ---------- SIZE/SPACE ---------- */
+/* TODO: This ruleset overrides the media max-inline-size from reset.css. */
 * {
   max-inline-size: var(--layout-measure);
 }
@@ -107,7 +108,8 @@ nav,
 footer,
 section,
 details,
-summary {
+summary,
+figure {
   max-inline-size: none;
 }
 

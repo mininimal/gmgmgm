@@ -47,7 +47,7 @@ figure, blockquote, dl, dd {
 }
 
 html {
-   /* Sets starting color mode based on user's preference. */
+  /* Sets starting color mode based on user's preference. */
   color-scheme: light dark;
 
   /* Sets responsive font resizing at root. */
@@ -98,12 +98,13 @@ pre {
   }
 }
 
- /*TODO: Check how this works with header/footer*/
+/*TODO: Check how this works with header/footer*/
 body {
   min-block-size: 100vh; /* Prevents pages shorter than the viewport height. */
 }
 
 img,
+figure,
 picture,
 video,
 canvas,
@@ -221,8 +222,6 @@ input:where([type="submit"], [type="reset"], [type="button"]) {
   color: Canvas;
   border: 1px solid transparent;
 }
-
-
 
 table {
   caption-side: bottom;

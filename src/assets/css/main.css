@@ -103,9 +103,9 @@ article h1 {
   color: var(--color-bright);
 }
 
-article h2 {
+/* article h2 {
   color: var(--color-bright);
-}
+} */
 
 /* https://webkit.org/blog/16831/line-height-units/ */
 article p,
@@ -235,32 +235,41 @@ details {
 
 .archive-item figure {
   flex: 1 1 0;
-  max-inline-size: 100%;
   min-inline-size: min(var(--layout-measure), 100%);
   aspect-ratio: 16 / 9;
-  margin: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 8px solid rgba(255, 255, 255, 0.5);
+  padding: clamp(8px, 2vw, 24px);
   border-radius: 24px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: radial-gradient(
+      at 27% 37%,
+      oklch(0.4 0.15 280) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 97% 21%, oklch(0.35 0.12 320) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, oklch(0.3 0.1 260) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, oklch(0.32 0.13 300) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, oklch(0.28 0.08 240) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, oklch(0.25 0.1 290) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, oklch(0.3 0.12 270) 0px, transparent 50%),
+    var(--color-dark);
 
-  & picture,
   & img,
   & video {
     max-inline-size: 100%;
     max-block-size: 100%;
     object-fit: contain;
-    border-radius: 4px;
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 }
 
 .archive-item summary {
   color: var(--text-color);
   & h2 {
-    color: var(--color-bright);
     font-size: var(--font-size);
     flex: 1;
     max-inline-size: none;
@@ -281,20 +290,12 @@ details {
 /* Hover Effect */
 .archive-list,
 .archive-list * {
-  transition: var(--transition);
+  transition: opacity var(--transition-speed) var(--transition-function);
 }
 
-.archive-list:hover .archive-item:not(:hover) * {
-  color: var(--color-medium);
-}
-
-/* !important required to reset becuase of extra summary element not found on writing archive */
-.archive-list:hover details[open] span {
-  color: var(--text-color) !important;
-}
-
-.archive-list:hover details[open] h2 {
-  color: var(--link-color) !important;
+/* When ANY archive-item is hovered… */
+.archive-list:has(.archive-item:hover) .archive-item:not(:hover) {
+  opacity: 0.15;
 }
 
 /*--- Project Image---*/
