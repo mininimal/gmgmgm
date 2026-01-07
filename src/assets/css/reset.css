@@ -25,6 +25,7 @@ Sources:
 - Adam Argyle: https://nerdy.dev/6-css-snippets-every-front-end-developer-should-know-in-2025
 - Kilian Valkhof: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
 - Chris Coyier: https://frontendmasters.com/blog/the-coyier-css-starter/
+- Greg Gibson: https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/
 
 ------------------------------------------------------------------------*/
 
@@ -252,4 +253,13 @@ select,
 label,
 button {
   cursor: pointer; /* show the mickey mouse finger on interactive controls */
+}
+
+/* Sets smarter defaults for the native disclosure element */
+details summary {
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
 }

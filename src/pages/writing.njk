@@ -4,16 +4,16 @@ layout: layouts/base.njk
 ---
 
 <main class="archive">
-  <section class="box titleRow">
+  <section class="cluster box archive-item title-row">
     <h1>Writing</h1>
     <span>{{ collections.writing.length }} posts</span>
   </section>
 
-  <section class="archiveList">
+  <section class="archive-list">
 
   {% for post in collections.writing | reverse %}
     <hr>
-    <a href="{{ post.url }}" class="cluster box archiveItem">
+    <a href="{{ post.url }}" class="cluster box archive-item">
       <span>{{ ((loop.length - loop.index + 1) | string).padStart(3, '0') }}</span>
       <h2>{{ post.data.title }}</h2>
       <span>{{ post.data.categories[0] or "Uncategorized" }}</span>

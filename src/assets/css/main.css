@@ -213,9 +213,14 @@ details {
   margin-inline: 0;
 }
 
-.titleRow {
-  display: flex;
+.title-row {
   justify-content: space-between;
+}
+
+.archive-item h2 {
+  font-size: var(--font-size);
+  flex: 1;
+  max-inline-size: none;
 }
 
 .archive-item > div {
@@ -267,17 +272,10 @@ details {
   }
 }
 
-.archive-item summary {
-  color: var(--text-color);
-  & h2 {
-    font-size: var(--font-size);
-    flex: 1;
-    max-inline-size: none;
-  }
-  & :active > * {
-    opacity: 0.5;
-  }
-}
+/* .archive-item:active,
+.archive-item:active * {
+  opacity: 0.5;
+} */
 
 .archive-list hr {
   border: none;
@@ -288,13 +286,17 @@ details {
 }
 
 /* Hover Effect */
-.archive-list,
-.archive-list * {
+.archive-item {
   transition: opacity var(--transition-speed) var(--transition-function);
 }
 
-/* When ANY archive-item is hovered… */
-.archive-list:has(.archive-item:hover) .archive-item:not(:hover) {
+.archive-list:has(.archive-item:hover)
+  .archive-item:not(:hover):not(.title-row) {
+  opacity: 0.15;
+}
+
+.archive-list:has(.archive-item:hover, .archive-item:focus-within)
+  .archive-item:not(:hover):not(:focus-within) {
   opacity: 0.15;
 }
 
