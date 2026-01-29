@@ -217,6 +217,14 @@ details {
   justify-content: space-between;
 }
 
+.archive-item {
+  max-inline-size: none;
+}
+
+.archive-list > a.archive-item {
+  text-decoration: none;
+}
+
 .archive-item h2 {
   font-size: var(--font-size);
   flex: 1;
@@ -230,7 +238,7 @@ details {
   align-items: start;
 }
 
-.archive-item > .project-info {
+project-preview {
   flex: 0 0 var(--layout-measure);
   min-inline-size: 0; /* Prevents long words from expanding container */
   display: flex;
